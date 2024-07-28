@@ -1,0 +1,3019 @@
+{
+	"info": {
+		"_postman_id": "3a132b34-35b4-409b-a79b-439f209a8019",
+		"name": "Link Palette",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6265202",
+		"_collection_link": "https://linpalette.postman.co/workspace/Linkpalette~bd0cbeb0-299a-4b8c-9155-e69ac1ba1b6f/collection/6265202-3a132b34-35b4-409b-a79b-439f209a8019?action=share&source=collection_link&creator=6265202"
+	},
+	"item": [
+		{
+			"name": "Admin Site",
+			"item": [
+				{
+					"name": "Admin",
+					"item": [
+						{
+							"name": "Get Me",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{API_KEY}}",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"name": "Content-Type",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"userName\":\"123\",\n    \"password\":\"123\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/admin_site/admin/me",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"admin_site",
+										"admin",
+										"me"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Signup Basic",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "x-api-key",
+												"value": "{{API_KEY}}",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"name": "Content-Type",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\" : \"Janishar Ali\",\n\t\"email\": \"ali@github.com\",\n\t\"password\": \"changeit\",\n\t\"profilePicUrl\": \"https://avatars1.githubusercontent.com/u/11065002?s=460&u=1e8e42bda7e6f579a2b216767b2ed986619bbf78&v=4\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}/signup/basic",
+											"host": [
+												"{{BASE_URL}}"
+											],
+											"path": [
+												"signup",
+												"basic"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "1270"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"4f6-GXO8jjGI8w2J6i6uswKo7ocjos0\""
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 20 Dec 2022 11:36:59 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"statusCode\": \"10000\",\n    \"message\": \"Signup Successful\",\n    \"data\": {\n        \"user\": {\n            \"_id\": \"63a19e5ba2730d1599d46c0b\",\n            \"name\": \"Janishar Ali\",\n            \"roles\": [\n                {\n                    \"_id\": \"63a197b39e07f859826e6626\",\n                    \"code\": \"LEARNER\",\n                    \"status\": true\n                }\n            ],\n            \"profilePicUrl\": \"https://avatars1.githubusercontent.com/u/11065002?s=460&u=1e8e42bda7e6f579a2b216767b2ed986619bbf78&v=4\"\n        },\n        \"tokens\": {\n            \"accessToken\": \"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhcGkuZGV2Lnh5ei5jb20iLCJhdWQiOiJ4eXouY29tIiwic3ViIjoiNjNhMTllNWJhMjczMGQxNTk5ZDQ2YzBiIiwiaWF0IjoxNjcxNTM2MjE5LCJleHAiOjE2NzE3MDkwMTksInBybSI6ImIwM2QxZTk2ZmFmYmQwNjBjMmRlYTA2Y2UyNzgwZjNmM2RjNzk2N2JkNzRhYWVjYTIyNTEwMzA0MWI1YWM0MWY5ZThjMzVkZGNhMGM5MzNjMmI4NDcxZWZlNzY5MmZmYzBiNGE5ZjliODY2MDliYjhmNGNhMTc3OTIxM2U5Y2UzIn0.m0KpxUsLJ3HrgsgvjUu1qZy4AljExY4eblPE288zatz4JdqoQ6mbHlYCG2c2c1Qos2e_XI5pMUToGFd39T_rCQ\",\n            \"refreshToken\": \"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhcGkuZGV2Lnh5ei5jb20iLCJhdWQiOiJ4eXouY29tIiwic3ViIjoiNjNhMTllNWJhMjczMGQxNTk5ZDQ2YzBiIiwiaWF0IjoxNjcxNTM2MjE5LCJleHAiOjE2NzIxNDEwMTksInBybSI6IjZlNzVjNjZiZWY1ZmJlM2M0YjlkOGQ5ZjFmYjgzY2U2NGJjZDJhZTZhYjMxNTI2YWYzYjI3MDY3ODVmMTRmMzEwZjFlZmJlMmYyNGY4MTk2YzVkOWExNTliZDliMGY0ZTJkNGQ2MTAzYjliNzdhMmVmNGRhYTgwODc0MDgyZDgyIn0.ChW8GlgrCeD_Z6rOKFTaPlZ2-KsxCaRU1Nwmre7xvXtPMMNH4iMzGseI5wYGSc1NqR5OWOoCl1vo2tnBjHaF9A\"\n        }\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "change passoword",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{API_KEY}}",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"name": "Content-Type",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"password_confirm\":\"password1\",\n    \"password_new\":\"password\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/admin_site/admin/change-password",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"admin_site",
+										"admin",
+										"change-password"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Signup Basic",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "x-api-key",
+												"value": "{{API_KEY}}",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"name": "Content-Type",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\" : \"Janishar Ali\",\n\t\"email\": \"ali@github.com\",\n\t\"password\": \"changeit\",\n\t\"profilePicUrl\": \"https://avatars1.githubusercontent.com/u/11065002?s=460&u=1e8e42bda7e6f579a2b216767b2ed986619bbf78&v=4\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}/signup/basic",
+											"host": [
+												"{{BASE_URL}}"
+											],
+											"path": [
+												"signup",
+												"basic"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "1270"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"4f6-GXO8jjGI8w2J6i6uswKo7ocjos0\""
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 20 Dec 2022 11:36:59 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"statusCode\": \"10000\",\n    \"message\": \"Signup Successful\",\n    \"data\": {\n        \"user\": {\n            \"_id\": \"63a19e5ba2730d1599d46c0b\",\n            \"name\": \"Janishar Ali\",\n            \"roles\": [\n                {\n                    \"_id\": \"63a197b39e07f859826e6626\",\n                    \"code\": \"LEARNER\",\n                    \"status\": true\n                }\n            ],\n            \"profilePicUrl\": \"https://avatars1.githubusercontent.com/u/11065002?s=460&u=1e8e42bda7e6f579a2b216767b2ed986619bbf78&v=4\"\n        },\n        \"tokens\": {\n            \"accessToken\": \"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhcGkuZGV2Lnh5ei5jb20iLCJhdWQiOiJ4eXouY29tIiwic3ViIjoiNjNhMTllNWJhMjczMGQxNTk5ZDQ2YzBiIiwiaWF0IjoxNjcxNTM2MjE5LCJleHAiOjE2NzE3MDkwMTksInBybSI6ImIwM2QxZTk2ZmFmYmQwNjBjMmRlYTA2Y2UyNzgwZjNmM2RjNzk2N2JkNzRhYWVjYTIyNTEwMzA0MWI1YWM0MWY5ZThjMzVkZGNhMGM5MzNjMmI4NDcxZWZlNzY5MmZmYzBiNGE5ZjliODY2MDliYjhmNGNhMTc3OTIxM2U5Y2UzIn0.m0KpxUsLJ3HrgsgvjUu1qZy4AljExY4eblPE288zatz4JdqoQ6mbHlYCG2c2c1Qos2e_XI5pMUToGFd39T_rCQ\",\n            \"refreshToken\": \"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhcGkuZGV2Lnh5ei5jb20iLCJhdWQiOiJ4eXouY29tIiwic3ViIjoiNjNhMTllNWJhMjczMGQxNTk5ZDQ2YzBiIiwiaWF0IjoxNjcxNTM2MjE5LCJleHAiOjE2NzIxNDEwMTksInBybSI6IjZlNzVjNjZiZWY1ZmJlM2M0YjlkOGQ5ZjFmYjgzY2U2NGJjZDJhZTZhYjMxNTI2YWYzYjI3MDY3ODVmMTRmMzEwZjFlZmJlMmYyNGY4MTk2YzVkOWExNTliZDliMGY0ZTJkNGQ2MTAzYjliNzdhMmVmNGRhYTgwODc0MDgyZDgyIn0.ChW8GlgrCeD_Z6rOKFTaPlZ2-KsxCaRU1Nwmre7xvXtPMMNH4iMzGseI5wYGSc1NqR5OWOoCl1vo2tnBjHaF9A\"\n        }\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Login",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"const accessToken = pm.response.json().data.token.accessToken;",
+											"pm.environment.set(\"admin_token\", accessToken);"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{API_KEY}}",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"name": "Content-Type",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"userName\":\"username\",\n    \"password\":\"password\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/admin_site/admin/login",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"admin_site",
+										"admin",
+										"login"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Signup Basic",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "x-api-key",
+												"value": "{{API_KEY}}",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"name": "Content-Type",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\" : \"Janishar Ali\",\n\t\"email\": \"ali@github.com\",\n\t\"password\": \"changeit\",\n\t\"profilePicUrl\": \"https://avatars1.githubusercontent.com/u/11065002?s=460&u=1e8e42bda7e6f579a2b216767b2ed986619bbf78&v=4\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}/signup/basic",
+											"host": [
+												"{{BASE_URL}}"
+											],
+											"path": [
+												"signup",
+												"basic"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "1270"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"4f6-GXO8jjGI8w2J6i6uswKo7ocjos0\""
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 20 Dec 2022 11:36:59 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"statusCode\": \"10000\",\n    \"message\": \"Signup Successful\",\n    \"data\": {\n        \"user\": {\n            \"_id\": \"63a19e5ba2730d1599d46c0b\",\n            \"name\": \"Janishar Ali\",\n            \"roles\": [\n                {\n                    \"_id\": \"63a197b39e07f859826e6626\",\n                    \"code\": \"LEARNER\",\n                    \"status\": true\n                }\n            ],\n            \"profilePicUrl\": \"https://avatars1.githubusercontent.com/u/11065002?s=460&u=1e8e42bda7e6f579a2b216767b2ed986619bbf78&v=4\"\n        },\n        \"tokens\": {\n            \"accessToken\": \"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhcGkuZGV2Lnh5ei5jb20iLCJhdWQiOiJ4eXouY29tIiwic3ViIjoiNjNhMTllNWJhMjczMGQxNTk5ZDQ2YzBiIiwiaWF0IjoxNjcxNTM2MjE5LCJleHAiOjE2NzE3MDkwMTksInBybSI6ImIwM2QxZTk2ZmFmYmQwNjBjMmRlYTA2Y2UyNzgwZjNmM2RjNzk2N2JkNzRhYWVjYTIyNTEwMzA0MWI1YWM0MWY5ZThjMzVkZGNhMGM5MzNjMmI4NDcxZWZlNzY5MmZmYzBiNGE5ZjliODY2MDliYjhmNGNhMTc3OTIxM2U5Y2UzIn0.m0KpxUsLJ3HrgsgvjUu1qZy4AljExY4eblPE288zatz4JdqoQ6mbHlYCG2c2c1Qos2e_XI5pMUToGFd39T_rCQ\",\n            \"refreshToken\": \"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhcGkuZGV2Lnh5ei5jb20iLCJhdWQiOiJ4eXouY29tIiwic3ViIjoiNjNhMTllNWJhMjczMGQxNTk5ZDQ2YzBiIiwiaWF0IjoxNjcxNTM2MjE5LCJleHAiOjE2NzIxNDEwMTksInBybSI6IjZlNzVjNjZiZWY1ZmJlM2M0YjlkOGQ5ZjFmYjgzY2U2NGJjZDJhZTZhYjMxNTI2YWYzYjI3MDY3ODVmMTRmMzEwZjFlZmJlMmYyNGY4MTk2YzVkOWExNTliZDliMGY0ZTJkNGQ2MTAzYjliNzdhMmVmNGRhYTgwODc0MDgyZDgyIn0.ChW8GlgrCeD_Z6rOKFTaPlZ2-KsxCaRU1Nwmre7xvXtPMMNH4iMzGseI5wYGSc1NqR5OWOoCl1vo2tnBjHaF9A\"\n        }\n    }\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Seller",
+					"item": [
+						{
+							"name": "Get Seller List",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{API_KEY}}",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"name": "Content-Type",
+										"type": "text"
+									},
+									{
+										"key": "filter",
+										"value": "Ww0KICAgIHsNCiAgICAgICAgIm9wZXJhdGlvbiI6ICJlcSIsDQogICAgICAgICJ2YWx1ZSI6ICIyM2JkMzY0OS1kZDBjLTExZWUtYTFkMS0wMjQyYWMxODAwMDIiLA0KICAgICAgICAiYXR0cmlidXRlIjogInN0b3JlSWQiDQogICAgfQ0KXQ",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "order",
+										"value": "Ww0KICAgIHsNCiAgICAgICAgImF0dHJpYnV0ZSI6ICJpZCINCiAgICB9DQpd",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "[\n    {\n        \"operation\": \"eq\",\n        \"value\": \"db0c9d2b-6603-4d37-b419-1be575e9a9cc\",\n        \"attribute\": \"id\",\n        \"not\": false\n    }\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/admin_site/seller/sellers?limit=4&page=2",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"admin_site",
+										"seller",
+										"sellers"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "4"
+										},
+										{
+											"key": "page",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Signup Basic",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "x-api-key",
+												"value": "{{API_KEY}}",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"name": "Content-Type",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\" : \"Janishar Ali\",\n\t\"email\": \"ali@github.com\",\n\t\"password\": \"changeit\",\n\t\"profilePicUrl\": \"https://avatars1.githubusercontent.com/u/11065002?s=460&u=1e8e42bda7e6f579a2b216767b2ed986619bbf78&v=4\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}/signup/basic",
+											"host": [
+												"{{BASE_URL}}"
+											],
+											"path": [
+												"signup",
+												"basic"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "1270"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"4f6-GXO8jjGI8w2J6i6uswKo7ocjos0\""
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 20 Dec 2022 11:36:59 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"statusCode\": \"10000\",\n    \"message\": \"Signup Successful\",\n    \"data\": {\n        \"user\": {\n            \"_id\": \"63a19e5ba2730d1599d46c0b\",\n            \"name\": \"Janishar Ali\",\n            \"roles\": [\n                {\n                    \"_id\": \"63a197b39e07f859826e6626\",\n                    \"code\": \"LEARNER\",\n                    \"status\": true\n                }\n            ],\n            \"profilePicUrl\": \"https://avatars1.githubusercontent.com/u/11065002?s=460&u=1e8e42bda7e6f579a2b216767b2ed986619bbf78&v=4\"\n        },\n        \"tokens\": {\n            \"accessToken\": \"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhcGkuZGV2Lnh5ei5jb20iLCJhdWQiOiJ4eXouY29tIiwic3ViIjoiNjNhMTllNWJhMjczMGQxNTk5ZDQ2YzBiIiwiaWF0IjoxNjcxNTM2MjE5LCJleHAiOjE2NzE3MDkwMTksInBybSI6ImIwM2QxZTk2ZmFmYmQwNjBjMmRlYTA2Y2UyNzgwZjNmM2RjNzk2N2JkNzRhYWVjYTIyNTEwMzA0MWI1YWM0MWY5ZThjMzVkZGNhMGM5MzNjMmI4NDcxZWZlNzY5MmZmYzBiNGE5ZjliODY2MDliYjhmNGNhMTc3OTIxM2U5Y2UzIn0.m0KpxUsLJ3HrgsgvjUu1qZy4AljExY4eblPE288zatz4JdqoQ6mbHlYCG2c2c1Qos2e_XI5pMUToGFd39T_rCQ\",\n            \"refreshToken\": \"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhcGkuZGV2Lnh5ei5jb20iLCJhdWQiOiJ4eXouY29tIiwic3ViIjoiNjNhMTllNWJhMjczMGQxNTk5ZDQ2YzBiIiwiaWF0IjoxNjcxNTM2MjE5LCJleHAiOjE2NzIxNDEwMTksInBybSI6IjZlNzVjNjZiZWY1ZmJlM2M0YjlkOGQ5ZjFmYjgzY2U2NGJjZDJhZTZhYjMxNTI2YWYzYjI3MDY3ODVmMTRmMzEwZjFlZmJlMmYyNGY4MTk2YzVkOWExNTliZDliMGY0ZTJkNGQ2MTAzYjliNzdhMmVmNGRhYTgwODc0MDgyZDgyIn0.ChW8GlgrCeD_Z6rOKFTaPlZ2-KsxCaRU1Nwmre7xvXtPMMNH4iMzGseI5wYGSc1NqR5OWOoCl1vo2tnBjHaF9A\"\n        }\n    }\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Store",
+					"item": [
+						{
+							"name": "Get Store List",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{API_KEY}}",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"name": "Content-Type",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"userName\":\"123\",\n    \"password\":\"123\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/admin_site/store/stores",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"admin_site",
+										"store",
+										"stores"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Signup Basic",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "x-api-key",
+												"value": "{{API_KEY}}",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"name": "Content-Type",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\" : \"Janishar Ali\",\n\t\"email\": \"ali@github.com\",\n\t\"password\": \"changeit\",\n\t\"profilePicUrl\": \"https://avatars1.githubusercontent.com/u/11065002?s=460&u=1e8e42bda7e6f579a2b216767b2ed986619bbf78&v=4\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}/signup/basic",
+											"host": [
+												"{{BASE_URL}}"
+											],
+											"path": [
+												"signup",
+												"basic"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "1270"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"4f6-GXO8jjGI8w2J6i6uswKo7ocjos0\""
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 20 Dec 2022 11:36:59 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"statusCode\": \"10000\",\n    \"message\": \"Signup Successful\",\n    \"data\": {\n        \"user\": {\n            \"_id\": \"63a19e5ba2730d1599d46c0b\",\n            \"name\": \"Janishar Ali\",\n            \"roles\": [\n                {\n                    \"_id\": \"63a197b39e07f859826e6626\",\n                    \"code\": \"LEARNER\",\n                    \"status\": true\n                }\n            ],\n            \"profilePicUrl\": \"https://avatars1.githubusercontent.com/u/11065002?s=460&u=1e8e42bda7e6f579a2b216767b2ed986619bbf78&v=4\"\n        },\n        \"tokens\": {\n            \"accessToken\": \"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhcGkuZGV2Lnh5ei5jb20iLCJhdWQiOiJ4eXouY29tIiwic3ViIjoiNjNhMTllNWJhMjczMGQxNTk5ZDQ2YzBiIiwiaWF0IjoxNjcxNTM2MjE5LCJleHAiOjE2NzE3MDkwMTksInBybSI6ImIwM2QxZTk2ZmFmYmQwNjBjMmRlYTA2Y2UyNzgwZjNmM2RjNzk2N2JkNzRhYWVjYTIyNTEwMzA0MWI1YWM0MWY5ZThjMzVkZGNhMGM5MzNjMmI4NDcxZWZlNzY5MmZmYzBiNGE5ZjliODY2MDliYjhmNGNhMTc3OTIxM2U5Y2UzIn0.m0KpxUsLJ3HrgsgvjUu1qZy4AljExY4eblPE288zatz4JdqoQ6mbHlYCG2c2c1Qos2e_XI5pMUToGFd39T_rCQ\",\n            \"refreshToken\": \"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhcGkuZGV2Lnh5ei5jb20iLCJhdWQiOiJ4eXouY29tIiwic3ViIjoiNjNhMTllNWJhMjczMGQxNTk5ZDQ2YzBiIiwiaWF0IjoxNjcxNTM2MjE5LCJleHAiOjE2NzIxNDEwMTksInBybSI6IjZlNzVjNjZiZWY1ZmJlM2M0YjlkOGQ5ZjFmYjgzY2U2NGJjZDJhZTZhYjMxNTI2YWYzYjI3MDY3ODVmMTRmMzEwZjFlZmJlMmYyNGY4MTk2YzVkOWExNTliZDliMGY0ZTJkNGQ2MTAzYjliNzdhMmVmNGRhYTgwODc0MDgyZDgyIn0.ChW8GlgrCeD_Z6rOKFTaPlZ2-KsxCaRU1Nwmre7xvXtPMMNH4iMzGseI5wYGSc1NqR5OWOoCl1vo2tnBjHaF9A\"\n        }\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Get Store Detail",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{API_KEY}}",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"name": "Content-Type",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"userName\":\"123\",\n    \"password\":\"123\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/admin_site/store/store/detail/23bd3649-dd0c-11ee-a1d1-0242ac180002",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"admin_site",
+										"store",
+										"store",
+										"detail",
+										"23bd3649-dd0c-11ee-a1d1-0242ac180002"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Signup Basic",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "x-api-key",
+												"value": "{{API_KEY}}",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"name": "Content-Type",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\" : \"Janishar Ali\",\n\t\"email\": \"ali@github.com\",\n\t\"password\": \"changeit\",\n\t\"profilePicUrl\": \"https://avatars1.githubusercontent.com/u/11065002?s=460&u=1e8e42bda7e6f579a2b216767b2ed986619bbf78&v=4\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}/signup/basic",
+											"host": [
+												"{{BASE_URL}}"
+											],
+											"path": [
+												"signup",
+												"basic"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "1270"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"4f6-GXO8jjGI8w2J6i6uswKo7ocjos0\""
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 20 Dec 2022 11:36:59 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"statusCode\": \"10000\",\n    \"message\": \"Signup Successful\",\n    \"data\": {\n        \"user\": {\n            \"_id\": \"63a19e5ba2730d1599d46c0b\",\n            \"name\": \"Janishar Ali\",\n            \"roles\": [\n                {\n                    \"_id\": \"63a197b39e07f859826e6626\",\n                    \"code\": \"LEARNER\",\n                    \"status\": true\n                }\n            ],\n            \"profilePicUrl\": \"https://avatars1.githubusercontent.com/u/11065002?s=460&u=1e8e42bda7e6f579a2b216767b2ed986619bbf78&v=4\"\n        },\n        \"tokens\": {\n            \"accessToken\": \"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhcGkuZGV2Lnh5ei5jb20iLCJhdWQiOiJ4eXouY29tIiwic3ViIjoiNjNhMTllNWJhMjczMGQxNTk5ZDQ2YzBiIiwiaWF0IjoxNjcxNTM2MjE5LCJleHAiOjE2NzE3MDkwMTksInBybSI6ImIwM2QxZTk2ZmFmYmQwNjBjMmRlYTA2Y2UyNzgwZjNmM2RjNzk2N2JkNzRhYWVjYTIyNTEwMzA0MWI1YWM0MWY5ZThjMzVkZGNhMGM5MzNjMmI4NDcxZWZlNzY5MmZmYzBiNGE5ZjliODY2MDliYjhmNGNhMTc3OTIxM2U5Y2UzIn0.m0KpxUsLJ3HrgsgvjUu1qZy4AljExY4eblPE288zatz4JdqoQ6mbHlYCG2c2c1Qos2e_XI5pMUToGFd39T_rCQ\",\n            \"refreshToken\": \"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhcGkuZGV2Lnh5ei5jb20iLCJhdWQiOiJ4eXouY29tIiwic3ViIjoiNjNhMTllNWJhMjczMGQxNTk5ZDQ2YzBiIiwiaWF0IjoxNjcxNTM2MjE5LCJleHAiOjE2NzIxNDEwMTksInBybSI6IjZlNzVjNjZiZWY1ZmJlM2M0YjlkOGQ5ZjFmYjgzY2U2NGJjZDJhZTZhYjMxNTI2YWYzYjI3MDY3ODVmMTRmMzEwZjFlZmJlMmYyNGY4MTk2YzVkOWExNTliZDliMGY0ZTJkNGQ2MTAzYjliNzdhMmVmNGRhYTgwODc0MDgyZDgyIn0.ChW8GlgrCeD_Z6rOKFTaPlZ2-KsxCaRU1Nwmre7xvXtPMMNH4iMzGseI5wYGSc1NqR5OWOoCl1vo2tnBjHaF9A\"\n        }\n    }\n}"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Seller Site",
+			"item": [
+				{
+					"name": "Seller",
+					"item": [
+						{
+							"name": "Register",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"const accessToken = pm.response.json().data.token.accessToken;",
+											"pm.environment.set(\"seller_token\", accessToken);"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{API_KEY}}",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"name": "Content-Type",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"prefectureId\":\"test\",\n    \"email\": \"eamil@test.com\",\n    \"username\":\"1234\",\n    \"password\":\"123\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/seller_site/seller/register",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"seller_site",
+										"seller",
+										"register"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Signup Basic",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "x-api-key",
+												"value": "{{API_KEY}}",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"name": "Content-Type",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\" : \"Janishar Ali\",\n\t\"email\": \"ali@github.com\",\n\t\"password\": \"changeit\",\n\t\"profilePicUrl\": \"https://avatars1.githubusercontent.com/u/11065002?s=460&u=1e8e42bda7e6f579a2b216767b2ed986619bbf78&v=4\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}/signup/basic",
+											"host": [
+												"{{BASE_URL}}"
+											],
+											"path": [
+												"signup",
+												"basic"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "1270"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"4f6-GXO8jjGI8w2J6i6uswKo7ocjos0\""
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 20 Dec 2022 11:36:59 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"statusCode\": \"10000\",\n    \"message\": \"Signup Successful\",\n    \"data\": {\n        \"user\": {\n            \"_id\": \"63a19e5ba2730d1599d46c0b\",\n            \"name\": \"Janishar Ali\",\n            \"roles\": [\n                {\n                    \"_id\": \"63a197b39e07f859826e6626\",\n                    \"code\": \"LEARNER\",\n                    \"status\": true\n                }\n            ],\n            \"profilePicUrl\": \"https://avatars1.githubusercontent.com/u/11065002?s=460&u=1e8e42bda7e6f579a2b216767b2ed986619bbf78&v=4\"\n        },\n        \"tokens\": {\n            \"accessToken\": \"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhcGkuZGV2Lnh5ei5jb20iLCJhdWQiOiJ4eXouY29tIiwic3ViIjoiNjNhMTllNWJhMjczMGQxNTk5ZDQ2YzBiIiwiaWF0IjoxNjcxNTM2MjE5LCJleHAiOjE2NzE3MDkwMTksInBybSI6ImIwM2QxZTk2ZmFmYmQwNjBjMmRlYTA2Y2UyNzgwZjNmM2RjNzk2N2JkNzRhYWVjYTIyNTEwMzA0MWI1YWM0MWY5ZThjMzVkZGNhMGM5MzNjMmI4NDcxZWZlNzY5MmZmYzBiNGE5ZjliODY2MDliYjhmNGNhMTc3OTIxM2U5Y2UzIn0.m0KpxUsLJ3HrgsgvjUu1qZy4AljExY4eblPE288zatz4JdqoQ6mbHlYCG2c2c1Qos2e_XI5pMUToGFd39T_rCQ\",\n            \"refreshToken\": \"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhcGkuZGV2Lnh5ei5jb20iLCJhdWQiOiJ4eXouY29tIiwic3ViIjoiNjNhMTllNWJhMjczMGQxNTk5ZDQ2YzBiIiwiaWF0IjoxNjcxNTM2MjE5LCJleHAiOjE2NzIxNDEwMTksInBybSI6IjZlNzVjNjZiZWY1ZmJlM2M0YjlkOGQ5ZjFmYjgzY2U2NGJjZDJhZTZhYjMxNTI2YWYzYjI3MDY3ODVmMTRmMzEwZjFlZmJlMmYyNGY4MTk2YzVkOWExNTliZDliMGY0ZTJkNGQ2MTAzYjliNzdhMmVmNGRhYTgwODc0MDgyZDgyIn0.ChW8GlgrCeD_Z6rOKFTaPlZ2-KsxCaRU1Nwmre7xvXtPMMNH4iMzGseI5wYGSc1NqR5OWOoCl1vo2tnBjHaF9A\"\n        }\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Get Token",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"const accessToken = pm.response.json().data.token.accessToken;",
+											"pm.environment.set(\"seller_token\", accessToken);"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhcGkuZGV2Lnh5ei5jb20iLCJhdWQiOiJ4eXouY29tIiwic3ViIjoiMDIyNzUwZmEtZjE4MS00ZjcyLWIwMzgtNjc2NTFkZmUzZGE5IiwiaWF0IjoxNzA2NjgyNjMyLCJleHAiOjE3MDY4NTU0MzIsInBybSI6ImNjOTRlMmM4NTJhYTZkMWZkNWQ5ZGZiY2ZlNjhmYWM2MjhkYzYwMjNjNGJmODJlMGQ3Y2NjZWE3NzE5ZGE5MzBmNjU5ZTAxZWNkYmM5YjIzZTc1ODA1MWM5YzY1MWRjMTU3OTgwMzBhNjA4YjdkNzEwMDdjZmExZmI3ZmMxMDNlIn0.W48zDTi1G8hZOOQTGOzn9O1xCHL1C5HyI-akZ9LovgEhgCN_rSRo8g3x8-qnIZ6518_ADFmgT4uCh7N5u3zH1dE4fIVWBk85kvOal4f-gYbC_2VfrHBXzD9keSKTCAs0EZfzqg74UUg-aDcqgpEjWhPAZLcxyheN8avZJs0GQSL-y2GCJbKM8jqUiuB_SB4zbZbIvvefxW8iH-2RwIWdIZRKFW2H3JokV5CChGzUJW3yFgps0mIBodt4MtbhcqYSrPkMVEudrgJ96HEjJkXAeX-6Oku-2ZmDlPXJbEnMoqYcRNmp7219Rp1xrYXaxk83MD4gY0v9UPM6Phpjq7NtBQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{API_KEY}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"sellerId\":\"3d1df0e3-89f7-441e-86ee-052be159623a\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/seller_site/seller/getToken",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"seller_site",
+										"seller",
+										"getToken"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Signup Basic",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "x-api-key",
+												"value": "{{API_KEY}}",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"name": "Content-Type",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\" : \"Janishar Ali\",\n\t\"email\": \"ali@github.com\",\n\t\"password\": \"changeit\",\n\t\"profilePicUrl\": \"https://avatars1.githubusercontent.com/u/11065002?s=460&u=1e8e42bda7e6f579a2b216767b2ed986619bbf78&v=4\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}/signup/basic",
+											"host": [
+												"{{BASE_URL}}"
+											],
+											"path": [
+												"signup",
+												"basic"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "1270"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"4f6-GXO8jjGI8w2J6i6uswKo7ocjos0\""
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 20 Dec 2022 11:36:59 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"statusCode\": \"10000\",\n    \"message\": \"Signup Successful\",\n    \"data\": {\n        \"user\": {\n            \"_id\": \"63a19e5ba2730d1599d46c0b\",\n            \"name\": \"Janishar Ali\",\n            \"roles\": [\n                {\n                    \"_id\": \"63a197b39e07f859826e6626\",\n                    \"code\": \"LEARNER\",\n                    \"status\": true\n                }\n            ],\n            \"profilePicUrl\": \"https://avatars1.githubusercontent.com/u/11065002?s=460&u=1e8e42bda7e6f579a2b216767b2ed986619bbf78&v=4\"\n        },\n        \"tokens\": {\n            \"accessToken\": \"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhcGkuZGV2Lnh5ei5jb20iLCJhdWQiOiJ4eXouY29tIiwic3ViIjoiNjNhMTllNWJhMjczMGQxNTk5ZDQ2YzBiIiwiaWF0IjoxNjcxNTM2MjE5LCJleHAiOjE2NzE3MDkwMTksInBybSI6ImIwM2QxZTk2ZmFmYmQwNjBjMmRlYTA2Y2UyNzgwZjNmM2RjNzk2N2JkNzRhYWVjYTIyNTEwMzA0MWI1YWM0MWY5ZThjMzVkZGNhMGM5MzNjMmI4NDcxZWZlNzY5MmZmYzBiNGE5ZjliODY2MDliYjhmNGNhMTc3OTIxM2U5Y2UzIn0.m0KpxUsLJ3HrgsgvjUu1qZy4AljExY4eblPE288zatz4JdqoQ6mbHlYCG2c2c1Qos2e_XI5pMUToGFd39T_rCQ\",\n            \"refreshToken\": \"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhcGkuZGV2Lnh5ei5jb20iLCJhdWQiOiJ4eXouY29tIiwic3ViIjoiNjNhMTllNWJhMjczMGQxNTk5ZDQ2YzBiIiwiaWF0IjoxNjcxNTM2MjE5LCJleHAiOjE2NzIxNDEwMTksInBybSI6IjZlNzVjNjZiZWY1ZmJlM2M0YjlkOGQ5ZjFmYjgzY2U2NGJjZDJhZTZhYjMxNTI2YWYzYjI3MDY3ODVmMTRmMzEwZjFlZmJlMmYyNGY4MTk2YzVkOWExNTliZDliMGY0ZTJkNGQ2MTAzYjliNzdhMmVmNGRhYTgwODc0MDgyZDgyIn0.ChW8GlgrCeD_Z6rOKFTaPlZ2-KsxCaRU1Nwmre7xvXtPMMNH4iMzGseI5wYGSc1NqR5OWOoCl1vo2tnBjHaF9A\"\n        }\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Get Me",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{seller_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{API_KEY}}",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"name": "Content-Type",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/seller_site/seller/me",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"seller_site",
+										"seller",
+										"me"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Signup Basic",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "x-api-key",
+												"value": "{{API_KEY}}",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"name": "Content-Type",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\" : \"Janishar Ali\",\n\t\"email\": \"ali@github.com\",\n\t\"password\": \"changeit\",\n\t\"profilePicUrl\": \"https://avatars1.githubusercontent.com/u/11065002?s=460&u=1e8e42bda7e6f579a2b216767b2ed986619bbf78&v=4\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}/signup/basic",
+											"host": [
+												"{{BASE_URL}}"
+											],
+											"path": [
+												"signup",
+												"basic"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "1270"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"4f6-GXO8jjGI8w2J6i6uswKo7ocjos0\""
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 20 Dec 2022 11:36:59 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"statusCode\": \"10000\",\n    \"message\": \"Signup Successful\",\n    \"data\": {\n        \"user\": {\n            \"_id\": \"63a19e5ba2730d1599d46c0b\",\n            \"name\": \"Janishar Ali\",\n            \"roles\": [\n                {\n                    \"_id\": \"63a197b39e07f859826e6626\",\n                    \"code\": \"LEARNER\",\n                    \"status\": true\n                }\n            ],\n            \"profilePicUrl\": \"https://avatars1.githubusercontent.com/u/11065002?s=460&u=1e8e42bda7e6f579a2b216767b2ed986619bbf78&v=4\"\n        },\n        \"tokens\": {\n            \"accessToken\": \"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhcGkuZGV2Lnh5ei5jb20iLCJhdWQiOiJ4eXouY29tIiwic3ViIjoiNjNhMTllNWJhMjczMGQxNTk5ZDQ2YzBiIiwiaWF0IjoxNjcxNTM2MjE5LCJleHAiOjE2NzE3MDkwMTksInBybSI6ImIwM2QxZTk2ZmFmYmQwNjBjMmRlYTA2Y2UyNzgwZjNmM2RjNzk2N2JkNzRhYWVjYTIyNTEwMzA0MWI1YWM0MWY5ZThjMzVkZGNhMGM5MzNjMmI4NDcxZWZlNzY5MmZmYzBiNGE5ZjliODY2MDliYjhmNGNhMTc3OTIxM2U5Y2UzIn0.m0KpxUsLJ3HrgsgvjUu1qZy4AljExY4eblPE288zatz4JdqoQ6mbHlYCG2c2c1Qos2e_XI5pMUToGFd39T_rCQ\",\n            \"refreshToken\": \"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhcGkuZGV2Lnh5ei5jb20iLCJhdWQiOiJ4eXouY29tIiwic3ViIjoiNjNhMTllNWJhMjczMGQxNTk5ZDQ2YzBiIiwiaWF0IjoxNjcxNTM2MjE5LCJleHAiOjE2NzIxNDEwMTksInBybSI6IjZlNzVjNjZiZWY1ZmJlM2M0YjlkOGQ5ZjFmYjgzY2U2NGJjZDJhZTZhYjMxNTI2YWYzYjI3MDY3ODVmMTRmMzEwZjFlZmJlMmYyNGY4MTk2YzVkOWExNTliZDliMGY0ZTJkNGQ2MTAzYjliNzdhMmVmNGRhYTgwODc0MDgyZDgyIn0.ChW8GlgrCeD_Z6rOKFTaPlZ2-KsxCaRU1Nwmre7xvXtPMMNH4iMzGseI5wYGSc1NqR5OWOoCl1vo2tnBjHaF9A\"\n        }\n    }\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Store",
+					"item": [
+						{
+							"name": "Register",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{seller_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{API_KEY}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"companyAddress\": \"aaa\",\n    \"companyName\":\"aaa\",\n    \"contractId\": \"123aa11a\",\n    \"prefectureId\": \"12113\",\n    \"storeKey\": \"12312113\",\n    \"storeName\": \"storeName\",\n    \"status\": \"true\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/seller_site/store/register",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"seller_site",
+										"store",
+										"register"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Category",
+					"item": [
+						{
+							"name": "Create category",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{seller_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    // \"parentId\": \"8c2fd916-f758-11ee-98f9-0242ac120002\",\r\n    \"storeId\": \"4cd3dd18-ff9d-11ee-bef1-0242ac180002\",\r\n    \"categoryName\": \"category 5\",\r\n    \"categoryTag\": \"category_tag 6\",\r\n    \"status\": \"true\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/seller_site/category/create",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"seller_site",
+										"category",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get list",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj",
+										"type": "text"
+									},
+									{
+										"key": "paging",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/seller_site/category/categories",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"seller_site",
+										"category",
+										"categories"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "5",
+											"disabled": true
+										},
+										{
+											"key": "orderBy",
+											"value": "created_at",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update category",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhcGkuZGV2Lnh5ei5jb20iLCJhdWQiOiJ4eXouY29tIiwic3ViIjoiZTYwYjcxMzUtNjlhZC00Yzk1LWFkM2QtNTYwMmIzZjliYjg2IiwiaWF0IjoxNzA4MzE0Mzg4LCJleHAiOjE3MDg0ODcxODgsInBybSI6IjRkMDM2MDQ1MDVmMjE5Njg1NGNmZjdjMDQwOTZlODM5NzQ1ZjUzMTcyZmFhNmI0ZWNjNTcxMzhlZWMwOGYyNzZmMTk1YmRiYWY3Mzk4MWIwN2RjNGVlNzRlMmFjODkwYThkYzZjY2UxZDc2MGY5NmQ2NDUzNTRlZDgzNDc5YTVmIn0.ITvhc7s2Hpq1jwqo6riJSCX3K6TzB8mSk6qZ39H97f27rnUeVaeufJPbvGSbr6ANPUK2C-2KQvdIGsYwTHPkcIkZ569Jsb-tYi6axERwY8BBOfyC5UFAw9P5qWjphG7892aau8A2uFrXytupEgUrlTnmt-LvwYRswAZhjsBjSTsrOQ8WFHMDJq2ipvKXCCtmRwcL-mWdY7XsYtSOOnPByS9cAvYWJkjpxcLAsaZpAYOCPJpyqpiY94fvpcBSQXkU2OzRApFJrKTcSkzZgtd6we9rhcNk7bRMJ-Jhzb671eHwdz7fd8dvM260TUvr2mjpR0LuRwsTiOftLw4AGGhtiQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"category_name\": \"nhim nhex nhau nham update\",\r\n    \"category_tag\": \"nhim nhex nhay nhet\",\r\n    \"status\": \"222222\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/seller_site/category/update/2b4127f0-659d-42e2-822b-57d1313325d3",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"seller_site",
+										"category",
+										"update",
+										"2b4127f0-659d-42e2-822b-57d1313325d3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Detail category",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhcGkuZGV2Lnh5ei5jb20iLCJhdWQiOiJ4eXouY29tIiwic3ViIjoiMzUxMTk2OGQtOGFmZS00OWNjLTg3ODgtMDJhOTRmZThhMDY5IiwiaWF0IjoxNzA4NjExNzc4LCJleHAiOjE3MDg3ODQ1NzgsInBybSI6IjIzNGFmYWVhY2U2ZmJhMzc5OGFjMmU1OTlhZDg0MWEzY2E0Yzk2OThkMjkyY2Q0N2ZlZmY3YzBkNDg4MTIyMDMwOGU4NmNiZThlMjEzOTZlMTFlZjkwNzEzZjU0M2UyNTA3MWEwMmI2NGY0YmMyNzg2MWNlYWEyMWI2Y2EyYWZiIn0.PEQuP5mWMOy1IvFOjb_HtslMlYl2wx27pKCo0wTKpw9qlTs-8LWYyMkRJwnFSyG228C75y_BpUR4FW0NW5_q0_uqY-hB8edT5yI8t_cCuLpmBA-LMP7UgGm2AFXH5W77mpASXR86XaUENW41UBVNzG51BEMGH3yup2-SkPXGx78zOLa8FvTkuZLDwk_rrJa2p-YbII6aeBsVBPwoUELZYWweekrnTE5qWyabnuseGfXsLMhHHfIjBytjEEO5eaGGBfHPc-GdQ41rnye5GWXyMBO38aC1E4Td38afm_47QS8950ss2r81u0menD4xuT5jnuBKNfpqtdNEsYil61HnEw",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/seller_site/category/detail/74dddfb1-7fe9-431c-b5aa-e63b2839e368",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"seller_site",
+										"category",
+										"detail",
+										"74dddfb1-7fe9-431c-b5aa-e63b2839e368"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete category",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhcGkuZGV2Lnh5ei5jb20iLCJhdWQiOiJ4eXouY29tIiwic3ViIjoiMzUxMTk2OGQtOGFmZS00OWNjLTg3ODgtMDJhOTRmZThhMDY5IiwiaWF0IjoxNzA4NjA4MTA1LCJleHAiOjE3MDg3ODA5MDUsInBybSI6ImZjYjQ0MzgwNmNhOTdjOGIzZjhhNDQxYTJmODU2YjJhMDgzN2JkZGNjZGEzYTc0NTFhMGI3Y2U4N2YwYTVkZGRlNjY2MjAzYTVjMjQ4ZDE1Njg5ZTNjYjk0N2U3ZGJjN2IyYjllNmI4NDM4MTU1ZDNiYzE0NjQxN2FjODg4NGUwIn0.ELsQRH9BZsXZL14lw8HCwb9hkUFFAQBSFNj98ShOpNlc_rJ1jqIG1dQ9yPCIJH9CLMZZhOD9lkpQ5nmNEiATKurCD8weThcncNHQDtkuha4XzhfLm_JsSbq_Yy-gHkGdYOT0o4eUlszukQ3o-soQj8pBk8Ixlc2oBEHOFKdvFq9-LPMj_z8CcEwC1yMBOLdwcX1NXOCvbbQ5KxJwa6KmFK9BOVwkenTXmZEOUl0iiGxZkQX2hrbmHhgM40wiGuuXfAFwJP4KageeIlYcPhHa6L39fi-TD_6OKMnlqDrLxGi_MZCYNE60IlJLeFxND1JEum--H7cZvxHuyDURhN7vPw",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/seller_site/category/delete/2b4127f0-659d-42e2-822b-57d1313325d3",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"seller_site",
+										"category",
+										"delete",
+										"2b4127f0-659d-42e2-822b-57d1313325d3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Category hierarchy",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{seller_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj",
+										"type": "text"
+									},
+									{
+										"key": "paging",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/seller_site/category/categories/hierarchy",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"seller_site",
+										"category",
+										"categories",
+										"hierarchy"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "5",
+											"disabled": true
+										},
+										{
+											"key": "orderBy",
+											"value": "created_at",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Move position category",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{seller_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/seller_site/category/move/71d3f999-f639-11ee-9e73-0242ac160002",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"seller_site",
+										"category",
+										"move",
+										"71d3f999-f639-11ee-9e73-0242ac160002"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Product",
+					"item": [
+						{
+							"name": "Create Product with option",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{seller_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"isSubscription\": false,\r\n    \"buyingPeriod\": [],\r\n    \"isRecommend\": false,\r\n    \"productName\": \"test21\",\r\n    \"productImage\": [],\r\n    \"productDescription\": \"string\",\r\n    \"isFixPrice\": true,\r\n    \"productOverview\": \"aaaaa\",\r\n    \"productTag\": \"string\",\r\n    \"status\": \"string\",\r\n    \"isDiscount\": false,\r\n    \"discountPercentage\": 99,\r\n    \"hasDiscountSchedule\": true,\r\n    \"discountTimeFrom\": \"2024/05/06\",\r\n    \"discountTimeTo\": \"2024/07/07\",\r\n    \"categories\": [],\r\n    \"price\": \"25.00\",\r\n    \"stockItem\": 100,\r\n    \"amount\": 1000,\r\n    \"components\": [],\r\n    \"faqs\":[],\r\n    \"capacity\":\"\",\r\n    \"expirationUseDate\":\"\",\r\n    \"storageMethod\":\"\",\r\n    \"intakeMethod\":\"\",\r\n    \"ingredient\":\"\",\r\n    \"notificationNumber\": \"\",\r\n    \"notification\":\"\",\r\n    \"hasOption\":false,\r\n    \"options\":[],\r\n    \"optionPrices\":[]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/seller_site/product/create",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"seller_site",
+										"product",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Product with no option Copy",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{seller_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"isSubscription\": false,\r\n    \"isDiscount\": false,\r\n    \"discountPercentage\": 10,\r\n    \"hasDiscountSchedule\": true,\r\n    \"isRecommend\": false,\r\n    \"productName\": \"string\",\r\n    \"productImage\": [],\r\n    \"productDescription\": \"string\",\r\n    \"capacity\": \"string\",\r\n    \"expirationUseDate\": \"string\",\r\n    \"storageMethod\": \"string\",\r\n    \"intakeMethod\": \"string\",\r\n    \"ingredient\": \"string\",\r\n    \"notificationNumber\": \"string\",\r\n    \"notification\": \"string\",\r\n    \"isFixPrice\": true,\r\n    \"hasOption\": false,\r\n    \"productTag\": \"string\",\r\n    \"status\": \"string\",\r\n    \"productOverview\": \"ssss\",\r\n    \"faqs\": [],\r\n    \"components\": [\r\n        {\r\n            \"componentValue\": \"a\",\r\n            \"amount\": 100,\r\n            \"unit\": \"test\"\r\n        }\r\n    ],\r\n    \"cost\":9923456789,\r\n    \"options\": [],\r\n    \"optionPrices\": [],\r\n    \"buyingTimeOption\": [],\r\n    \"buyingPeriod\": [],\r\n    \"categories\": [],\r\n    \"price\": \"10\",\r\n    \"priceBeforeDiscount\": \"10\",\r\n    \"stockItem\": 100\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/seller_site/product/create",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"seller_site",
+										"product",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Product with subcription",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{seller_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"isSubscription\": true,\r\n    \"buyingPeriod\": [15,30,45,90],\r\n    \"isRecommend\": false,\r\n    \"productName\": \"string\",\r\n    \"productImage\": [],\r\n    \"productDescription\": \"string\",\r\n    \"capacity\": \"string\",\r\n    \"expirationUseDate\": \"string\",\r\n    \"storageMethod\": \"string\",\r\n    \"intakeMethod\": \"string\",\r\n    \"ingredient\": \"string\",\r\n    \"notificationNumber\": \"string\",\r\n    \"productOverview\": \"qq\",\r\n    \"faqs\":[],\r\n    \"notification\": \"string\",\r\n    \"hasOption\": false,\r\n    \"productTag\": \"string\",\r\n    \"status\": \"string\",\r\n    \"isDiscount\":true,\r\n    \"categories\": [],\r\n\r\n    \"components\": [\r\n        {\r\n            \"componentValue\":\"a\",\r\n            \"amount\": 100,\r\n            \"unit\": \"test\"\r\n        }\r\n    ],\r\n    \"options\": [],\r\n    \"optionPrices\": [],\r\n    \"price\": \"25.01\",\r\n    \"priceBeforeDiscount\": \"30.00\",\r\n    \"cost\": ,\r\n    \"stockItem\": 100,\r\n    \"priceSubscription\":\"10.00\",\r\n    \"discountPercentage\":\"10.00\",\r\n    \"hasDiscountSchedule\": false\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/seller_site/product/create",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"seller_site",
+										"product",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Active Product",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{seller_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"isSubscription\": true,\r\n    \"buyingTimeOption\": [15,30,45,90],\r\n    \"buyingPeriod\": [-1,3,6,12],\r\n    \"isRecomend\": false,\r\n    \"productName\": \"string\",\r\n    \"productImage\": [],\r\n    \"productDescription\": \"string\",\r\n    \"capacity\": \"string\",\r\n    \"expirationUseDate\": \"string\",\r\n    \"storageMethod\": \"string\",\r\n    \"intakeMethod\": \"string\",\r\n    \"ingredient\": \"string\",\r\n    \"notificationNumber\": \"string\",\r\n    \"notification\": \"string\",\r\n    \"hasOption\": false,\r\n    \"productTag\": \"string\",\r\n    \"status\": \"string\",\r\n    \"components\": [\r\n        {\r\n            \"amount\": 100,\r\n            \"unit\": \"test\"\r\n        }\r\n    ],\r\n    \"options\": [],\r\n    \"optionPrices\": [],\r\n    \"price\": \"25.01\",\r\n    \"priceBeforeDiscount\": \"30.00\",\r\n    \"cost\": \"15.00\",\r\n    \"stockItem\": 100\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/seller_site/product/active/3f21487f-1f5a-4368-adbb-51bb5dec3db4",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"seller_site",
+										"product",
+										"active",
+										"3f21487f-1f5a-4368-adbb-51bb5dec3db4"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Inactive Product",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{seller_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"isSubscription\": true,\r\n    \"buyingTimeOption\": [15,30,45,90],\r\n    \"buyingPeriod\": [-1,3,6,12],\r\n    \"isRecomend\": false,\r\n    \"productName\": \"string\",\r\n    \"productImage\": [],\r\n    \"productDescription\": \"string\",\r\n    \"capacity\": \"string\",\r\n    \"expirationUseDate\": \"string\",\r\n    \"storageMethod\": \"string\",\r\n    \"intakeMethod\": \"string\",\r\n    \"ingredient\": \"string\",\r\n    \"notificationNumber\": \"string\",\r\n    \"notification\": \"string\",\r\n    \"hasOption\": false,\r\n    \"productTag\": \"string\",\r\n    \"status\": \"string\",\r\n    \"components\": [\r\n        {\r\n            \"amount\": 100,\r\n            \"unit\": \"test\"\r\n        }\r\n    ],\r\n    \"options\": [],\r\n    \"optionPrices\": [],\r\n    \"price\": \"25.01\",\r\n    \"priceBeforeDiscount\": \"30.00\",\r\n    \"cost\": \"15.00\",\r\n    \"stockItem\": 100\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/seller_site/product/active/34bc82e3-17a2-4a0d-b79e-3fe6473d441d",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"seller_site",
+										"product",
+										"active",
+										"34bc82e3-17a2-4a0d-b79e-3fe6473d441d"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get Product list",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{seller_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"isSubscription\": false,\r\n    \"buyingTimeOption\": [],\r\n    \"buyingPeriod\": [],\r\n    \"isRecomend\": false,\r\n    \"productName\": \"string\",\r\n    \"productImage\": [],\r\n    \"productDescription\": \"string\",\r\n    \"capacity\": \"string\",\r\n    \"expirationUseDate\": \"string\",\r\n    \"storageMethod\": \"string\",\r\n    \"intakeMethod\": \"string\",\r\n    \"ingredient\": \"string\",\r\n    \"notificationNumber\": \"string\",\r\n    \"notification\": \"string\",\r\n    \"isFixPrice\": false,\r\n    \"hasOption\": true,\r\n    \"productTag\": \"string\",\r\n    \"status\": \"string\",\r\n    \"components\": [\r\n        {\r\n            \"amount\": 100,\r\n            \"unit\": \"test\"\r\n        }\r\n    ],\r\n    \"options\": [\r\n        {\r\n            \"optionType\": \"color\",\r\n            \"optionValue\": [\r\n                \"Red\",\r\n                \"Blue\",\r\n                \"Green\"\r\n            ],\r\n            \"order\": 1\r\n        }\r\n    ],\r\n    \"optionPrices\": [\r\n        {\r\n            \"optionType1\": \"Color\",\r\n            \"optionValue1\": \"Red\",\r\n            \"optionType2\": \"Size\",\r\n            \"optionValue2\": \"Large\",\r\n            \"optionType3\": \"Material\",\r\n            \"optionValue3\": \"Cotton\",\r\n            \"price\": \"25.00\",\r\n            \"priceBeforeDiscount\": \"30.00\",\r\n            \"cost\": \"15.00\",\r\n            \"stockItem\": 100\r\n        },\r\n        {\r\n            \"optionType1\": \"Color\",\r\n            \"optionValue1\": \"Green\",\r\n            \"optionType2\": \"Size\",\r\n            \"optionValue2\": \"Large\",\r\n            \"optionType3\": \"Material\",\r\n            \"optionValue3\": \"Cotton\",\r\n            \"price\": \"25.00\",\r\n            \"priceBeforeDiscount\": \"30.00\",\r\n            \"cost\": \"15.00\",\r\n            \"stockItem\": 100\r\n        },\r\n        {\r\n            \"optionType1\": \"Color\",\r\n            \"optionValue1\": \"Blue\",\r\n            \"optionType2\": \"Size\",\r\n            \"optionValue2\": \"Large\",\r\n            \"optionType3\": \"Material\",\r\n            \"optionValue3\": \"Cotton\",\r\n            \"price\": \"25.00\",\r\n            \"priceBeforeDiscount\": \"30.00\",\r\n            \"cost\": \"15.00\",\r\n            \"stockItem\": 100\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/seller_site/product/products",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"seller_site",
+										"product",
+										"products"
+									],
+									"query": [
+										{
+											"key": "categoryId",
+											"value": "094796ce-fe57-408f-a1a8-8a91b81fd613",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update Product",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{seller_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": " {\r\n        \"id\": \"e4ec1bb7-329a-44e4-84ee-0a3b51d2065c\",\r\n        \"storeId\": \"ca97cb7a-5cf5-4e46-928d-8799c49bab03\",\r\n        \"isSubscription\": false,\r\n        \"isDiscount\": false,\r\n        \"buyingPeriod\": [],\r\n        \"isRecommend\": false,\r\n        \"productName\": \"string\",\r\n        \"productImage\": [],\r\n        \"productDescription\": \"string\",\r\n        \"productOverview\": \"ssss\",\r\n        \"price\": 10,\r\n        \"priceSubscription\": null,\r\n        \"cost\": \"0\",\r\n        \"stockItem\": 100,\r\n        \"productTag\": \"string\",\r\n        \"status\": \"string\",\r\n        \"components\": [\r\n            {\r\n                \"id\": \"26c1e927-987a-4c59-a888-f40844209117\",\r\n                \"productId\": \"e4ec1bb7-329a-44e4-84ee-0a3b51d2065c\",\r\n                \"componentValue\": \"a\",\r\n                \"componentName\": \"\"\r\n            }\r\n        ],\r\n        \"categories\": [],\r\n        \"faqs\": [],\r\n        \"discountPercentage\": 10,\r\n        \"hasDiscountSchedule\": true,\r\n        \"calculatedNormalPrice\": 10,\r\n        \"createdAt\": \"2024-07-09T04:39:51.000Z\",\r\n        \"updatedAt\": \"2024-07-09T04:39:51.000Z\"\r\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/seller_site/product",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"seller_site",
+										"product"
+									],
+									"query": [
+										{
+											"key": "categoryId",
+											"value": "094796ce-fe57-408f-a1a8-8a91b81fd613",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Product Detail",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{seller_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{BASE_URL}}/seller_site/product/detail/e4ec1bb7-329a-44e4-84ee-0a3b51d2065c",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"seller_site",
+										"product",
+										"detail",
+										"e4ec1bb7-329a-44e4-84ee-0a3b51d2065c"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete1",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{seller_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"1ebd5276-9f5a-4de7-8ebf-da439d6e24a1\",\r\n    \"storeId\": \"454cb39e-513f-4716-b15e-14c9d18b431a\",\r\n    \"isSubscription\": false,\r\n    \"buyingTimeOption\": [],\r\n    \"buyingPeriod\": [],\r\n    \"isRecomend\": false,\r\n    \"productName\": \"string\",\r\n    \"productImage\": [],\r\n    \"productDescription\": \"string\",\r\n    \"capacity\": \"string\",\r\n    \"expirationUseDate\": \"string\",\r\n    \"storageMethod\": \"string\",\r\n    \"intakeMethod\": \"string\",\r\n    \"ingredient\": \"string\",\r\n    \"notificationNumber\": \"string\",\r\n    \"notification\": \"string\",\r\n    \"hasOption\": true,\r\n    \"price\": \"0.0000\",\r\n    \"priceBeforeDiscount\": \"0.0000\",\r\n    \"cost\": \"0.0000\",\r\n    \"stockItem\": 0,\r\n    \"productTag\": \"string\",\r\n    \"status\": \"string\",\r\n    \"components\": [\r\n        {\r\n            \"id\": \"10a05587-c112-45f7-8032-09c345de2b52\",\r\n            \"productId\": \"1ebd5276-9f5a-4de7-8ebf-da439d6e24a1\",\r\n            \"amount\": \"100.0000\",\r\n            \"unit\": \"test\"\r\n        }\r\n    ],\r\n    \"options\": [\r\n        {\r\n            \"productId\": \"1ebd5276-9f5a-4de7-8ebf-da439d6e24a1\",\r\n            \"optionType\": \"color\",\r\n            \"optionValue\": [\r\n                \"Red\",\r\n                \"Blue\",\r\n                \"Green\"\r\n            ],\r\n            \"order\": 1\r\n        }\r\n    ],\r\n    \"optionPrices\": [\r\n        {\r\n            \"productId\": \"1ebd5276-9f5a-4de7-8ebf-da439d6e24a1\",\r\n            \"optionValue1\": \"Blue\",\r\n            \"optionValue2\": \"Large\",\r\n            \"optionValue3\": \"Cotton\",\r\n            \"price\": \"25.0000\",\r\n            \"priceBeforeDiscount\": \"30.0000\",\r\n            \"cost\": \"15.0000\",\r\n            \"stockItem\": 100\r\n        },\r\n        {\r\n            \"productId\": \"1ebd5276-9f5a-4de7-8ebf-da439d6e24a1\",\r\n            \"optionValue1\": \"Green\",\r\n            \"optionValue2\": \"Large\",\r\n            \"optionValue3\": \"Cotton\",\r\n            \"price\": \"25.0000\",\r\n            \"priceBeforeDiscount\": \"30.0000\",\r\n            \"cost\": \"15.0000\",\r\n            \"stockItem\": 100\r\n        },\r\n        {\r\n            \"productId\": \"1ebd5276-9f5a-4de7-8ebf-da439d6e24a1\",\r\n            \"optionValue1\": \"Red\",\r\n            \"optionValue2\": \"Large\",\r\n            \"optionValue3\": \"Cotton\",\r\n            \"price\": \"25.0000\",\r\n            \"priceBeforeDiscount\": \"30.0000\",\r\n            \"cost\": \"15.0000\",\r\n            \"stockItem\": 100\r\n        }\r\n    ],\r\n    \"categories\": [\r\n        \"984e23df-f6bd-40b6-bc83-f608ee0d1944\",\r\n        \"f44808d2-e9af-43de-a54c-f721304c57da\"\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/seller_site/product/delete/e32d170e-1d5b-449b-86bb-1b564908a880",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"seller_site",
+										"product",
+										"delete",
+										"e32d170e-1d5b-449b-86bb-1b564908a880"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Post",
+					"item": [
+						{
+							"name": "add post",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{seller_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \" aaaa\",\r\n    \"postImage\": \"aaa\",\r\n    \"status\":\"string\",\r\n    \"details\": \"aaa\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/seller_site/post/",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"seller_site",
+										"post",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update post",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{seller_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"6fe7c715-93cd-4fec-9b4f-22e82f4c0f24\",\r\n    \"storeId\": \"48f6a6c4-b9ab-4752-ba26-41e8de4903c5\",\r\n    \"postImage\": \"aaaaaaaaaaaaaaaaaaaaaabba\",\r\n    \"title\": \" aaaa\",\r\n    \"details\": \"aaa\",\r\n    \"status\" : \"AAA\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/seller_site/post/",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"seller_site",
+										"post",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "active post",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{seller_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"d7914043-1053-46f3-b5e0-776efa7a6e33\",\r\n    \"storeId\": \"e94c893b-1f21-4d70-942b-e551060637ce\",\r\n    \"notificationImage\": \"aabba\",\r\n    \"title\": \" aaaa\",\r\n    \"details\": \"aaa\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/seller_site/post/active/6fe7c715-93cd-4fec-9b4f-22e82f4c0f24",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"seller_site",
+										"post",
+										"active",
+										"6fe7c715-93cd-4fec-9b4f-22e82f4c0f24"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inactive post",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{seller_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"d7914043-1053-46f3-b5e0-776efa7a6e33\",\r\n    \"storeId\": \"e94c893b-1f21-4d70-942b-e551060637ce\",\r\n    \"notificationImage\": \"aabba\",\r\n    \"title\": \" aaaa\",\r\n    \"details\": \"aaa\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/seller_site/post/inactive/6fe7c715-93cd-4fec-9b4f-22e82f4c0f24",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"seller_site",
+										"post",
+										"inactive",
+										"6fe7c715-93cd-4fec-9b4f-22e82f4c0f24"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get post",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{seller_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \" aaaa\",\r\n    \"notificationImage\": \"aaa\",\r\n    \"details\": \"aaa\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/seller_site/post/6fe7c715-93cd-4fec-9b4f-22e82f4c0f24",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"seller_site",
+										"post",
+										"6fe7c715-93cd-4fec-9b4f-22e82f4c0f24"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get posts by store id",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{seller_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \" aaaa\",\r\n    \"notificationImage\": \"aaa\",\r\n    \"details\": \"aaa\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/seller_site/post/",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"seller_site",
+										"post",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete post",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{seller_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \" aaaa\",\r\n    \"notificationImage\": \"aaa\",\r\n    \"details\": \"aaa\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/seller_site/post/6fe7c715-93cd-4fec-9b4f-22e82f4c0f24",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"seller_site",
+										"post",
+										"6fe7c715-93cd-4fec-9b4f-22e82f4c0f24"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Buyer Site",
+			"item": [
+				{
+					"name": "Buyer",
+					"item": [
+						{
+							"name": "getMe",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{buyer_id}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "x-store-id",
+										"value": "{{buyer_store_id}}"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer aaa"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:3000/buyer_site/buyer/getMe",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"buyer_site",
+										"buyer",
+										"getMe"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Cart",
+					"item": [
+						{
+							"name": "Add item",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{buyer_id}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "x-store-id",
+										"value": "{{buyer_store_id}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"productId\": \"3f21487f-1f5a-4368-adbb-51bb5dec3db4\",\r\n    \"quantity\": 100,\r\n    \"isSubscription\": false,\r\n    \"buyingPeriod\": [15],\r\n    \"component\":[],\r\n    \"startBuyingDate\": \"2024/12/11\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/buyer_site/cart/",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"buyer_site",
+										"cart",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update item",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{buyer_id}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "x-store-id",
+										"value": "{{buyer_store_id}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"e56486c4-1c3f-41f5-b553-af4dad9ddfba\",\r\n    \"buyerId\": \"7a72733a-7bb0-45a8-8973-fa50af302222\",\r\n    \"storeId\": \"747aa96d-251d-4bb4-a61d-683f43169419\",\r\n    \"productId\": \"9dd12ffc-fa58-495d-91e2-afa9cb3cff25\",\r\n    \"quantity\": 2,\r\n    \"isSubscription\": false,\r\n    \"buyingPeriod\": null,\r\n    \"product\": {\r\n        \"id\": \"9dd12ffc-fa58-495d-91e2-afa9cb3cff25\",\r\n        \"storeId\": \"747aa96d-251d-4bb4-a61d-683f43169419\",\r\n        \"isSubscription\": false,\r\n        \"isDiscount\": false,\r\n        \"buyingPeriod\": [],\r\n        \"isRecommend\": false,\r\n        \"productName\": \"test21\",\r\n        \"productImage\": [],\r\n        \"productDescription\": \"string\",\r\n        \"productOverview\": \"aaaaa\",\r\n        \"price\": 25,\r\n        \"priceSubscription\": null,\r\n        \"cost\": \"0\",\r\n        \"stockItem\": 100,\r\n        \"productTag\": \"string\",\r\n        \"status\": \"string\",\r\n        \"components\": [],\r\n        \"categories\": [],\r\n        \"faqs\": [],\r\n        \"discountPercentage\": 99,\r\n        \"hasDiscountSchedule\": true,\r\n        \"discountTimeFrom\": \"2024/05/06\",\r\n        \"discountTimeTo\": \"2024/07/07\",\r\n        \"calculatedNormalPrice\": 25,\r\n        \"createdAt\": \"2024-06-26T07:58:23.000Z\",\r\n        \"updatedAt\": \"2024-06-26T07:58:23.000Z\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/buyer_site/cart/",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"buyer_site",
+										"cart",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete item",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{buyer_id}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "x-store-id",
+										"value": "{{buyer_store_id}}"
+									}
+								],
+								"url": {
+									"raw": "{{BASE_URL}}/buyer_site/cart/6cf43206-103e-46c7-962a-1abdf26bf4a5",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"buyer_site",
+										"cart",
+										"6cf43206-103e-46c7-962a-1abdf26bf4a5"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete items",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{buyer_id}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "x-store-id",
+										"value": "{{buyer_store_id}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"ids\": [\r\n       \"5a6bdcb5-0922-4c78-9034-d66ff5c7156c\"\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/buyer_site/cart/items",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"buyer_site",
+										"cart",
+										"items"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get cart",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{buyer_id}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "x-store-id",
+										"value": "{{buyer_store_id}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{BASE_URL}}/buyer_site/cart",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"buyer_site",
+										"cart"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "shipping infor",
+					"item": [
+						{
+							"name": "Add address",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{buyer_id}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "x-store-id",
+										"value": "{{buyer_store_id}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nameKana\": \"aa\",\r\n    \"nameKanji\": \"a2a\",\r\n    \"postCode\": \"aaa\",\r\n    \"cityTown\": \"aa\",\r\n    \"streetAddress\": \"aa\",\r\n    \"buildingName\": \"aaa\",\r\n    \"email\": \"aaa\",\r\n    \"telephoneNumber\":\"111\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/buyer_site/address/",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"buyer_site",
+										"address",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update address",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{buyer_id}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "x-store-id",
+										"value": "{{buyer_store_id}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\" :\"fa1bf477-c27c-4d3e-a739-cb60f68a3651\",\r\n    \"nameKana\": \"bbb\",\r\n    \"nameKanji\": \"a2a\",\r\n    \"postCode\": \"aaa\",\r\n    \"cityTown\": \"aa\",\r\n    \"streetAddress\": \"aa\",\r\n    \"buildingName\": \"aaa\",\r\n    \"email\": \"aaa\",\r\n    \"telephoneNumber\":\"111\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/buyer_site/address/",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"buyer_site",
+										"address",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete address",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{buyer_id}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "x-store-id",
+										"value": "{{buyer_store_id}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\" :\"fa1bf477-c27c-4d3e-a739-cb60f68a3651\",\r\n    \"nameKana\": \"bbb\",\r\n    \"nameKanji\": \"a2a\",\r\n    \"postCode\": \"aaa\",\r\n    \"cityTown\": \"aa\",\r\n    \"streetAddress\": \"aa\",\r\n    \"buildingName\": \"aaa\",\r\n    \"email\": \"aaa\",\r\n    \"telephoneNumber\":\"111\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/buyer_site/address/fa1bf477-c27c-4d3e-a739-cb60f68a3651",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"buyer_site",
+										"address",
+										"fa1bf477-c27c-4d3e-a739-cb60f68a3651"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get address by id",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{buyer_id}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "x-store-id",
+										"value": "{{buyer_store_id}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\" :\"fa1bf477-c27c-4d3e-a739-cb60f68a3651\",\r\n    \"nameKana\": \"bbb\",\r\n    \"nameKanji\": \"a2a\",\r\n    \"postCode\": \"aaa\",\r\n    \"cityTown\": \"aa\",\r\n    \"streetAddress\": \"aa\",\r\n    \"buildingName\": \"aaa\",\r\n    \"email\": \"aaa\",\r\n    \"telephoneNumber\":\"111\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/buyer_site/address/fe0050ee-dd30-495c-8fb4-4ad171b62e36",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"buyer_site",
+										"address",
+										"fe0050ee-dd30-495c-8fb4-4ad171b62e36"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get addresses by buyer id",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{buyer_id}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "x-store-id",
+										"value": "{{buyer_store_id}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\" :\"fa1bf477-c27c-4d3e-a739-cb60f68a3651\",\r\n    \"nameKana\": \"bbb\",\r\n    \"nameKanji\": \"a2a\",\r\n    \"postCode\": \"aaa\",\r\n    \"cityTown\": \"aa\",\r\n    \"streetAddress\": \"aa\",\r\n    \"buildingName\": \"aaa\",\r\n    \"email\": \"aaa\",\r\n    \"telephoneNumber\":\"111\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/buyer_site/address/",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"buyer_site",
+										"address",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get addresses by buyer id Copy",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{buyer_id}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "x-store-id",
+										"value": "{{buyer_store_id}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\" :\"fa1bf477-c27c-4d3e-a739-cb60f68a3651\",\r\n    \"nameKana\": \"bbb\",\r\n    \"nameKanji\": \"a2a\",\r\n    \"postCode\": \"aaa\",\r\n    \"cityTown\": \"aa\",\r\n    \"streetAddress\": \"aa\",\r\n    \"buildingName\": \"aaa\",\r\n    \"email\": \"aaa\",\r\n    \"telephoneNumber\":\"111\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/buyer_site/address/store/storeId",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"buyer_site",
+										"address",
+										"store",
+										"storeId"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Store",
+					"item": []
+				}
+			]
+		}
+	]
+}
