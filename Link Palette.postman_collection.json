@@ -1,3019 +1,1476 @@
 {
-	"info": {
-		"_postman_id": "3a132b34-35b4-409b-a79b-439f209a8019",
-		"name": "Link Palette",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "6265202",
-		"_collection_link": "https://linpalette.postman.co/workspace/Linkpalette~bd0cbeb0-299a-4b8c-9155-e69ac1ba1b6f/collection/6265202-3a132b34-35b4-409b-a79b-439f209a8019?action=share&source=collection_link&creator=6265202"
-	},
-	"item": [
-		{
-			"name": "Admin Site",
-			"item": [
-				{
-					"name": "Admin",
-					"item": [
-						{
-							"name": "Get Me",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{admin_token}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "GET",
-								"header": [
-									{
-										"key": "x-api-key",
-										"value": "{{API_KEY}}",
-										"type": "text"
-									},
-									{
-										"key": "Content-Type",
-										"value": "application/json",
-										"name": "Content-Type",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"userName\":\"123\",\n    \"password\":\"123\"\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{BASE_URL}}/admin_site/admin/me",
-									"host": [
-										"{{BASE_URL}}"
-									],
-									"path": [
-										"admin_site",
-										"admin",
-										"me"
-									]
-								}
-							},
-							"response": [
-								{
-									"name": "Signup Basic",
-									"originalRequest": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "x-api-key",
-												"value": "{{API_KEY}}",
-												"type": "text"
-											},
-											{
-												"key": "Content-Type",
-												"value": "application/json",
-												"name": "Content-Type",
-												"type": "text"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n\t\"name\" : \"Janishar Ali\",\n\t\"email\": \"ali@github.com\",\n\t\"password\": \"changeit\",\n\t\"profilePicUrl\": \"https://avatars1.githubusercontent.com/u/11065002?s=460&u=1e8e42bda7e6f579a2b216767b2ed986619bbf78&v=4\"\n}",
-											"options": {
-												"raw": {
-													"language": "json"
-												}
-											}
-										},
-										"url": {
-											"raw": "{{BASE_URL}}/signup/basic",
-											"host": [
-												"{{BASE_URL}}"
-											],
-											"path": [
-												"signup",
-												"basic"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "X-Powered-By",
-											"value": "Express"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "*"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json; charset=utf-8"
-										},
-										{
-											"key": "Content-Length",
-											"value": "1270"
-										},
-										{
-											"key": "ETag",
-											"value": "W/\"4f6-GXO8jjGI8w2J6i6uswKo7ocjos0\""
-										},
-										{
-											"key": "Date",
-											"value": "Tue, 20 Dec 2022 11:36:59 GMT"
-										},
-										{
-											"key": "Connection",
-											"value": "keep-alive"
-										},
-										{
-											"key": "Keep-Alive",
-											"value": "timeout=5"
-										}
-									],
-									"cookie": [],
-									"body": "{\n    \"statusCode\": \"10000\",\n    \"message\": \"Signup Successful\",\n    \"data\": {\n        \"user\": {\n            \"_id\": \"63a19e5ba2730d1599d46c0b\",\n            \"name\": \"Janishar Ali\",\n            \"roles\": [\n                {\n                    \"_id\": \"63a197b39e07f859826e6626\",\n                    \"code\": \"LEARNER\",\n                    \"status\": true\n                }\n            ],\n            \"profilePicUrl\": \"https://avatars1.githubusercontent.com/u/11065002?s=460&u=1e8e42bda7e6f579a2b216767b2ed986619bbf78&v=4\"\n        },\n        \"tokens\": {\n            \"accessToken\": \"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhcGkuZGV2Lnh5ei5jb20iLCJhdWQiOiJ4eXouY29tIiwic3ViIjoiNjNhMTllNWJhMjczMGQxNTk5ZDQ2YzBiIiwiaWF0IjoxNjcxNTM2MjE5LCJleHAiOjE2NzE3MDkwMTksInBybSI6ImIwM2QxZTk2ZmFmYmQwNjBjMmRlYTA2Y2UyNzgwZjNmM2RjNzk2N2JkNzRhYWVjYTIyNTEwMzA0MWI1YWM0MWY5ZThjMzVkZGNhMGM5MzNjMmI4NDcxZWZlNzY5MmZmYzBiNGE5ZjliODY2MDliYjhmNGNhMTc3OTIxM2U5Y2UzIn0.m0KpxUsLJ3HrgsgvjUu1qZy4AljExY4eblPE288zatz4JdqoQ6mbHlYCG2c2c1Qos2e_XI5pMUToGFd39T_rCQ\",\n            \"refreshToken\": \"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhcGkuZGV2Lnh5ei5jb20iLCJhdWQiOiJ4eXouY29tIiwic3ViIjoiNjNhMTllNWJhMjczMGQxNTk5ZDQ2YzBiIiwiaWF0IjoxNjcxNTM2MjE5LCJleHAiOjE2NzIxNDEwMTksInBybSI6IjZlNzVjNjZiZWY1ZmJlM2M0YjlkOGQ5ZjFmYjgzY2U2NGJjZDJhZTZhYjMxNTI2YWYzYjI3MDY3ODVmMTRmMzEwZjFlZmJlMmYyNGY4MTk2YzVkOWExNTliZDliMGY0ZTJkNGQ2MTAzYjliNzdhMmVmNGRhYTgwODc0MDgyZDgyIn0.ChW8GlgrCeD_Z6rOKFTaPlZ2-KsxCaRU1Nwmre7xvXtPMMNH4iMzGseI5wYGSc1NqR5OWOoCl1vo2tnBjHaF9A\"\n        }\n    }\n}"
-								}
-							]
-						},
-						{
-							"name": "change passoword",
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{admin_token}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "POST",
-								"header": [
-									{
-										"key": "x-api-key",
-										"value": "{{API_KEY}}",
-										"type": "text"
-									},
-									{
-										"key": "Content-Type",
-										"value": "application/json",
-										"name": "Content-Type",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"password_confirm\":\"password1\",\n    \"password_new\":\"password\"\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{BASE_URL}}/admin_site/admin/change-password",
-									"host": [
-										"{{BASE_URL}}"
-									],
-									"path": [
-										"admin_site",
-										"admin",
-										"change-password"
-									]
-								}
-							},
-							"response": [
-								{
-									"name": "Signup Basic",
-									"originalRequest": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "x-api-key",
-												"value": "{{API_KEY}}",
-												"type": "text"
-											},
-											{
-												"key": "Content-Type",
-												"value": "application/json",
-												"name": "Content-Type",
-												"type": "text"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n\t\"name\" : \"Janishar Ali\",\n\t\"email\": \"ali@github.com\",\n\t\"password\": \"changeit\",\n\t\"profilePicUrl\": \"https://avatars1.githubusercontent.com/u/11065002?s=460&u=1e8e42bda7e6f579a2b216767b2ed986619bbf78&v=4\"\n}",
-											"options": {
-												"raw": {
-													"language": "json"
-												}
-											}
-										},
-										"url": {
-											"raw": "{{BASE_URL}}/signup/basic",
-											"host": [
-												"{{BASE_URL}}"
-											],
-											"path": [
-												"signup",
-												"basic"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "X-Powered-By",
-											"value": "Express"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "*"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json; charset=utf-8"
-										},
-										{
-											"key": "Content-Length",
-											"value": "1270"
-										},
-										{
-											"key": "ETag",
-											"value": "W/\"4f6-GXO8jjGI8w2J6i6uswKo7ocjos0\""
-										},
-										{
-											"key": "Date",
-											"value": "Tue, 20 Dec 2022 11:36:59 GMT"
-										},
-										{
-											"key": "Connection",
-											"value": "keep-alive"
-										},
-										{
-											"key": "Keep-Alive",
-											"value": "timeout=5"
-										}
-									],
-									"cookie": [],
-									"body": "{\n    \"statusCode\": \"10000\",\n    \"message\": \"Signup Successful\",\n    \"data\": {\n        \"user\": {\n            \"_id\": \"63a19e5ba2730d1599d46c0b\",\n            \"name\": \"Janishar Ali\",\n            \"roles\": [\n                {\n                    \"_id\": \"63a197b39e07f859826e6626\",\n                    \"code\": \"LEARNER\",\n                    \"status\": true\n                }\n            ],\n            \"profilePicUrl\": \"https://avatars1.githubusercontent.com/u/11065002?s=460&u=1e8e42bda7e6f579a2b216767b2ed986619bbf78&v=4\"\n        },\n        \"tokens\": {\n            \"accessToken\": \"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhcGkuZGV2Lnh5ei5jb20iLCJhdWQiOiJ4eXouY29tIiwic3ViIjoiNjNhMTllNWJhMjczMGQxNTk5ZDQ2YzBiIiwiaWF0IjoxNjcxNTM2MjE5LCJleHAiOjE2NzE3MDkwMTksInBybSI6ImIwM2QxZTk2ZmFmYmQwNjBjMmRlYTA2Y2UyNzgwZjNmM2RjNzk2N2JkNzRhYWVjYTIyNTEwMzA0MWI1YWM0MWY5ZThjMzVkZGNhMGM5MzNjMmI4NDcxZWZlNzY5MmZmYzBiNGE5ZjliODY2MDliYjhmNGNhMTc3OTIxM2U5Y2UzIn0.m0KpxUsLJ3HrgsgvjUu1qZy4AljExY4eblPE288zatz4JdqoQ6mbHlYCG2c2c1Qos2e_XI5pMUToGFd39T_rCQ\",\n            \"refreshToken\": \"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhcGkuZGV2Lnh5ei5jb20iLCJhdWQiOiJ4eXouY29tIiwic3ViIjoiNjNhMTllNWJhMjczMGQxNTk5ZDQ2YzBiIiwiaWF0IjoxNjcxNTM2MjE5LCJleHAiOjE2NzIxNDEwMTksInBybSI6IjZlNzVjNjZiZWY1ZmJlM2M0YjlkOGQ5ZjFmYjgzY2U2NGJjZDJhZTZhYjMxNTI2YWYzYjI3MDY3ODVmMTRmMzEwZjFlZmJlMmYyNGY4MTk2YzVkOWExNTliZDliMGY0ZTJkNGQ2MTAzYjliNzdhMmVmNGRhYTgwODc0MDgyZDgyIn0.ChW8GlgrCeD_Z6rOKFTaPlZ2-KsxCaRU1Nwmre7xvXtPMMNH4iMzGseI5wYGSc1NqR5OWOoCl1vo2tnBjHaF9A\"\n        }\n    }\n}"
-								}
-							]
-						},
-						{
-							"name": "Login",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"exec": [
-											"const accessToken = pm.response.json().data.token.accessToken;",
-											"pm.environment.set(\"admin_token\", accessToken);"
-										],
-										"type": "text/javascript",
-										"packages": {}
-									}
-								}
-							],
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "x-api-key",
-										"value": "{{API_KEY}}",
-										"type": "text"
-									},
-									{
-										"key": "Content-Type",
-										"value": "application/json",
-										"name": "Content-Type",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"userName\":\"username\",\n    \"password\":\"password\"\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{BASE_URL}}/admin_site/admin/login",
-									"host": [
-										"{{BASE_URL}}"
-									],
-									"path": [
-										"admin_site",
-										"admin",
-										"login"
-									]
-								}
-							},
-							"response": [
-								{
-									"name": "Signup Basic",
-									"originalRequest": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "x-api-key",
-												"value": "{{API_KEY}}",
-												"type": "text"
-											},
-											{
-												"key": "Content-Type",
-												"value": "application/json",
-												"name": "Content-Type",
-												"type": "text"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n\t\"name\" : \"Janishar Ali\",\n\t\"email\": \"ali@github.com\",\n\t\"password\": \"changeit\",\n\t\"profilePicUrl\": \"https://avatars1.githubusercontent.com/u/11065002?s=460&u=1e8e42bda7e6f579a2b216767b2ed986619bbf78&v=4\"\n}",
-											"options": {
-												"raw": {
-													"language": "json"
-												}
-											}
-										},
-										"url": {
-											"raw": "{{BASE_URL}}/signup/basic",
-											"host": [
-												"{{BASE_URL}}"
-											],
-											"path": [
-												"signup",
-												"basic"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "X-Powered-By",
-											"value": "Express"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "*"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json; charset=utf-8"
-										},
-										{
-											"key": "Content-Length",
-											"value": "1270"
-										},
-										{
-											"key": "ETag",
-											"value": "W/\"4f6-GXO8jjGI8w2J6i6uswKo7ocjos0\""
-										},
-										{
-											"key": "Date",
-											"value": "Tue, 20 Dec 2022 11:36:59 GMT"
-										},
-										{
-											"key": "Connection",
-											"value": "keep-alive"
-										},
-										{
-											"key": "Keep-Alive",
-											"value": "timeout=5"
-										}
-									],
-									"cookie": [],
-									"body": "{\n    \"statusCode\": \"10000\",\n    \"message\": \"Signup Successful\",\n    \"data\": {\n        \"user\": {\n            \"_id\": \"63a19e5ba2730d1599d46c0b\",\n            \"name\": \"Janishar Ali\",\n            \"roles\": [\n                {\n                    \"_id\": \"63a197b39e07f859826e6626\",\n                    \"code\": \"LEARNER\",\n                    \"status\": true\n                }\n            ],\n            \"profilePicUrl\": \"https://avatars1.githubusercontent.com/u/11065002?s=460&u=1e8e42bda7e6f579a2b216767b2ed986619bbf78&v=4\"\n        },\n        \"tokens\": {\n            \"accessToken\": \"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhcGkuZGV2Lnh5ei5jb20iLCJhdWQiOiJ4eXouY29tIiwic3ViIjoiNjNhMTllNWJhMjczMGQxNTk5ZDQ2YzBiIiwiaWF0IjoxNjcxNTM2MjE5LCJleHAiOjE2NzE3MDkwMTksInBybSI6ImIwM2QxZTk2ZmFmYmQwNjBjMmRlYTA2Y2UyNzgwZjNmM2RjNzk2N2JkNzRhYWVjYTIyNTEwMzA0MWI1YWM0MWY5ZThjMzVkZGNhMGM5MzNjMmI4NDcxZWZlNzY5MmZmYzBiNGE5ZjliODY2MDliYjhmNGNhMTc3OTIxM2U5Y2UzIn0.m0KpxUsLJ3HrgsgvjUu1qZy4AljExY4eblPE288zatz4JdqoQ6mbHlYCG2c2c1Qos2e_XI5pMUToGFd39T_rCQ\",\n            \"refreshToken\": \"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhcGkuZGV2Lnh5ei5jb20iLCJhdWQiOiJ4eXouY29tIiwic3ViIjoiNjNhMTllNWJhMjczMGQxNTk5ZDQ2YzBiIiwiaWF0IjoxNjcxNTM2MjE5LCJleHAiOjE2NzIxNDEwMTksInBybSI6IjZlNzVjNjZiZWY1ZmJlM2M0YjlkOGQ5ZjFmYjgzY2U2NGJjZDJhZTZhYjMxNTI2YWYzYjI3MDY3ODVmMTRmMzEwZjFlZmJlMmYyNGY4MTk2YzVkOWExNTliZDliMGY0ZTJkNGQ2MTAzYjliNzdhMmVmNGRhYTgwODc0MDgyZDgyIn0.ChW8GlgrCeD_Z6rOKFTaPlZ2-KsxCaRU1Nwmre7xvXtPMMNH4iMzGseI5wYGSc1NqR5OWOoCl1vo2tnBjHaF9A\"\n        }\n    }\n}"
-								}
-							]
-						}
-					]
-				},
-				{
-					"name": "Seller",
-					"item": [
-						{
-							"name": "Get Seller List",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{admin_token}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "GET",
-								"header": [
-									{
-										"key": "x-api-key",
-										"value": "{{API_KEY}}",
-										"type": "text"
-									},
-									{
-										"key": "Content-Type",
-										"value": "application/json",
-										"name": "Content-Type",
-										"type": "text"
-									},
-									{
-										"key": "filter",
-										"value": "Ww0KICAgIHsNCiAgICAgICAgIm9wZXJhdGlvbiI6ICJlcSIsDQogICAgICAgICJ2YWx1ZSI6ICIyM2JkMzY0OS1kZDBjLTExZWUtYTFkMS0wMjQyYWMxODAwMDIiLA0KICAgICAgICAiYXR0cmlidXRlIjogInN0b3JlSWQiDQogICAgfQ0KXQ",
-										"type": "text",
-										"disabled": true
-									},
-									{
-										"key": "order",
-										"value": "Ww0KICAgIHsNCiAgICAgICAgImF0dHJpYnV0ZSI6ICJpZCINCiAgICB9DQpd",
-										"type": "text",
-										"disabled": true
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "[\n    {\n        \"operation\": \"eq\",\n        \"value\": \"db0c9d2b-6603-4d37-b419-1be575e9a9cc\",\n        \"attribute\": \"id\",\n        \"not\": false\n    }\n]",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{BASE_URL}}/admin_site/seller/sellers?limit=4&page=2",
-									"host": [
-										"{{BASE_URL}}"
-									],
-									"path": [
-										"admin_site",
-										"seller",
-										"sellers"
-									],
-									"query": [
-										{
-											"key": "limit",
-											"value": "4"
-										},
-										{
-											"key": "page",
-											"value": "2"
-										}
-									]
-								}
-							},
-							"response": [
-								{
-									"name": "Signup Basic",
-									"originalRequest": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "x-api-key",
-												"value": "{{API_KEY}}",
-												"type": "text"
-											},
-											{
-												"key": "Content-Type",
-												"value": "application/json",
-												"name": "Content-Type",
-												"type": "text"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n\t\"name\" : \"Janishar Ali\",\n\t\"email\": \"ali@github.com\",\n\t\"password\": \"changeit\",\n\t\"profilePicUrl\": \"https://avatars1.githubusercontent.com/u/11065002?s=460&u=1e8e42bda7e6f579a2b216767b2ed986619bbf78&v=4\"\n}",
-											"options": {
-												"raw": {
-													"language": "json"
-												}
-											}
-										},
-										"url": {
-											"raw": "{{BASE_URL}}/signup/basic",
-											"host": [
-												"{{BASE_URL}}"
-											],
-											"path": [
-												"signup",
-												"basic"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "X-Powered-By",
-											"value": "Express"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "*"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json; charset=utf-8"
-										},
-										{
-											"key": "Content-Length",
-											"value": "1270"
-										},
-										{
-											"key": "ETag",
-											"value": "W/\"4f6-GXO8jjGI8w2J6i6uswKo7ocjos0\""
-										},
-										{
-											"key": "Date",
-											"value": "Tue, 20 Dec 2022 11:36:59 GMT"
-										},
-										{
-											"key": "Connection",
-											"value": "keep-alive"
-										},
-										{
-											"key": "Keep-Alive",
-											"value": "timeout=5"
-										}
-									],
-									"cookie": [],
-									"body": "{\n    \"statusCode\": \"10000\",\n    \"message\": \"Signup Successful\",\n    \"data\": {\n        \"user\": {\n            \"_id\": \"63a19e5ba2730d1599d46c0b\",\n            \"name\": \"Janishar Ali\",\n            \"roles\": [\n                {\n                    \"_id\": \"63a197b39e07f859826e6626\",\n                    \"code\": \"LEARNER\",\n                    \"status\": true\n                }\n            ],\n            \"profilePicUrl\": \"https://avatars1.githubusercontent.com/u/11065002?s=460&u=1e8e42bda7e6f579a2b216767b2ed986619bbf78&v=4\"\n        },\n        \"tokens\": {\n            \"accessToken\": \"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhcGkuZGV2Lnh5ei5jb20iLCJhdWQiOiJ4eXouY29tIiwic3ViIjoiNjNhMTllNWJhMjczMGQxNTk5ZDQ2YzBiIiwiaWF0IjoxNjcxNTM2MjE5LCJleHAiOjE2NzE3MDkwMTksInBybSI6ImIwM2QxZTk2ZmFmYmQwNjBjMmRlYTA2Y2UyNzgwZjNmM2RjNzk2N2JkNzRhYWVjYTIyNTEwMzA0MWI1YWM0MWY5ZThjMzVkZGNhMGM5MzNjMmI4NDcxZWZlNzY5MmZmYzBiNGE5ZjliODY2MDliYjhmNGNhMTc3OTIxM2U5Y2UzIn0.m0KpxUsLJ3HrgsgvjUu1qZy4AljExY4eblPE288zatz4JdqoQ6mbHlYCG2c2c1Qos2e_XI5pMUToGFd39T_rCQ\",\n            \"refreshToken\": \"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhcGkuZGV2Lnh5ei5jb20iLCJhdWQiOiJ4eXouY29tIiwic3ViIjoiNjNhMTllNWJhMjczMGQxNTk5ZDQ2YzBiIiwiaWF0IjoxNjcxNTM2MjE5LCJleHAiOjE2NzIxNDEwMTksInBybSI6IjZlNzVjNjZiZWY1ZmJlM2M0YjlkOGQ5ZjFmYjgzY2U2NGJjZDJhZTZhYjMxNTI2YWYzYjI3MDY3ODVmMTRmMzEwZjFlZmJlMmYyNGY4MTk2YzVkOWExNTliZDliMGY0ZTJkNGQ2MTAzYjliNzdhMmVmNGRhYTgwODc0MDgyZDgyIn0.ChW8GlgrCeD_Z6rOKFTaPlZ2-KsxCaRU1Nwmre7xvXtPMMNH4iMzGseI5wYGSc1NqR5OWOoCl1vo2tnBjHaF9A\"\n        }\n    }\n}"
-								}
-							]
-						}
-					]
-				},
-				{
-					"name": "Store",
-					"item": [
-						{
-							"name": "Get Store List",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{admin_token}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "GET",
-								"header": [
-									{
-										"key": "x-api-key",
-										"value": "{{API_KEY}}",
-										"type": "text"
-									},
-									{
-										"key": "Content-Type",
-										"value": "application/json",
-										"name": "Content-Type",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"userName\":\"123\",\n    \"password\":\"123\"\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{BASE_URL}}/admin_site/store/stores",
-									"host": [
-										"{{BASE_URL}}"
-									],
-									"path": [
-										"admin_site",
-										"store",
-										"stores"
-									]
-								}
-							},
-							"response": [
-								{
-									"name": "Signup Basic",
-									"originalRequest": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "x-api-key",
-												"value": "{{API_KEY}}",
-												"type": "text"
-											},
-											{
-												"key": "Content-Type",
-												"value": "application/json",
-												"name": "Content-Type",
-												"type": "text"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n\t\"name\" : \"Janishar Ali\",\n\t\"email\": \"ali@github.com\",\n\t\"password\": \"changeit\",\n\t\"profilePicUrl\": \"https://avatars1.githubusercontent.com/u/11065002?s=460&u=1e8e42bda7e6f579a2b216767b2ed986619bbf78&v=4\"\n}",
-											"options": {
-												"raw": {
-													"language": "json"
-												}
-											}
-										},
-										"url": {
-											"raw": "{{BASE_URL}}/signup/basic",
-											"host": [
-												"{{BASE_URL}}"
-											],
-											"path": [
-												"signup",
-												"basic"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "X-Powered-By",
-											"value": "Express"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "*"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json; charset=utf-8"
-										},
-										{
-											"key": "Content-Length",
-											"value": "1270"
-										},
-										{
-											"key": "ETag",
-											"value": "W/\"4f6-GXO8jjGI8w2J6i6uswKo7ocjos0\""
-										},
-										{
-											"key": "Date",
-											"value": "Tue, 20 Dec 2022 11:36:59 GMT"
-										},
-										{
-											"key": "Connection",
-											"value": "keep-alive"
-										},
-										{
-											"key": "Keep-Alive",
-											"value": "timeout=5"
-										}
-									],
-									"cookie": [],
-									"body": "{\n    \"statusCode\": \"10000\",\n    \"message\": \"Signup Successful\",\n    \"data\": {\n        \"user\": {\n            \"_id\": \"63a19e5ba2730d1599d46c0b\",\n            \"name\": \"Janishar Ali\",\n            \"roles\": [\n                {\n                    \"_id\": \"63a197b39e07f859826e6626\",\n                    \"code\": \"LEARNER\",\n                    \"status\": true\n                }\n            ],\n            \"profilePicUrl\": \"https://avatars1.githubusercontent.com/u/11065002?s=460&u=1e8e42bda7e6f579a2b216767b2ed986619bbf78&v=4\"\n        },\n        \"tokens\": {\n            \"accessToken\": \"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhcGkuZGV2Lnh5ei5jb20iLCJhdWQiOiJ4eXouY29tIiwic3ViIjoiNjNhMTllNWJhMjczMGQxNTk5ZDQ2YzBiIiwiaWF0IjoxNjcxNTM2MjE5LCJleHAiOjE2NzE3MDkwMTksInBybSI6ImIwM2QxZTk2ZmFmYmQwNjBjMmRlYTA2Y2UyNzgwZjNmM2RjNzk2N2JkNzRhYWVjYTIyNTEwMzA0MWI1YWM0MWY5ZThjMzVkZGNhMGM5MzNjMmI4NDcxZWZlNzY5MmZmYzBiNGE5ZjliODY2MDliYjhmNGNhMTc3OTIxM2U5Y2UzIn0.m0KpxUsLJ3HrgsgvjUu1qZy4AljExY4eblPE288zatz4JdqoQ6mbHlYCG2c2c1Qos2e_XI5pMUToGFd39T_rCQ\",\n            \"refreshToken\": \"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhcGkuZGV2Lnh5ei5jb20iLCJhdWQiOiJ4eXouY29tIiwic3ViIjoiNjNhMTllNWJhMjczMGQxNTk5ZDQ2YzBiIiwiaWF0IjoxNjcxNTM2MjE5LCJleHAiOjE2NzIxNDEwMTksInBybSI6IjZlNzVjNjZiZWY1ZmJlM2M0YjlkOGQ5ZjFmYjgzY2U2NGJjZDJhZTZhYjMxNTI2YWYzYjI3MDY3ODVmMTRmMzEwZjFlZmJlMmYyNGY4MTk2YzVkOWExNTliZDliMGY0ZTJkNGQ2MTAzYjliNzdhMmVmNGRhYTgwODc0MDgyZDgyIn0.ChW8GlgrCeD_Z6rOKFTaPlZ2-KsxCaRU1Nwmre7xvXtPMMNH4iMzGseI5wYGSc1NqR5OWOoCl1vo2tnBjHaF9A\"\n        }\n    }\n}"
-								}
-							]
-						},
-						{
-							"name": "Get Store Detail",
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{admin_token}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "POST",
-								"header": [
-									{
-										"key": "x-api-key",
-										"value": "{{API_KEY}}",
-										"type": "text"
-									},
-									{
-										"key": "Content-Type",
-										"value": "application/json",
-										"name": "Content-Type",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"userName\":\"123\",\n    \"password\":\"123\"\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{BASE_URL}}/admin_site/store/store/detail/23bd3649-dd0c-11ee-a1d1-0242ac180002",
-									"host": [
-										"{{BASE_URL}}"
-									],
-									"path": [
-										"admin_site",
-										"store",
-										"store",
-										"detail",
-										"23bd3649-dd0c-11ee-a1d1-0242ac180002"
-									]
-								}
-							},
-							"response": [
-								{
-									"name": "Signup Basic",
-									"originalRequest": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "x-api-key",
-												"value": "{{API_KEY}}",
-												"type": "text"
-											},
-											{
-												"key": "Content-Type",
-												"value": "application/json",
-												"name": "Content-Type",
-												"type": "text"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n\t\"name\" : \"Janishar Ali\",\n\t\"email\": \"ali@github.com\",\n\t\"password\": \"changeit\",\n\t\"profilePicUrl\": \"https://avatars1.githubusercontent.com/u/11065002?s=460&u=1e8e42bda7e6f579a2b216767b2ed986619bbf78&v=4\"\n}",
-											"options": {
-												"raw": {
-													"language": "json"
-												}
-											}
-										},
-										"url": {
-											"raw": "{{BASE_URL}}/signup/basic",
-											"host": [
-												"{{BASE_URL}}"
-											],
-											"path": [
-												"signup",
-												"basic"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "X-Powered-By",
-											"value": "Express"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "*"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json; charset=utf-8"
-										},
-										{
-											"key": "Content-Length",
-											"value": "1270"
-										},
-										{
-											"key": "ETag",
-											"value": "W/\"4f6-GXO8jjGI8w2J6i6uswKo7ocjos0\""
-										},
-										{
-											"key": "Date",
-											"value": "Tue, 20 Dec 2022 11:36:59 GMT"
-										},
-										{
-											"key": "Connection",
-											"value": "keep-alive"
-										},
-										{
-											"key": "Keep-Alive",
-											"value": "timeout=5"
-										}
-									],
-									"cookie": [],
-									"body": "{\n    \"statusCode\": \"10000\",\n    \"message\": \"Signup Successful\",\n    \"data\": {\n        \"user\": {\n            \"_id\": \"63a19e5ba2730d1599d46c0b\",\n            \"name\": \"Janishar Ali\",\n            \"roles\": [\n                {\n                    \"_id\": \"63a197b39e07f859826e6626\",\n                    \"code\": \"LEARNER\",\n                    \"status\": true\n                }\n            ],\n            \"profilePicUrl\": \"https://avatars1.githubusercontent.com/u/11065002?s=460&u=1e8e42bda7e6f579a2b216767b2ed986619bbf78&v=4\"\n        },\n        \"tokens\": {\n            \"accessToken\": \"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhcGkuZGV2Lnh5ei5jb20iLCJhdWQiOiJ4eXouY29tIiwic3ViIjoiNjNhMTllNWJhMjczMGQxNTk5ZDQ2YzBiIiwiaWF0IjoxNjcxNTM2MjE5LCJleHAiOjE2NzE3MDkwMTksInBybSI6ImIwM2QxZTk2ZmFmYmQwNjBjMmRlYTA2Y2UyNzgwZjNmM2RjNzk2N2JkNzRhYWVjYTIyNTEwMzA0MWI1YWM0MWY5ZThjMzVkZGNhMGM5MzNjMmI4NDcxZWZlNzY5MmZmYzBiNGE5ZjliODY2MDliYjhmNGNhMTc3OTIxM2U5Y2UzIn0.m0KpxUsLJ3HrgsgvjUu1qZy4AljExY4eblPE288zatz4JdqoQ6mbHlYCG2c2c1Qos2e_XI5pMUToGFd39T_rCQ\",\n            \"refreshToken\": \"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhcGkuZGV2Lnh5ei5jb20iLCJhdWQiOiJ4eXouY29tIiwic3ViIjoiNjNhMTllNWJhMjczMGQxNTk5ZDQ2YzBiIiwiaWF0IjoxNjcxNTM2MjE5LCJleHAiOjE2NzIxNDEwMTksInBybSI6IjZlNzVjNjZiZWY1ZmJlM2M0YjlkOGQ5ZjFmYjgzY2U2NGJjZDJhZTZhYjMxNTI2YWYzYjI3MDY3ODVmMTRmMzEwZjFlZmJlMmYyNGY4MTk2YzVkOWExNTliZDliMGY0ZTJkNGQ2MTAzYjliNzdhMmVmNGRhYTgwODc0MDgyZDgyIn0.ChW8GlgrCeD_Z6rOKFTaPlZ2-KsxCaRU1Nwmre7xvXtPMMNH4iMzGseI5wYGSc1NqR5OWOoCl1vo2tnBjHaF9A\"\n        }\n    }\n}"
-								}
-							]
-						}
-					]
-				}
-			]
-		},
-		{
-			"name": "Seller Site",
-			"item": [
-				{
-					"name": "Seller",
-					"item": [
-						{
-							"name": "Register",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"exec": [
-											"const accessToken = pm.response.json().data.token.accessToken;",
-											"pm.environment.set(\"seller_token\", accessToken);"
-										],
-										"type": "text/javascript",
-										"packages": {}
-									}
-								}
-							],
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "",
-											"type": "string"
-										}
-									]
-								},
-								"method": "POST",
-								"header": [
-									{
-										"key": "x-api-key",
-										"value": "{{API_KEY}}",
-										"type": "text"
-									},
-									{
-										"key": "Content-Type",
-										"value": "application/json",
-										"name": "Content-Type",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"prefectureId\":\"test\",\n    \"email\": \"eamil@test.com\",\n    \"username\":\"1234\",\n    \"password\":\"123\"\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{BASE_URL}}/seller_site/seller/register",
-									"host": [
-										"{{BASE_URL}}"
-									],
-									"path": [
-										"seller_site",
-										"seller",
-										"register"
-									]
-								}
-							},
-							"response": [
-								{
-									"name": "Signup Basic",
-									"originalRequest": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "x-api-key",
-												"value": "{{API_KEY}}",
-												"type": "text"
-											},
-											{
-												"key": "Content-Type",
-												"value": "application/json",
-												"name": "Content-Type",
-												"type": "text"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n\t\"name\" : \"Janishar Ali\",\n\t\"email\": \"ali@github.com\",\n\t\"password\": \"changeit\",\n\t\"profilePicUrl\": \"https://avatars1.githubusercontent.com/u/11065002?s=460&u=1e8e42bda7e6f579a2b216767b2ed986619bbf78&v=4\"\n}",
-											"options": {
-												"raw": {
-													"language": "json"
-												}
-											}
-										},
-										"url": {
-											"raw": "{{BASE_URL}}/signup/basic",
-											"host": [
-												"{{BASE_URL}}"
-											],
-											"path": [
-												"signup",
-												"basic"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "X-Powered-By",
-											"value": "Express"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "*"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json; charset=utf-8"
-										},
-										{
-											"key": "Content-Length",
-											"value": "1270"
-										},
-										{
-											"key": "ETag",
-											"value": "W/\"4f6-GXO8jjGI8w2J6i6uswKo7ocjos0\""
-										},
-										{
-											"key": "Date",
-											"value": "Tue, 20 Dec 2022 11:36:59 GMT"
-										},
-										{
-											"key": "Connection",
-											"value": "keep-alive"
-										},
-										{
-											"key": "Keep-Alive",
-											"value": "timeout=5"
-										}
-									],
-									"cookie": [],
-									"body": "{\n    \"statusCode\": \"10000\",\n    \"message\": \"Signup Successful\",\n    \"data\": {\n        \"user\": {\n            \"_id\": \"63a19e5ba2730d1599d46c0b\",\n            \"name\": \"Janishar Ali\",\n            \"roles\": [\n                {\n                    \"_id\": \"63a197b39e07f859826e6626\",\n                    \"code\": \"LEARNER\",\n                    \"status\": true\n                }\n            ],\n            \"profilePicUrl\": \"https://avatars1.githubusercontent.com/u/11065002?s=460&u=1e8e42bda7e6f579a2b216767b2ed986619bbf78&v=4\"\n        },\n        \"tokens\": {\n            \"accessToken\": \"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhcGkuZGV2Lnh5ei5jb20iLCJhdWQiOiJ4eXouY29tIiwic3ViIjoiNjNhMTllNWJhMjczMGQxNTk5ZDQ2YzBiIiwiaWF0IjoxNjcxNTM2MjE5LCJleHAiOjE2NzE3MDkwMTksInBybSI6ImIwM2QxZTk2ZmFmYmQwNjBjMmRlYTA2Y2UyNzgwZjNmM2RjNzk2N2JkNzRhYWVjYTIyNTEwMzA0MWI1YWM0MWY5ZThjMzVkZGNhMGM5MzNjMmI4NDcxZWZlNzY5MmZmYzBiNGE5ZjliODY2MDliYjhmNGNhMTc3OTIxM2U5Y2UzIn0.m0KpxUsLJ3HrgsgvjUu1qZy4AljExY4eblPE288zatz4JdqoQ6mbHlYCG2c2c1Qos2e_XI5pMUToGFd39T_rCQ\",\n            \"refreshToken\": \"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhcGkuZGV2Lnh5ei5jb20iLCJhdWQiOiJ4eXouY29tIiwic3ViIjoiNjNhMTllNWJhMjczMGQxNTk5ZDQ2YzBiIiwiaWF0IjoxNjcxNTM2MjE5LCJleHAiOjE2NzIxNDEwMTksInBybSI6IjZlNzVjNjZiZWY1ZmJlM2M0YjlkOGQ5ZjFmYjgzY2U2NGJjZDJhZTZhYjMxNTI2YWYzYjI3MDY3ODVmMTRmMzEwZjFlZmJlMmYyNGY4MTk2YzVkOWExNTliZDliMGY0ZTJkNGQ2MTAzYjliNzdhMmVmNGRhYTgwODc0MDgyZDgyIn0.ChW8GlgrCeD_Z6rOKFTaPlZ2-KsxCaRU1Nwmre7xvXtPMMNH4iMzGseI5wYGSc1NqR5OWOoCl1vo2tnBjHaF9A\"\n        }\n    }\n}"
-								}
-							]
-						},
-						{
-							"name": "Get Token",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"exec": [
-											"const accessToken = pm.response.json().data.token.accessToken;",
-											"pm.environment.set(\"seller_token\", accessToken);"
-										],
-										"type": "text/javascript",
-										"packages": {}
-									}
-								}
-							],
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhcGkuZGV2Lnh5ei5jb20iLCJhdWQiOiJ4eXouY29tIiwic3ViIjoiMDIyNzUwZmEtZjE4MS00ZjcyLWIwMzgtNjc2NTFkZmUzZGE5IiwiaWF0IjoxNzA2NjgyNjMyLCJleHAiOjE3MDY4NTU0MzIsInBybSI6ImNjOTRlMmM4NTJhYTZkMWZkNWQ5ZGZiY2ZlNjhmYWM2MjhkYzYwMjNjNGJmODJlMGQ3Y2NjZWE3NzE5ZGE5MzBmNjU5ZTAxZWNkYmM5YjIzZTc1ODA1MWM5YzY1MWRjMTU3OTgwMzBhNjA4YjdkNzEwMDdjZmExZmI3ZmMxMDNlIn0.W48zDTi1G8hZOOQTGOzn9O1xCHL1C5HyI-akZ9LovgEhgCN_rSRo8g3x8-qnIZ6518_ADFmgT4uCh7N5u3zH1dE4fIVWBk85kvOal4f-gYbC_2VfrHBXzD9keSKTCAs0EZfzqg74UUg-aDcqgpEjWhPAZLcxyheN8avZJs0GQSL-y2GCJbKM8jqUiuB_SB4zbZbIvvefxW8iH-2RwIWdIZRKFW2H3JokV5CChGzUJW3yFgps0mIBodt4MtbhcqYSrPkMVEudrgJ96HEjJkXAeX-6Oku-2ZmDlPXJbEnMoqYcRNmp7219Rp1xrYXaxk83MD4gY0v9UPM6Phpjq7NtBQ",
-											"type": "string"
-										}
-									]
-								},
-								"method": "POST",
-								"header": [
-									{
-										"key": "x-api-key",
-										"value": "{{API_KEY}}"
-									},
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"sellerId\":\"3d1df0e3-89f7-441e-86ee-052be159623a\"\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{BASE_URL}}/seller_site/seller/getToken",
-									"host": [
-										"{{BASE_URL}}"
-									],
-									"path": [
-										"seller_site",
-										"seller",
-										"getToken"
-									]
-								}
-							},
-							"response": [
-								{
-									"name": "Signup Basic",
-									"originalRequest": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "x-api-key",
-												"value": "{{API_KEY}}",
-												"type": "text"
-											},
-											{
-												"key": "Content-Type",
-												"value": "application/json",
-												"name": "Content-Type",
-												"type": "text"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n\t\"name\" : \"Janishar Ali\",\n\t\"email\": \"ali@github.com\",\n\t\"password\": \"changeit\",\n\t\"profilePicUrl\": \"https://avatars1.githubusercontent.com/u/11065002?s=460&u=1e8e42bda7e6f579a2b216767b2ed986619bbf78&v=4\"\n}",
-											"options": {
-												"raw": {
-													"language": "json"
-												}
-											}
-										},
-										"url": {
-											"raw": "{{BASE_URL}}/signup/basic",
-											"host": [
-												"{{BASE_URL}}"
-											],
-											"path": [
-												"signup",
-												"basic"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "X-Powered-By",
-											"value": "Express"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "*"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json; charset=utf-8"
-										},
-										{
-											"key": "Content-Length",
-											"value": "1270"
-										},
-										{
-											"key": "ETag",
-											"value": "W/\"4f6-GXO8jjGI8w2J6i6uswKo7ocjos0\""
-										},
-										{
-											"key": "Date",
-											"value": "Tue, 20 Dec 2022 11:36:59 GMT"
-										},
-										{
-											"key": "Connection",
-											"value": "keep-alive"
-										},
-										{
-											"key": "Keep-Alive",
-											"value": "timeout=5"
-										}
-									],
-									"cookie": [],
-									"body": "{\n    \"statusCode\": \"10000\",\n    \"message\": \"Signup Successful\",\n    \"data\": {\n        \"user\": {\n            \"_id\": \"63a19e5ba2730d1599d46c0b\",\n            \"name\": \"Janishar Ali\",\n            \"roles\": [\n                {\n                    \"_id\": \"63a197b39e07f859826e6626\",\n                    \"code\": \"LEARNER\",\n                    \"status\": true\n                }\n            ],\n            \"profilePicUrl\": \"https://avatars1.githubusercontent.com/u/11065002?s=460&u=1e8e42bda7e6f579a2b216767b2ed986619bbf78&v=4\"\n        },\n        \"tokens\": {\n            \"accessToken\": \"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhcGkuZGV2Lnh5ei5jb20iLCJhdWQiOiJ4eXouY29tIiwic3ViIjoiNjNhMTllNWJhMjczMGQxNTk5ZDQ2YzBiIiwiaWF0IjoxNjcxNTM2MjE5LCJleHAiOjE2NzE3MDkwMTksInBybSI6ImIwM2QxZTk2ZmFmYmQwNjBjMmRlYTA2Y2UyNzgwZjNmM2RjNzk2N2JkNzRhYWVjYTIyNTEwMzA0MWI1YWM0MWY5ZThjMzVkZGNhMGM5MzNjMmI4NDcxZWZlNzY5MmZmYzBiNGE5ZjliODY2MDliYjhmNGNhMTc3OTIxM2U5Y2UzIn0.m0KpxUsLJ3HrgsgvjUu1qZy4AljExY4eblPE288zatz4JdqoQ6mbHlYCG2c2c1Qos2e_XI5pMUToGFd39T_rCQ\",\n            \"refreshToken\": \"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhcGkuZGV2Lnh5ei5jb20iLCJhdWQiOiJ4eXouY29tIiwic3ViIjoiNjNhMTllNWJhMjczMGQxNTk5ZDQ2YzBiIiwiaWF0IjoxNjcxNTM2MjE5LCJleHAiOjE2NzIxNDEwMTksInBybSI6IjZlNzVjNjZiZWY1ZmJlM2M0YjlkOGQ5ZjFmYjgzY2U2NGJjZDJhZTZhYjMxNTI2YWYzYjI3MDY3ODVmMTRmMzEwZjFlZmJlMmYyNGY4MTk2YzVkOWExNTliZDliMGY0ZTJkNGQ2MTAzYjliNzdhMmVmNGRhYTgwODc0MDgyZDgyIn0.ChW8GlgrCeD_Z6rOKFTaPlZ2-KsxCaRU1Nwmre7xvXtPMMNH4iMzGseI5wYGSc1NqR5OWOoCl1vo2tnBjHaF9A\"\n        }\n    }\n}"
-								}
-							]
-						},
-						{
-							"name": "Get Me",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"exec": [
-											""
-										],
-										"type": "text/javascript",
-										"packages": {}
-									}
-								}
-							],
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{seller_token}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "GET",
-								"header": [
-									{
-										"key": "x-api-key",
-										"value": "{{API_KEY}}",
-										"type": "text"
-									},
-									{
-										"key": "Content-Type",
-										"value": "application/json",
-										"name": "Content-Type",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{BASE_URL}}/seller_site/seller/me",
-									"host": [
-										"{{BASE_URL}}"
-									],
-									"path": [
-										"seller_site",
-										"seller",
-										"me"
-									]
-								}
-							},
-							"response": [
-								{
-									"name": "Signup Basic",
-									"originalRequest": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "x-api-key",
-												"value": "{{API_KEY}}",
-												"type": "text"
-											},
-											{
-												"key": "Content-Type",
-												"value": "application/json",
-												"name": "Content-Type",
-												"type": "text"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n\t\"name\" : \"Janishar Ali\",\n\t\"email\": \"ali@github.com\",\n\t\"password\": \"changeit\",\n\t\"profilePicUrl\": \"https://avatars1.githubusercontent.com/u/11065002?s=460&u=1e8e42bda7e6f579a2b216767b2ed986619bbf78&v=4\"\n}",
-											"options": {
-												"raw": {
-													"language": "json"
-												}
-											}
-										},
-										"url": {
-											"raw": "{{BASE_URL}}/signup/basic",
-											"host": [
-												"{{BASE_URL}}"
-											],
-											"path": [
-												"signup",
-												"basic"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "X-Powered-By",
-											"value": "Express"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "*"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json; charset=utf-8"
-										},
-										{
-											"key": "Content-Length",
-											"value": "1270"
-										},
-										{
-											"key": "ETag",
-											"value": "W/\"4f6-GXO8jjGI8w2J6i6uswKo7ocjos0\""
-										},
-										{
-											"key": "Date",
-											"value": "Tue, 20 Dec 2022 11:36:59 GMT"
-										},
-										{
-											"key": "Connection",
-											"value": "keep-alive"
-										},
-										{
-											"key": "Keep-Alive",
-											"value": "timeout=5"
-										}
-									],
-									"cookie": [],
-									"body": "{\n    \"statusCode\": \"10000\",\n    \"message\": \"Signup Successful\",\n    \"data\": {\n        \"user\": {\n            \"_id\": \"63a19e5ba2730d1599d46c0b\",\n            \"name\": \"Janishar Ali\",\n            \"roles\": [\n                {\n                    \"_id\": \"63a197b39e07f859826e6626\",\n                    \"code\": \"LEARNER\",\n                    \"status\": true\n                }\n            ],\n            \"profilePicUrl\": \"https://avatars1.githubusercontent.com/u/11065002?s=460&u=1e8e42bda7e6f579a2b216767b2ed986619bbf78&v=4\"\n        },\n        \"tokens\": {\n            \"accessToken\": \"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhcGkuZGV2Lnh5ei5jb20iLCJhdWQiOiJ4eXouY29tIiwic3ViIjoiNjNhMTllNWJhMjczMGQxNTk5ZDQ2YzBiIiwiaWF0IjoxNjcxNTM2MjE5LCJleHAiOjE2NzE3MDkwMTksInBybSI6ImIwM2QxZTk2ZmFmYmQwNjBjMmRlYTA2Y2UyNzgwZjNmM2RjNzk2N2JkNzRhYWVjYTIyNTEwMzA0MWI1YWM0MWY5ZThjMzVkZGNhMGM5MzNjMmI4NDcxZWZlNzY5MmZmYzBiNGE5ZjliODY2MDliYjhmNGNhMTc3OTIxM2U5Y2UzIn0.m0KpxUsLJ3HrgsgvjUu1qZy4AljExY4eblPE288zatz4JdqoQ6mbHlYCG2c2c1Qos2e_XI5pMUToGFd39T_rCQ\",\n            \"refreshToken\": \"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhcGkuZGV2Lnh5ei5jb20iLCJhdWQiOiJ4eXouY29tIiwic3ViIjoiNjNhMTllNWJhMjczMGQxNTk5ZDQ2YzBiIiwiaWF0IjoxNjcxNTM2MjE5LCJleHAiOjE2NzIxNDEwMTksInBybSI6IjZlNzVjNjZiZWY1ZmJlM2M0YjlkOGQ5ZjFmYjgzY2U2NGJjZDJhZTZhYjMxNTI2YWYzYjI3MDY3ODVmMTRmMzEwZjFlZmJlMmYyNGY4MTk2YzVkOWExNTliZDliMGY0ZTJkNGQ2MTAzYjliNzdhMmVmNGRhYTgwODc0MDgyZDgyIn0.ChW8GlgrCeD_Z6rOKFTaPlZ2-KsxCaRU1Nwmre7xvXtPMMNH4iMzGseI5wYGSc1NqR5OWOoCl1vo2tnBjHaF9A\"\n        }\n    }\n}"
-								}
-							]
-						}
-					]
-				},
-				{
-					"name": "Store",
-					"item": [
-						{
-							"name": "Register",
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{seller_token}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "POST",
-								"header": [
-									{
-										"key": "x-api-key",
-										"value": "{{API_KEY}}"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"companyAddress\": \"aaa\",\n    \"companyName\":\"aaa\",\n    \"contractId\": \"123aa11a\",\n    \"prefectureId\": \"12113\",\n    \"storeKey\": \"12312113\",\n    \"storeName\": \"storeName\",\n    \"status\": \"true\"\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{BASE_URL}}/seller_site/store/register",
-									"host": [
-										"{{BASE_URL}}"
-									],
-									"path": [
-										"seller_site",
-										"store",
-										"register"
-									]
-								}
-							},
-							"response": []
-						}
-					]
-				},
-				{
-					"name": "Category",
-					"item": [
-						{
-							"name": "Create category",
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{seller_token}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "POST",
-								"header": [
-									{
-										"key": "x-api-key",
-										"value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    // \"parentId\": \"8c2fd916-f758-11ee-98f9-0242ac120002\",\r\n    \"storeId\": \"4cd3dd18-ff9d-11ee-bef1-0242ac180002\",\r\n    \"categoryName\": \"category 5\",\r\n    \"categoryTag\": \"category_tag 6\",\r\n    \"status\": \"true\"\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{BASE_URL}}/seller_site/category/create",
-									"host": [
-										"{{BASE_URL}}"
-									],
-									"path": [
-										"seller_site",
-										"category",
-										"create"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Get list",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "x-api-key",
-										"value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj",
-										"type": "text"
-									},
-									{
-										"key": "paging",
-										"value": "",
-										"type": "text",
-										"disabled": true
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{BASE_URL}}/seller_site/category/categories",
-									"host": [
-										"{{BASE_URL}}"
-									],
-									"path": [
-										"seller_site",
-										"category",
-										"categories"
-									],
-									"query": [
-										{
-											"key": "limit",
-											"value": "5",
-											"disabled": true
-										},
-										{
-											"key": "orderBy",
-											"value": "created_at",
-											"disabled": true
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Update category",
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhcGkuZGV2Lnh5ei5jb20iLCJhdWQiOiJ4eXouY29tIiwic3ViIjoiZTYwYjcxMzUtNjlhZC00Yzk1LWFkM2QtNTYwMmIzZjliYjg2IiwiaWF0IjoxNzA4MzE0Mzg4LCJleHAiOjE3MDg0ODcxODgsInBybSI6IjRkMDM2MDQ1MDVmMjE5Njg1NGNmZjdjMDQwOTZlODM5NzQ1ZjUzMTcyZmFhNmI0ZWNjNTcxMzhlZWMwOGYyNzZmMTk1YmRiYWY3Mzk4MWIwN2RjNGVlNzRlMmFjODkwYThkYzZjY2UxZDc2MGY5NmQ2NDUzNTRlZDgzNDc5YTVmIn0.ITvhc7s2Hpq1jwqo6riJSCX3K6TzB8mSk6qZ39H97f27rnUeVaeufJPbvGSbr6ANPUK2C-2KQvdIGsYwTHPkcIkZ569Jsb-tYi6axERwY8BBOfyC5UFAw9P5qWjphG7892aau8A2uFrXytupEgUrlTnmt-LvwYRswAZhjsBjSTsrOQ8WFHMDJq2ipvKXCCtmRwcL-mWdY7XsYtSOOnPByS9cAvYWJkjpxcLAsaZpAYOCPJpyqpiY94fvpcBSQXkU2OzRApFJrKTcSkzZgtd6we9rhcNk7bRMJ-Jhzb671eHwdz7fd8dvM260TUvr2mjpR0LuRwsTiOftLw4AGGhtiQ",
-											"type": "string"
-										}
-									]
-								},
-								"method": "PUT",
-								"header": [
-									{
-										"key": "x-api-key",
-										"value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"category_name\": \"nhim nhex nhau nham update\",\r\n    \"category_tag\": \"nhim nhex nhay nhet\",\r\n    \"status\": \"222222\"\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{BASE_URL}}/seller_site/category/update/2b4127f0-659d-42e2-822b-57d1313325d3",
-									"host": [
-										"{{BASE_URL}}"
-									],
-									"path": [
-										"seller_site",
-										"category",
-										"update",
-										"2b4127f0-659d-42e2-822b-57d1313325d3"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Detail category",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhcGkuZGV2Lnh5ei5jb20iLCJhdWQiOiJ4eXouY29tIiwic3ViIjoiMzUxMTk2OGQtOGFmZS00OWNjLTg3ODgtMDJhOTRmZThhMDY5IiwiaWF0IjoxNzA4NjExNzc4LCJleHAiOjE3MDg3ODQ1NzgsInBybSI6IjIzNGFmYWVhY2U2ZmJhMzc5OGFjMmU1OTlhZDg0MWEzY2E0Yzk2OThkMjkyY2Q0N2ZlZmY3YzBkNDg4MTIyMDMwOGU4NmNiZThlMjEzOTZlMTFlZjkwNzEzZjU0M2UyNTA3MWEwMmI2NGY0YmMyNzg2MWNlYWEyMWI2Y2EyYWZiIn0.PEQuP5mWMOy1IvFOjb_HtslMlYl2wx27pKCo0wTKpw9qlTs-8LWYyMkRJwnFSyG228C75y_BpUR4FW0NW5_q0_uqY-hB8edT5yI8t_cCuLpmBA-LMP7UgGm2AFXH5W77mpASXR86XaUENW41UBVNzG51BEMGH3yup2-SkPXGx78zOLa8FvTkuZLDwk_rrJa2p-YbII6aeBsVBPwoUELZYWweekrnTE5qWyabnuseGfXsLMhHHfIjBytjEEO5eaGGBfHPc-GdQ41rnye5GWXyMBO38aC1E4Td38afm_47QS8950ss2r81u0menD4xuT5jnuBKNfpqtdNEsYil61HnEw",
-											"type": "string"
-										}
-									]
-								},
-								"method": "GET",
-								"header": [
-									{
-										"key": "x-api-key",
-										"value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{BASE_URL}}/seller_site/category/detail/74dddfb1-7fe9-431c-b5aa-e63b2839e368",
-									"host": [
-										"{{BASE_URL}}"
-									],
-									"path": [
-										"seller_site",
-										"category",
-										"detail",
-										"74dddfb1-7fe9-431c-b5aa-e63b2839e368"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Delete category",
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhcGkuZGV2Lnh5ei5jb20iLCJhdWQiOiJ4eXouY29tIiwic3ViIjoiMzUxMTk2OGQtOGFmZS00OWNjLTg3ODgtMDJhOTRmZThhMDY5IiwiaWF0IjoxNzA4NjA4MTA1LCJleHAiOjE3MDg3ODA5MDUsInBybSI6ImZjYjQ0MzgwNmNhOTdjOGIzZjhhNDQxYTJmODU2YjJhMDgzN2JkZGNjZGEzYTc0NTFhMGI3Y2U4N2YwYTVkZGRlNjY2MjAzYTVjMjQ4ZDE1Njg5ZTNjYjk0N2U3ZGJjN2IyYjllNmI4NDM4MTU1ZDNiYzE0NjQxN2FjODg4NGUwIn0.ELsQRH9BZsXZL14lw8HCwb9hkUFFAQBSFNj98ShOpNlc_rJ1jqIG1dQ9yPCIJH9CLMZZhOD9lkpQ5nmNEiATKurCD8weThcncNHQDtkuha4XzhfLm_JsSbq_Yy-gHkGdYOT0o4eUlszukQ3o-soQj8pBk8Ixlc2oBEHOFKdvFq9-LPMj_z8CcEwC1yMBOLdwcX1NXOCvbbQ5KxJwa6KmFK9BOVwkenTXmZEOUl0iiGxZkQX2hrbmHhgM40wiGuuXfAFwJP4KageeIlYcPhHa6L39fi-TD_6OKMnlqDrLxGi_MZCYNE60IlJLeFxND1JEum--H7cZvxHuyDURhN7vPw",
-											"type": "string"
-										}
-									]
-								},
-								"method": "DELETE",
-								"header": [
-									{
-										"key": "x-api-key",
-										"value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{BASE_URL}}/seller_site/category/delete/2b4127f0-659d-42e2-822b-57d1313325d3",
-									"host": [
-										"{{BASE_URL}}"
-									],
-									"path": [
-										"seller_site",
-										"category",
-										"delete",
-										"2b4127f0-659d-42e2-822b-57d1313325d3"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Get Category hierarchy",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{seller_token}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "GET",
-								"header": [
-									{
-										"key": "x-api-key",
-										"value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj",
-										"type": "text"
-									},
-									{
-										"key": "paging",
-										"value": "",
-										"type": "text",
-										"disabled": true
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{BASE_URL}}/seller_site/category/categories/hierarchy",
-									"host": [
-										"{{BASE_URL}}"
-									],
-									"path": [
-										"seller_site",
-										"category",
-										"categories",
-										"hierarchy"
-									],
-									"query": [
-										{
-											"key": "limit",
-											"value": "5",
-											"disabled": true
-										},
-										{
-											"key": "orderBy",
-											"value": "created_at",
-											"disabled": true
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Move position category",
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{seller_token}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "PUT",
-								"header": [],
-								"url": {
-									"raw": "{{BASE_URL}}/seller_site/category/move/71d3f999-f639-11ee-9e73-0242ac160002",
-									"host": [
-										"{{BASE_URL}}"
-									],
-									"path": [
-										"seller_site",
-										"category",
-										"move",
-										"71d3f999-f639-11ee-9e73-0242ac160002"
-									]
-								}
-							},
-							"response": []
-						}
-					]
-				},
-				{
-					"name": "Product",
-					"item": [
-						{
-							"name": "Create Product with option",
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{seller_token}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "POST",
-								"header": [
-									{
-										"key": "x-api-key",
-										"value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"isSubscription\": false,\r\n    \"buyingPeriod\": [],\r\n    \"isRecommend\": false,\r\n    \"productName\": \"test21\",\r\n    \"productImage\": [],\r\n    \"productDescription\": \"string\",\r\n    \"isFixPrice\": true,\r\n    \"productOverview\": \"aaaaa\",\r\n    \"productTag\": \"string\",\r\n    \"status\": \"string\",\r\n    \"isDiscount\": false,\r\n    \"discountPercentage\": 99,\r\n    \"hasDiscountSchedule\": true,\r\n    \"discountTimeFrom\": \"2024/05/06\",\r\n    \"discountTimeTo\": \"2024/07/07\",\r\n    \"categories\": [],\r\n    \"price\": \"25.00\",\r\n    \"stockItem\": 100,\r\n    \"amount\": 1000,\r\n    \"components\": [],\r\n    \"faqs\":[],\r\n    \"capacity\":\"\",\r\n    \"expirationUseDate\":\"\",\r\n    \"storageMethod\":\"\",\r\n    \"intakeMethod\":\"\",\r\n    \"ingredient\":\"\",\r\n    \"notificationNumber\": \"\",\r\n    \"notification\":\"\",\r\n    \"hasOption\":false,\r\n    \"options\":[],\r\n    \"optionPrices\":[]\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{BASE_URL}}/seller_site/product/create",
-									"host": [
-										"{{BASE_URL}}"
-									],
-									"path": [
-										"seller_site",
-										"product",
-										"create"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Create Product with no option Copy",
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{seller_token}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "POST",
-								"header": [
-									{
-										"key": "x-api-key",
-										"value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"isSubscription\": false,\r\n    \"isDiscount\": false,\r\n    \"discountPercentage\": 10,\r\n    \"hasDiscountSchedule\": true,\r\n    \"isRecommend\": false,\r\n    \"productName\": \"string\",\r\n    \"productImage\": [],\r\n    \"productDescription\": \"string\",\r\n    \"capacity\": \"string\",\r\n    \"expirationUseDate\": \"string\",\r\n    \"storageMethod\": \"string\",\r\n    \"intakeMethod\": \"string\",\r\n    \"ingredient\": \"string\",\r\n    \"notificationNumber\": \"string\",\r\n    \"notification\": \"string\",\r\n    \"isFixPrice\": true,\r\n    \"hasOption\": false,\r\n    \"productTag\": \"string\",\r\n    \"status\": \"string\",\r\n    \"productOverview\": \"ssss\",\r\n    \"faqs\": [],\r\n    \"components\": [\r\n        {\r\n            \"componentValue\": \"a\",\r\n            \"amount\": 100,\r\n            \"unit\": \"test\"\r\n        }\r\n    ],\r\n    \"cost\":9923456789,\r\n    \"options\": [],\r\n    \"optionPrices\": [],\r\n    \"buyingTimeOption\": [],\r\n    \"buyingPeriod\": [],\r\n    \"categories\": [],\r\n    \"price\": \"10\",\r\n    \"priceBeforeDiscount\": \"10\",\r\n    \"stockItem\": 100\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{BASE_URL}}/seller_site/product/create",
-									"host": [
-										"{{BASE_URL}}"
-									],
-									"path": [
-										"seller_site",
-										"product",
-										"create"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Create Product with subcription",
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{seller_token}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "POST",
-								"header": [
-									{
-										"key": "x-api-key",
-										"value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"isSubscription\": true,\r\n    \"buyingPeriod\": [15,30,45,90],\r\n    \"isRecommend\": false,\r\n    \"productName\": \"string\",\r\n    \"productImage\": [],\r\n    \"productDescription\": \"string\",\r\n    \"capacity\": \"string\",\r\n    \"expirationUseDate\": \"string\",\r\n    \"storageMethod\": \"string\",\r\n    \"intakeMethod\": \"string\",\r\n    \"ingredient\": \"string\",\r\n    \"notificationNumber\": \"string\",\r\n    \"productOverview\": \"qq\",\r\n    \"faqs\":[],\r\n    \"notification\": \"string\",\r\n    \"hasOption\": false,\r\n    \"productTag\": \"string\",\r\n    \"status\": \"string\",\r\n    \"isDiscount\":true,\r\n    \"categories\": [],\r\n\r\n    \"components\": [\r\n        {\r\n            \"componentValue\":\"a\",\r\n            \"amount\": 100,\r\n            \"unit\": \"test\"\r\n        }\r\n    ],\r\n    \"options\": [],\r\n    \"optionPrices\": [],\r\n    \"price\": \"25.01\",\r\n    \"priceBeforeDiscount\": \"30.00\",\r\n    \"cost\": ,\r\n    \"stockItem\": 100,\r\n    \"priceSubscription\":\"10.00\",\r\n    \"discountPercentage\":\"10.00\",\r\n    \"hasDiscountSchedule\": false\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{BASE_URL}}/seller_site/product/create",
-									"host": [
-										"{{BASE_URL}}"
-									],
-									"path": [
-										"seller_site",
-										"product",
-										"create"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Active Product",
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{seller_token}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "PUT",
-								"header": [
-									{
-										"key": "x-api-key",
-										"value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"isSubscription\": true,\r\n    \"buyingTimeOption\": [15,30,45,90],\r\n    \"buyingPeriod\": [-1,3,6,12],\r\n    \"isRecomend\": false,\r\n    \"productName\": \"string\",\r\n    \"productImage\": [],\r\n    \"productDescription\": \"string\",\r\n    \"capacity\": \"string\",\r\n    \"expirationUseDate\": \"string\",\r\n    \"storageMethod\": \"string\",\r\n    \"intakeMethod\": \"string\",\r\n    \"ingredient\": \"string\",\r\n    \"notificationNumber\": \"string\",\r\n    \"notification\": \"string\",\r\n    \"hasOption\": false,\r\n    \"productTag\": \"string\",\r\n    \"status\": \"string\",\r\n    \"components\": [\r\n        {\r\n            \"amount\": 100,\r\n            \"unit\": \"test\"\r\n        }\r\n    ],\r\n    \"options\": [],\r\n    \"optionPrices\": [],\r\n    \"price\": \"25.01\",\r\n    \"priceBeforeDiscount\": \"30.00\",\r\n    \"cost\": \"15.00\",\r\n    \"stockItem\": 100\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{BASE_URL}}/seller_site/product/active/3f21487f-1f5a-4368-adbb-51bb5dec3db4",
-									"host": [
-										"{{BASE_URL}}"
-									],
-									"path": [
-										"seller_site",
-										"product",
-										"active",
-										"3f21487f-1f5a-4368-adbb-51bb5dec3db4"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Inactive Product",
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{seller_token}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "PUT",
-								"header": [
-									{
-										"key": "x-api-key",
-										"value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"isSubscription\": true,\r\n    \"buyingTimeOption\": [15,30,45,90],\r\n    \"buyingPeriod\": [-1,3,6,12],\r\n    \"isRecomend\": false,\r\n    \"productName\": \"string\",\r\n    \"productImage\": [],\r\n    \"productDescription\": \"string\",\r\n    \"capacity\": \"string\",\r\n    \"expirationUseDate\": \"string\",\r\n    \"storageMethod\": \"string\",\r\n    \"intakeMethod\": \"string\",\r\n    \"ingredient\": \"string\",\r\n    \"notificationNumber\": \"string\",\r\n    \"notification\": \"string\",\r\n    \"hasOption\": false,\r\n    \"productTag\": \"string\",\r\n    \"status\": \"string\",\r\n    \"components\": [\r\n        {\r\n            \"amount\": 100,\r\n            \"unit\": \"test\"\r\n        }\r\n    ],\r\n    \"options\": [],\r\n    \"optionPrices\": [],\r\n    \"price\": \"25.01\",\r\n    \"priceBeforeDiscount\": \"30.00\",\r\n    \"cost\": \"15.00\",\r\n    \"stockItem\": 100\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{BASE_URL}}/seller_site/product/active/34bc82e3-17a2-4a0d-b79e-3fe6473d441d",
-									"host": [
-										"{{BASE_URL}}"
-									],
-									"path": [
-										"seller_site",
-										"product",
-										"active",
-										"34bc82e3-17a2-4a0d-b79e-3fe6473d441d"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "get Product list",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{seller_token}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "GET",
-								"header": [
-									{
-										"key": "x-api-key",
-										"value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"isSubscription\": false,\r\n    \"buyingTimeOption\": [],\r\n    \"buyingPeriod\": [],\r\n    \"isRecomend\": false,\r\n    \"productName\": \"string\",\r\n    \"productImage\": [],\r\n    \"productDescription\": \"string\",\r\n    \"capacity\": \"string\",\r\n    \"expirationUseDate\": \"string\",\r\n    \"storageMethod\": \"string\",\r\n    \"intakeMethod\": \"string\",\r\n    \"ingredient\": \"string\",\r\n    \"notificationNumber\": \"string\",\r\n    \"notification\": \"string\",\r\n    \"isFixPrice\": false,\r\n    \"hasOption\": true,\r\n    \"productTag\": \"string\",\r\n    \"status\": \"string\",\r\n    \"components\": [\r\n        {\r\n            \"amount\": 100,\r\n            \"unit\": \"test\"\r\n        }\r\n    ],\r\n    \"options\": [\r\n        {\r\n            \"optionType\": \"color\",\r\n            \"optionValue\": [\r\n                \"Red\",\r\n                \"Blue\",\r\n                \"Green\"\r\n            ],\r\n            \"order\": 1\r\n        }\r\n    ],\r\n    \"optionPrices\": [\r\n        {\r\n            \"optionType1\": \"Color\",\r\n            \"optionValue1\": \"Red\",\r\n            \"optionType2\": \"Size\",\r\n            \"optionValue2\": \"Large\",\r\n            \"optionType3\": \"Material\",\r\n            \"optionValue3\": \"Cotton\",\r\n            \"price\": \"25.00\",\r\n            \"priceBeforeDiscount\": \"30.00\",\r\n            \"cost\": \"15.00\",\r\n            \"stockItem\": 100\r\n        },\r\n        {\r\n            \"optionType1\": \"Color\",\r\n            \"optionValue1\": \"Green\",\r\n            \"optionType2\": \"Size\",\r\n            \"optionValue2\": \"Large\",\r\n            \"optionType3\": \"Material\",\r\n            \"optionValue3\": \"Cotton\",\r\n            \"price\": \"25.00\",\r\n            \"priceBeforeDiscount\": \"30.00\",\r\n            \"cost\": \"15.00\",\r\n            \"stockItem\": 100\r\n        },\r\n        {\r\n            \"optionType1\": \"Color\",\r\n            \"optionValue1\": \"Blue\",\r\n            \"optionType2\": \"Size\",\r\n            \"optionValue2\": \"Large\",\r\n            \"optionType3\": \"Material\",\r\n            \"optionValue3\": \"Cotton\",\r\n            \"price\": \"25.00\",\r\n            \"priceBeforeDiscount\": \"30.00\",\r\n            \"cost\": \"15.00\",\r\n            \"stockItem\": 100\r\n        }\r\n    ]\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{BASE_URL}}/seller_site/product/products",
-									"host": [
-										"{{BASE_URL}}"
-									],
-									"path": [
-										"seller_site",
-										"product",
-										"products"
-									],
-									"query": [
-										{
-											"key": "categoryId",
-											"value": "094796ce-fe57-408f-a1a8-8a91b81fd613",
-											"disabled": true
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "update Product",
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{seller_token}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "PUT",
-								"header": [
-									{
-										"key": "x-api-key",
-										"value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": " {\r\n        \"id\": \"e4ec1bb7-329a-44e4-84ee-0a3b51d2065c\",\r\n        \"storeId\": \"ca97cb7a-5cf5-4e46-928d-8799c49bab03\",\r\n        \"isSubscription\": false,\r\n        \"isDiscount\": false,\r\n        \"buyingPeriod\": [],\r\n        \"isRecommend\": false,\r\n        \"productName\": \"string\",\r\n        \"productImage\": [],\r\n        \"productDescription\": \"string\",\r\n        \"productOverview\": \"ssss\",\r\n        \"price\": 10,\r\n        \"priceSubscription\": null,\r\n        \"cost\": \"0\",\r\n        \"stockItem\": 100,\r\n        \"productTag\": \"string\",\r\n        \"status\": \"string\",\r\n        \"components\": [\r\n            {\r\n                \"id\": \"26c1e927-987a-4c59-a888-f40844209117\",\r\n                \"productId\": \"e4ec1bb7-329a-44e4-84ee-0a3b51d2065c\",\r\n                \"componentValue\": \"a\",\r\n                \"componentName\": \"\"\r\n            }\r\n        ],\r\n        \"categories\": [],\r\n        \"faqs\": [],\r\n        \"discountPercentage\": 10,\r\n        \"hasDiscountSchedule\": true,\r\n        \"calculatedNormalPrice\": 10,\r\n        \"createdAt\": \"2024-07-09T04:39:51.000Z\",\r\n        \"updatedAt\": \"2024-07-09T04:39:51.000Z\"\r\n    }",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{BASE_URL}}/seller_site/product",
-									"host": [
-										"{{BASE_URL}}"
-									],
-									"path": [
-										"seller_site",
-										"product"
-									],
-									"query": [
-										{
-											"key": "categoryId",
-											"value": "094796ce-fe57-408f-a1a8-8a91b81fd613",
-											"disabled": true
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Get Product Detail",
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{seller_token}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "GET",
-								"header": [
-									{
-										"key": "x-api-key",
-										"value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj",
-										"type": "text"
-									}
-								],
-								"url": {
-									"raw": "{{BASE_URL}}/seller_site/product/detail/e4ec1bb7-329a-44e4-84ee-0a3b51d2065c",
-									"host": [
-										"{{BASE_URL}}"
-									],
-									"path": [
-										"seller_site",
-										"product",
-										"detail",
-										"e4ec1bb7-329a-44e4-84ee-0a3b51d2065c"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "delete1",
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{seller_token}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "DELETE",
-								"header": [
-									{
-										"key": "x-api-key",
-										"value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"id\": \"1ebd5276-9f5a-4de7-8ebf-da439d6e24a1\",\r\n    \"storeId\": \"454cb39e-513f-4716-b15e-14c9d18b431a\",\r\n    \"isSubscription\": false,\r\n    \"buyingTimeOption\": [],\r\n    \"buyingPeriod\": [],\r\n    \"isRecomend\": false,\r\n    \"productName\": \"string\",\r\n    \"productImage\": [],\r\n    \"productDescription\": \"string\",\r\n    \"capacity\": \"string\",\r\n    \"expirationUseDate\": \"string\",\r\n    \"storageMethod\": \"string\",\r\n    \"intakeMethod\": \"string\",\r\n    \"ingredient\": \"string\",\r\n    \"notificationNumber\": \"string\",\r\n    \"notification\": \"string\",\r\n    \"hasOption\": true,\r\n    \"price\": \"0.0000\",\r\n    \"priceBeforeDiscount\": \"0.0000\",\r\n    \"cost\": \"0.0000\",\r\n    \"stockItem\": 0,\r\n    \"productTag\": \"string\",\r\n    \"status\": \"string\",\r\n    \"components\": [\r\n        {\r\n            \"id\": \"10a05587-c112-45f7-8032-09c345de2b52\",\r\n            \"productId\": \"1ebd5276-9f5a-4de7-8ebf-da439d6e24a1\",\r\n            \"amount\": \"100.0000\",\r\n            \"unit\": \"test\"\r\n        }\r\n    ],\r\n    \"options\": [\r\n        {\r\n            \"productId\": \"1ebd5276-9f5a-4de7-8ebf-da439d6e24a1\",\r\n            \"optionType\": \"color\",\r\n            \"optionValue\": [\r\n                \"Red\",\r\n                \"Blue\",\r\n                \"Green\"\r\n            ],\r\n            \"order\": 1\r\n        }\r\n    ],\r\n    \"optionPrices\": [\r\n        {\r\n            \"productId\": \"1ebd5276-9f5a-4de7-8ebf-da439d6e24a1\",\r\n            \"optionValue1\": \"Blue\",\r\n            \"optionValue2\": \"Large\",\r\n            \"optionValue3\": \"Cotton\",\r\n            \"price\": \"25.0000\",\r\n            \"priceBeforeDiscount\": \"30.0000\",\r\n            \"cost\": \"15.0000\",\r\n            \"stockItem\": 100\r\n        },\r\n        {\r\n            \"productId\": \"1ebd5276-9f5a-4de7-8ebf-da439d6e24a1\",\r\n            \"optionValue1\": \"Green\",\r\n            \"optionValue2\": \"Large\",\r\n            \"optionValue3\": \"Cotton\",\r\n            \"price\": \"25.0000\",\r\n            \"priceBeforeDiscount\": \"30.0000\",\r\n            \"cost\": \"15.0000\",\r\n            \"stockItem\": 100\r\n        },\r\n        {\r\n            \"productId\": \"1ebd5276-9f5a-4de7-8ebf-da439d6e24a1\",\r\n            \"optionValue1\": \"Red\",\r\n            \"optionValue2\": \"Large\",\r\n            \"optionValue3\": \"Cotton\",\r\n            \"price\": \"25.0000\",\r\n            \"priceBeforeDiscount\": \"30.0000\",\r\n            \"cost\": \"15.0000\",\r\n            \"stockItem\": 100\r\n        }\r\n    ],\r\n    \"categories\": [\r\n        \"984e23df-f6bd-40b6-bc83-f608ee0d1944\",\r\n        \"f44808d2-e9af-43de-a54c-f721304c57da\"\r\n    ]\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{BASE_URL}}/seller_site/product/delete/e32d170e-1d5b-449b-86bb-1b564908a880",
-									"host": [
-										"{{BASE_URL}}"
-									],
-									"path": [
-										"seller_site",
-										"product",
-										"delete",
-										"e32d170e-1d5b-449b-86bb-1b564908a880"
-									]
-								}
-							},
-							"response": []
-						}
-					]
-				},
-				{
-					"name": "Post",
-					"item": [
-						{
-							"name": "add post",
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{seller_token}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "POST",
-								"header": [
-									{
-										"key": "x-api-key",
-										"value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"title\": \" aaaa\",\r\n    \"postImage\": \"aaa\",\r\n    \"status\":\"string\",\r\n    \"details\": \"aaa\"\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{BASE_URL}}/seller_site/post/",
-									"host": [
-										"{{BASE_URL}}"
-									],
-									"path": [
-										"seller_site",
-										"post",
-										""
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "update post",
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{seller_token}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "PUT",
-								"header": [
-									{
-										"key": "x-api-key",
-										"value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"id\": \"6fe7c715-93cd-4fec-9b4f-22e82f4c0f24\",\r\n    \"storeId\": \"48f6a6c4-b9ab-4752-ba26-41e8de4903c5\",\r\n    \"postImage\": \"aaaaaaaaaaaaaaaaaaaaaabba\",\r\n    \"title\": \" aaaa\",\r\n    \"details\": \"aaa\",\r\n    \"status\" : \"AAA\"\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{BASE_URL}}/seller_site/post/",
-									"host": [
-										"{{BASE_URL}}"
-									],
-									"path": [
-										"seller_site",
-										"post",
-										""
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "active post",
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{seller_token}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "PUT",
-								"header": [
-									{
-										"key": "x-api-key",
-										"value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"id\": \"d7914043-1053-46f3-b5e0-776efa7a6e33\",\r\n    \"storeId\": \"e94c893b-1f21-4d70-942b-e551060637ce\",\r\n    \"notificationImage\": \"aabba\",\r\n    \"title\": \" aaaa\",\r\n    \"details\": \"aaa\"\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{BASE_URL}}/seller_site/post/active/6fe7c715-93cd-4fec-9b4f-22e82f4c0f24",
-									"host": [
-										"{{BASE_URL}}"
-									],
-									"path": [
-										"seller_site",
-										"post",
-										"active",
-										"6fe7c715-93cd-4fec-9b4f-22e82f4c0f24"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "inactive post",
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{seller_token}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "PUT",
-								"header": [
-									{
-										"key": "x-api-key",
-										"value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"id\": \"d7914043-1053-46f3-b5e0-776efa7a6e33\",\r\n    \"storeId\": \"e94c893b-1f21-4d70-942b-e551060637ce\",\r\n    \"notificationImage\": \"aabba\",\r\n    \"title\": \" aaaa\",\r\n    \"details\": \"aaa\"\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{BASE_URL}}/seller_site/post/inactive/6fe7c715-93cd-4fec-9b4f-22e82f4c0f24",
-									"host": [
-										"{{BASE_URL}}"
-									],
-									"path": [
-										"seller_site",
-										"post",
-										"inactive",
-										"6fe7c715-93cd-4fec-9b4f-22e82f4c0f24"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "get post",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{seller_token}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "GET",
-								"header": [
-									{
-										"key": "x-api-key",
-										"value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"title\": \" aaaa\",\r\n    \"notificationImage\": \"aaa\",\r\n    \"details\": \"aaa\"\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{BASE_URL}}/seller_site/post/6fe7c715-93cd-4fec-9b4f-22e82f4c0f24",
-									"host": [
-										"{{BASE_URL}}"
-									],
-									"path": [
-										"seller_site",
-										"post",
-										"6fe7c715-93cd-4fec-9b4f-22e82f4c0f24"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "get posts by store id",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{seller_token}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "GET",
-								"header": [
-									{
-										"key": "x-api-key",
-										"value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"title\": \" aaaa\",\r\n    \"notificationImage\": \"aaa\",\r\n    \"details\": \"aaa\"\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{BASE_URL}}/seller_site/post/",
-									"host": [
-										"{{BASE_URL}}"
-									],
-									"path": [
-										"seller_site",
-										"post",
-										""
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "delete post",
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{seller_token}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "DELETE",
-								"header": [
-									{
-										"key": "x-api-key",
-										"value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"title\": \" aaaa\",\r\n    \"notificationImage\": \"aaa\",\r\n    \"details\": \"aaa\"\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{BASE_URL}}/seller_site/post/6fe7c715-93cd-4fec-9b4f-22e82f4c0f24",
-									"host": [
-										"{{BASE_URL}}"
-									],
-									"path": [
-										"seller_site",
-										"post",
-										"6fe7c715-93cd-4fec-9b4f-22e82f4c0f24"
-									]
-								}
-							},
-							"response": []
-						}
-					]
-				}
-			]
-		},
-		{
-			"name": "Buyer Site",
-			"item": [
-				{
-					"name": "Buyer",
-					"item": [
-						{
-							"name": "getMe",
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{buyer_id}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "GET",
-								"header": [
-									{
-										"key": "x-api-key",
-										"value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj"
-									},
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									},
-									{
-										"key": "x-store-id",
-										"value": "{{buyer_store_id}}"
-									},
-									{
-										"key": "Authorization",
-										"value": "Bearer aaa"
-									}
-								],
-								"url": {
-									"raw": "http://localhost:3000/buyer_site/buyer/getMe",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "3000",
-									"path": [
-										"buyer_site",
-										"buyer",
-										"getMe"
-									]
-								}
-							},
-							"response": []
-						}
-					]
-				},
-				{
-					"name": "Cart",
-					"item": [
-						{
-							"name": "Add item",
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{buyer_id}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "POST",
-								"header": [
-									{
-										"key": "x-api-key",
-										"value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj"
-									},
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									},
-									{
-										"key": "x-store-id",
-										"value": "{{buyer_store_id}}"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"productId\": \"3f21487f-1f5a-4368-adbb-51bb5dec3db4\",\r\n    \"quantity\": 100,\r\n    \"isSubscription\": false,\r\n    \"buyingPeriod\": [15],\r\n    \"component\":[],\r\n    \"startBuyingDate\": \"2024/12/11\"\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{BASE_URL}}/buyer_site/cart/",
-									"host": [
-										"{{BASE_URL}}"
-									],
-									"path": [
-										"buyer_site",
-										"cart",
-										""
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Update item",
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{buyer_id}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "PUT",
-								"header": [
-									{
-										"key": "x-api-key",
-										"value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj",
-										"type": "text"
-									},
-									{
-										"key": "Content-Type",
-										"value": "application/json",
-										"type": "text"
-									},
-									{
-										"key": "x-store-id",
-										"value": "{{buyer_store_id}}",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"id\": \"e56486c4-1c3f-41f5-b553-af4dad9ddfba\",\r\n    \"buyerId\": \"7a72733a-7bb0-45a8-8973-fa50af302222\",\r\n    \"storeId\": \"747aa96d-251d-4bb4-a61d-683f43169419\",\r\n    \"productId\": \"9dd12ffc-fa58-495d-91e2-afa9cb3cff25\",\r\n    \"quantity\": 2,\r\n    \"isSubscription\": false,\r\n    \"buyingPeriod\": null,\r\n    \"product\": {\r\n        \"id\": \"9dd12ffc-fa58-495d-91e2-afa9cb3cff25\",\r\n        \"storeId\": \"747aa96d-251d-4bb4-a61d-683f43169419\",\r\n        \"isSubscription\": false,\r\n        \"isDiscount\": false,\r\n        \"buyingPeriod\": [],\r\n        \"isRecommend\": false,\r\n        \"productName\": \"test21\",\r\n        \"productImage\": [],\r\n        \"productDescription\": \"string\",\r\n        \"productOverview\": \"aaaaa\",\r\n        \"price\": 25,\r\n        \"priceSubscription\": null,\r\n        \"cost\": \"0\",\r\n        \"stockItem\": 100,\r\n        \"productTag\": \"string\",\r\n        \"status\": \"string\",\r\n        \"components\": [],\r\n        \"categories\": [],\r\n        \"faqs\": [],\r\n        \"discountPercentage\": 99,\r\n        \"hasDiscountSchedule\": true,\r\n        \"discountTimeFrom\": \"2024/05/06\",\r\n        \"discountTimeTo\": \"2024/07/07\",\r\n        \"calculatedNormalPrice\": 25,\r\n        \"createdAt\": \"2024-06-26T07:58:23.000Z\",\r\n        \"updatedAt\": \"2024-06-26T07:58:23.000Z\"\r\n    }\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{BASE_URL}}/buyer_site/cart/",
-									"host": [
-										"{{BASE_URL}}"
-									],
-									"path": [
-										"buyer_site",
-										"cart",
-										""
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Delete item",
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{buyer_id}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "DELETE",
-								"header": [
-									{
-										"key": "x-api-key",
-										"value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj"
-									},
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									},
-									{
-										"key": "x-store-id",
-										"value": "{{buyer_store_id}}"
-									}
-								],
-								"url": {
-									"raw": "{{BASE_URL}}/buyer_site/cart/6cf43206-103e-46c7-962a-1abdf26bf4a5",
-									"host": [
-										"{{BASE_URL}}"
-									],
-									"path": [
-										"buyer_site",
-										"cart",
-										"6cf43206-103e-46c7-962a-1abdf26bf4a5"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Delete items",
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{buyer_id}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "DELETE",
-								"header": [
-									{
-										"key": "x-api-key",
-										"value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj",
-										"type": "text"
-									},
-									{
-										"key": "Content-Type",
-										"value": "application/json",
-										"type": "text"
-									},
-									{
-										"key": "x-store-id",
-										"value": "{{buyer_store_id}}",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"ids\": [\r\n       \"5a6bdcb5-0922-4c78-9034-d66ff5c7156c\"\r\n    ]\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{BASE_URL}}/buyer_site/cart/items",
-									"host": [
-										"{{BASE_URL}}"
-									],
-									"path": [
-										"buyer_site",
-										"cart",
-										"items"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Get cart",
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{buyer_id}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "GET",
-								"header": [
-									{
-										"key": "x-api-key",
-										"value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj",
-										"type": "text"
-									},
-									{
-										"key": "Content-Type",
-										"value": "application/json",
-										"type": "text"
-									},
-									{
-										"key": "x-store-id",
-										"value": "{{buyer_store_id}}",
-										"type": "text"
-									}
-								],
-								"url": {
-									"raw": "{{BASE_URL}}/buyer_site/cart",
-									"host": [
-										"{{BASE_URL}}"
-									],
-									"path": [
-										"buyer_site",
-										"cart"
-									]
-								}
-							},
-							"response": []
-						}
-					]
-				},
-				{
-					"name": "shipping infor",
-					"item": [
-						{
-							"name": "Add address",
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{buyer_id}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "POST",
-								"header": [
-									{
-										"key": "x-api-key",
-										"value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj"
-									},
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									},
-									{
-										"key": "x-store-id",
-										"value": "{{buyer_store_id}}"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"nameKana\": \"aa\",\r\n    \"nameKanji\": \"a2a\",\r\n    \"postCode\": \"aaa\",\r\n    \"cityTown\": \"aa\",\r\n    \"streetAddress\": \"aa\",\r\n    \"buildingName\": \"aaa\",\r\n    \"email\": \"aaa\",\r\n    \"telephoneNumber\":\"111\"\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{BASE_URL}}/buyer_site/address/",
-									"host": [
-										"{{BASE_URL}}"
-									],
-									"path": [
-										"buyer_site",
-										"address",
-										""
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Update address",
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{buyer_id}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "PUT",
-								"header": [
-									{
-										"key": "x-api-key",
-										"value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj"
-									},
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									},
-									{
-										"key": "x-store-id",
-										"value": "{{buyer_store_id}}"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"id\" :\"fa1bf477-c27c-4d3e-a739-cb60f68a3651\",\r\n    \"nameKana\": \"bbb\",\r\n    \"nameKanji\": \"a2a\",\r\n    \"postCode\": \"aaa\",\r\n    \"cityTown\": \"aa\",\r\n    \"streetAddress\": \"aa\",\r\n    \"buildingName\": \"aaa\",\r\n    \"email\": \"aaa\",\r\n    \"telephoneNumber\":\"111\"\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{BASE_URL}}/buyer_site/address/",
-									"host": [
-										"{{BASE_URL}}"
-									],
-									"path": [
-										"buyer_site",
-										"address",
-										""
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Delete address",
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{buyer_id}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "DELETE",
-								"header": [
-									{
-										"key": "x-api-key",
-										"value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj"
-									},
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									},
-									{
-										"key": "x-store-id",
-										"value": "{{buyer_store_id}}"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"id\" :\"fa1bf477-c27c-4d3e-a739-cb60f68a3651\",\r\n    \"nameKana\": \"bbb\",\r\n    \"nameKanji\": \"a2a\",\r\n    \"postCode\": \"aaa\",\r\n    \"cityTown\": \"aa\",\r\n    \"streetAddress\": \"aa\",\r\n    \"buildingName\": \"aaa\",\r\n    \"email\": \"aaa\",\r\n    \"telephoneNumber\":\"111\"\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{BASE_URL}}/buyer_site/address/fa1bf477-c27c-4d3e-a739-cb60f68a3651",
-									"host": [
-										"{{BASE_URL}}"
-									],
-									"path": [
-										"buyer_site",
-										"address",
-										"fa1bf477-c27c-4d3e-a739-cb60f68a3651"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "get address by id",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{buyer_id}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "GET",
-								"header": [
-									{
-										"key": "x-api-key",
-										"value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj"
-									},
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									},
-									{
-										"key": "x-store-id",
-										"value": "{{buyer_store_id}}"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"id\" :\"fa1bf477-c27c-4d3e-a739-cb60f68a3651\",\r\n    \"nameKana\": \"bbb\",\r\n    \"nameKanji\": \"a2a\",\r\n    \"postCode\": \"aaa\",\r\n    \"cityTown\": \"aa\",\r\n    \"streetAddress\": \"aa\",\r\n    \"buildingName\": \"aaa\",\r\n    \"email\": \"aaa\",\r\n    \"telephoneNumber\":\"111\"\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{BASE_URL}}/buyer_site/address/fe0050ee-dd30-495c-8fb4-4ad171b62e36",
-									"host": [
-										"{{BASE_URL}}"
-									],
-									"path": [
-										"buyer_site",
-										"address",
-										"fe0050ee-dd30-495c-8fb4-4ad171b62e36"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "get addresses by buyer id",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{buyer_id}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "GET",
-								"header": [
-									{
-										"key": "x-api-key",
-										"value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj"
-									},
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									},
-									{
-										"key": "x-store-id",
-										"value": "{{buyer_store_id}}"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"id\" :\"fa1bf477-c27c-4d3e-a739-cb60f68a3651\",\r\n    \"nameKana\": \"bbb\",\r\n    \"nameKanji\": \"a2a\",\r\n    \"postCode\": \"aaa\",\r\n    \"cityTown\": \"aa\",\r\n    \"streetAddress\": \"aa\",\r\n    \"buildingName\": \"aaa\",\r\n    \"email\": \"aaa\",\r\n    \"telephoneNumber\":\"111\"\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{BASE_URL}}/buyer_site/address/",
-									"host": [
-										"{{BASE_URL}}"
-									],
-									"path": [
-										"buyer_site",
-										"address",
-										""
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "get addresses by buyer id Copy",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{buyer_id}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "GET",
-								"header": [
-									{
-										"key": "x-api-key",
-										"value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj"
-									},
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									},
-									{
-										"key": "x-store-id",
-										"value": "{{buyer_store_id}}"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"id\" :\"fa1bf477-c27c-4d3e-a739-cb60f68a3651\",\r\n    \"nameKana\": \"bbb\",\r\n    \"nameKanji\": \"a2a\",\r\n    \"postCode\": \"aaa\",\r\n    \"cityTown\": \"aa\",\r\n    \"streetAddress\": \"aa\",\r\n    \"buildingName\": \"aaa\",\r\n    \"email\": \"aaa\",\r\n    \"telephoneNumber\":\"111\"\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{BASE_URL}}/buyer_site/address/store/storeId",
-									"host": [
-										"{{BASE_URL}}"
-									],
-									"path": [
-										"buyer_site",
-										"address",
-										"store",
-										"storeId"
-									]
-								}
-							},
-							"response": []
-						}
-					]
-				},
-				{
-					"name": "Store",
-					"item": []
-				}
-			]
-		}
-	]
+    "clientName": "Thunder Client",
+    "collectionName": "Link Palette",
+    "collectionId": "7402a3f8-5ce7-4662-9986-0c4de6474629",
+    "dateExported": "2024-07-28T05:15:48.683Z",
+    "version": "1.2",
+    "folders": [
+        {
+            "_id": "212cc810-8419-4ba0-ab0c-e907ec9356cd",
+            "name": "Admin Site",
+            "containerId": "",
+            "created": "2024-07-28T05:09:49.613Z",
+            "sortNum": 10000
+        },
+        {
+            "_id": "9fd47f51-d4e0-4900-974d-335e69daf2d2",
+            "name": "Admin",
+            "containerId": "212cc810-8419-4ba0-ab0c-e907ec9356cd",
+            "created": "2024-07-28T05:09:49.614Z",
+            "sortNum": 20000
+        },
+        {
+            "_id": "c74d7e7d-a0d8-41d3-ab5d-6528a91b2d0f",
+            "name": "Seller",
+            "containerId": "212cc810-8419-4ba0-ab0c-e907ec9356cd",
+            "created": "2024-07-28T05:09:49.615Z",
+            "sortNum": 30000
+        },
+        {
+            "_id": "16321003-1b70-458f-8c6e-1e554947a363",
+            "name": "Store",
+            "containerId": "212cc810-8419-4ba0-ab0c-e907ec9356cd",
+            "created": "2024-07-28T05:09:49.616Z",
+            "sortNum": 40000
+        },
+        {
+            "_id": "4cfc2b29-ca76-45e2-9c6d-6991325c6324",
+            "name": "Seller Site",
+            "containerId": "",
+            "created": "2024-07-28T05:09:49.617Z",
+            "sortNum": 50000
+        },
+        {
+            "_id": "93a86116-7832-40b6-a76e-11cc6b89d7f4",
+            "name": "Seller",
+            "containerId": "4cfc2b29-ca76-45e2-9c6d-6991325c6324",
+            "created": "2024-07-28T05:09:49.618Z",
+            "sortNum": 60000
+        },
+        {
+            "_id": "a1bbbcaa-a384-4c9e-abfd-6e1304e48cc4",
+            "name": "Store",
+            "containerId": "4cfc2b29-ca76-45e2-9c6d-6991325c6324",
+            "created": "2024-07-28T05:09:49.619Z",
+            "sortNum": 70000
+        },
+        {
+            "_id": "a5c300ac-844c-4e7e-95e5-d3941f53688c",
+            "name": "Category",
+            "containerId": "4cfc2b29-ca76-45e2-9c6d-6991325c6324",
+            "created": "2024-07-28T05:09:49.620Z",
+            "sortNum": 80000
+        },
+        {
+            "_id": "4dfbb797-1033-415a-80e7-801be2d1fe6f",
+            "name": "Product",
+            "containerId": "4cfc2b29-ca76-45e2-9c6d-6991325c6324",
+            "created": "2024-07-28T05:09:49.621Z",
+            "sortNum": 90000
+        },
+        {
+            "_id": "f503b264-bc1f-4fcf-81a4-6c31776a98a0",
+            "name": "Post",
+            "containerId": "4cfc2b29-ca76-45e2-9c6d-6991325c6324",
+            "created": "2024-07-28T05:09:49.622Z",
+            "sortNum": 100000
+        },
+        {
+            "_id": "1e02b879-e7a6-4c3a-8148-5e11e55265cd",
+            "name": "Buyer Site",
+            "containerId": "",
+            "created": "2024-07-28T05:09:49.623Z",
+            "sortNum": 110000
+        },
+        {
+            "_id": "818ae7f3-df20-4412-91eb-ccfe19f0a8a2",
+            "name": "Buyer",
+            "containerId": "1e02b879-e7a6-4c3a-8148-5e11e55265cd",
+            "created": "2024-07-28T05:09:49.624Z",
+            "sortNum": 120000
+        },
+        {
+            "_id": "44f8bbe7-0849-428a-ac8f-85bfde73cd8e",
+            "name": "Cart",
+            "containerId": "1e02b879-e7a6-4c3a-8148-5e11e55265cd",
+            "created": "2024-07-28T05:09:49.625Z",
+            "sortNum": 130000
+        },
+        {
+            "_id": "0b1b53c9-5e33-4c2d-8264-deb59096c9c7",
+            "name": "shipping infor",
+            "containerId": "1e02b879-e7a6-4c3a-8148-5e11e55265cd",
+            "created": "2024-07-28T05:09:49.626Z",
+            "sortNum": 140000
+        },
+        {
+            "_id": "9a661e72-df77-4806-8c73-baa1be1ab8d7",
+            "name": "Store",
+            "containerId": "1e02b879-e7a6-4c3a-8148-5e11e55265cd",
+            "created": "2024-07-28T05:09:49.627Z",
+            "sortNum": 150000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "00e63187-4c34-4b21-b83a-4cb79f607fd7",
+            "colId": "7402a3f8-5ce7-4662-9986-0c4de6474629",
+            "containerId": "9fd47f51-d4e0-4900-974d-335e69daf2d2",
+            "name": "Get Me",
+            "url": "{{BASE_URL}}/admin_site/admin/me",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-07-28T05:09:49.613Z",
+            "modified": "2024-07-28T05:09:49.613Z",
+            "headers": [
+                {
+                    "name": "x-api-key",
+                    "value": "{{API_KEY}}"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"userName\":\"123\",\n    \"password\":\"123\"\n}"
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{admin_token}}"
+            }
+        },
+        {
+            "_id": "55fa7dcf-bbc5-4439-8189-acea36ba5c57",
+            "colId": "7402a3f8-5ce7-4662-9986-0c4de6474629",
+            "containerId": "9fd47f51-d4e0-4900-974d-335e69daf2d2",
+            "name": "change passoword",
+            "url": "{{BASE_URL}}/admin_site/admin/change-password",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-07-28T05:09:49.614Z",
+            "modified": "2024-07-28T05:09:49.614Z",
+            "headers": [
+                {
+                    "name": "x-api-key",
+                    "value": "{{API_KEY}}"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"password_confirm\":\"password1\",\n    \"password_new\":\"password\"\n}"
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{admin_token}}"
+            }
+        },
+        {
+            "_id": "ba0792bb-a4d0-4002-8879-6ebb52e588e5",
+            "colId": "7402a3f8-5ce7-4662-9986-0c4de6474629",
+            "containerId": "9fd47f51-d4e0-4900-974d-335e69daf2d2",
+            "name": "Login",
+            "url": "{{BASE_URL}}/admin_site/admin/login",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2024-07-28T05:09:49.615Z",
+            "modified": "2024-07-28T05:09:49.615Z",
+            "headers": [
+                {
+                    "name": "x-api-key",
+                    "value": "{{API_KEY}}"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"userName\":\"username\",\n    \"password\":\"password\"\n}"
+            },
+            "preReq": {
+                "inlineScripts": []
+            },
+            "postReq": {
+                "inlineScripts": [
+                    {
+                        "script": [
+                            "const accessToken = tc.response.json.data.token.accessToken;",
+                            "tc.setVar(\"admin_token\", accessToken);"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "_id": "d326741d-7400-43fd-a911-fc96e604b883",
+            "colId": "7402a3f8-5ce7-4662-9986-0c4de6474629",
+            "containerId": "c74d7e7d-a0d8-41d3-ab5d-6528a91b2d0f",
+            "name": "Get Seller List",
+            "url": "{{BASE_URL}}/admin_site/seller/sellers?limit=4&page=2",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2024-07-28T05:09:49.616Z",
+            "modified": "2024-07-28T05:09:49.616Z",
+            "headers": [
+                {
+                    "name": "x-api-key",
+                    "value": "{{API_KEY}}"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "filter",
+                    "value": "Ww0KICAgIHsNCiAgICAgICAgIm9wZXJhdGlvbiI6ICJlcSIsDQogICAgICAgICJ2YWx1ZSI6ICIyM2JkMzY0OS1kZDBjLTExZWUtYTFkMS0wMjQyYWMxODAwMDIiLA0KICAgICAgICAiYXR0cmlidXRlIjogInN0b3JlSWQiDQogICAgfQ0KXQ",
+                    "isDisabled": true
+                },
+                {
+                    "name": "order",
+                    "value": "Ww0KICAgIHsNCiAgICAgICAgImF0dHJpYnV0ZSI6ICJpZCINCiAgICB9DQpd",
+                    "isDisabled": true
+                }
+            ],
+            "params": [
+                {
+                    "name": "limit",
+                    "value": "4"
+                },
+                {
+                    "name": "page",
+                    "value": "2"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "[\n    {\n        \"operation\": \"eq\",\n        \"value\": \"db0c9d2b-6603-4d37-b419-1be575e9a9cc\",\n        \"attribute\": \"id\",\n        \"not\": false\n    }\n]"
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{admin_token}}"
+            }
+        },
+        {
+            "_id": "0e39ff1d-1a4d-45d6-ad7f-f8d7c039674c",
+            "colId": "7402a3f8-5ce7-4662-9986-0c4de6474629",
+            "containerId": "16321003-1b70-458f-8c6e-1e554947a363",
+            "name": "Get Store List",
+            "url": "{{BASE_URL}}/admin_site/store/stores",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2024-07-28T05:09:49.617Z",
+            "modified": "2024-07-28T05:09:49.617Z",
+            "headers": [
+                {
+                    "name": "x-api-key",
+                    "value": "{{API_KEY}}"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"userName\":\"123\",\n    \"password\":\"123\"\n}"
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{admin_token}}"
+            }
+        },
+        {
+            "_id": "37fad184-8c85-4fa9-93c0-1e73cb976fe7",
+            "colId": "7402a3f8-5ce7-4662-9986-0c4de6474629",
+            "containerId": "16321003-1b70-458f-8c6e-1e554947a363",
+            "name": "Get Store Detail",
+            "url": "{{BASE_URL}}/admin_site/store/store/detail/23bd3649-dd0c-11ee-a1d1-0242ac180002",
+            "method": "POST",
+            "sortNum": 60000,
+            "created": "2024-07-28T05:09:49.618Z",
+            "modified": "2024-07-28T05:09:49.618Z",
+            "headers": [
+                {
+                    "name": "x-api-key",
+                    "value": "{{API_KEY}}"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"userName\":\"123\",\n    \"password\":\"123\"\n}"
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{admin_token}}"
+            }
+        },
+        {
+            "_id": "bc5c3083-1cdf-4ff0-81e3-ebde02a74f15",
+            "colId": "7402a3f8-5ce7-4662-9986-0c4de6474629",
+            "containerId": "93a86116-7832-40b6-a76e-11cc6b89d7f4",
+            "name": "Register",
+            "url": "{{BASE_URL}}/seller_site/seller/register",
+            "method": "POST",
+            "sortNum": 70000,
+            "created": "2024-07-28T05:09:49.619Z",
+            "modified": "2024-07-28T05:09:49.619Z",
+            "headers": [
+                {
+                    "name": "x-api-key",
+                    "value": "{{API_KEY}}"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"prefectureId\":\"test\",\n    \"email\": \"eamil@test.com\",\n    \"username\":\"1234\",\n    \"password\":\"123\"\n}"
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": ""
+            },
+            "preReq": {
+                "inlineScripts": []
+            },
+            "postReq": {
+                "inlineScripts": [
+                    {
+                        "script": [
+                            "const accessToken = tc.response.json.data.token.accessToken;",
+                            "tc.setVar(\"seller_token\", accessToken);"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "_id": "594011db-716b-4eba-bb1f-b4df8c4d626d",
+            "colId": "7402a3f8-5ce7-4662-9986-0c4de6474629",
+            "containerId": "93a86116-7832-40b6-a76e-11cc6b89d7f4",
+            "name": "Get Token",
+            "url": "{{BASE_URL}}/seller_site/seller/getToken",
+            "method": "POST",
+            "sortNum": 80000,
+            "created": "2024-07-28T05:09:49.620Z",
+            "modified": "2024-07-28T05:09:49.620Z",
+            "headers": [
+                {
+                    "name": "x-api-key",
+                    "value": "{{API_KEY}}"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"sellerId\":\"3d1df0e3-89f7-441e-86ee-052be159623a\"\n}"
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhcGkuZGV2Lnh5ei5jb20iLCJhdWQiOiJ4eXouY29tIiwic3ViIjoiMDIyNzUwZmEtZjE4MS00ZjcyLWIwMzgtNjc2NTFkZmUzZGE5IiwiaWF0IjoxNzA2NjgyNjMyLCJleHAiOjE3MDY4NTU0MzIsInBybSI6ImNjOTRlMmM4NTJhYTZkMWZkNWQ5ZGZiY2ZlNjhmYWM2MjhkYzYwMjNjNGJmODJlMGQ3Y2NjZWE3NzE5ZGE5MzBmNjU5ZTAxZWNkYmM5YjIzZTc1ODA1MWM5YzY1MWRjMTU3OTgwMzBhNjA4YjdkNzEwMDdjZmExZmI3ZmMxMDNlIn0.W48zDTi1G8hZOOQTGOzn9O1xCHL1C5HyI-akZ9LovgEhgCN_rSRo8g3x8-qnIZ6518_ADFmgT4uCh7N5u3zH1dE4fIVWBk85kvOal4f-gYbC_2VfrHBXzD9keSKTCAs0EZfzqg74UUg-aDcqgpEjWhPAZLcxyheN8avZJs0GQSL-y2GCJbKM8jqUiuB_SB4zbZbIvvefxW8iH-2RwIWdIZRKFW2H3JokV5CChGzUJW3yFgps0mIBodt4MtbhcqYSrPkMVEudrgJ96HEjJkXAeX-6Oku-2ZmDlPXJbEnMoqYcRNmp7219Rp1xrYXaxk83MD4gY0v9UPM6Phpjq7NtBQ"
+            },
+            "preReq": {
+                "inlineScripts": []
+            },
+            "postReq": {
+                "inlineScripts": [
+                    {
+                        "script": [
+                            "const accessToken = tc.response.json.data.token.accessToken;",
+                            "tc.setVar(\"seller_token\", accessToken);"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "_id": "595076f4-86ef-4c53-96e6-3296dc0e4f5d",
+            "colId": "7402a3f8-5ce7-4662-9986-0c4de6474629",
+            "containerId": "93a86116-7832-40b6-a76e-11cc6b89d7f4",
+            "name": "Get Me",
+            "url": "{{BASE_URL}}/seller_site/seller/me",
+            "method": "GET",
+            "sortNum": 90000,
+            "created": "2024-07-28T05:09:49.621Z",
+            "modified": "2024-07-28T05:09:49.621Z",
+            "headers": [
+                {
+                    "name": "x-api-key",
+                    "value": "{{API_KEY}}"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": ""
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{seller_token}}"
+            },
+            "preReq": {
+                "inlineScripts": []
+            },
+            "postReq": {
+                "inlineScripts": [
+                    {
+                        "script": [
+                            ""
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "_id": "4bea6569-bae2-4f94-a5e7-0804f1044476",
+            "colId": "7402a3f8-5ce7-4662-9986-0c4de6474629",
+            "containerId": "a1bbbcaa-a384-4c9e-abfd-6e1304e48cc4",
+            "name": "Register",
+            "url": "{{BASE_URL}}/seller_site/store/register",
+            "method": "POST",
+            "sortNum": 100000,
+            "created": "2024-07-28T05:09:49.622Z",
+            "modified": "2024-07-28T05:09:49.622Z",
+            "headers": [
+                {
+                    "name": "x-api-key",
+                    "value": "{{API_KEY}}"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"companyAddress\": \"aaa\",\n    \"companyName\":\"aaa\",\n    \"contractId\": \"123aa11a\",\n    \"prefectureId\": \"12113\",\n    \"storeKey\": \"12312113\",\n    \"storeName\": \"storeName\",\n    \"status\": \"true\"\n}"
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{seller_token}}"
+            }
+        },
+        {
+            "_id": "5acf288a-19ef-4fe8-8032-6f7415b30511",
+            "colId": "7402a3f8-5ce7-4662-9986-0c4de6474629",
+            "containerId": "a5c300ac-844c-4e7e-95e5-d3941f53688c",
+            "name": "Create category",
+            "url": "{{BASE_URL}}/seller_site/category/create",
+            "method": "POST",
+            "sortNum": 110000,
+            "created": "2024-07-28T05:09:49.623Z",
+            "modified": "2024-07-28T05:09:49.623Z",
+            "headers": [
+                {
+                    "name": "x-api-key",
+                    "value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\r\n    // \"parentId\": \"8c2fd916-f758-11ee-98f9-0242ac120002\",\r\n    \"storeId\": \"4cd3dd18-ff9d-11ee-bef1-0242ac180002\",\r\n    \"categoryName\": \"category 5\",\r\n    \"categoryTag\": \"category_tag 6\",\r\n    \"status\": \"true\"\r\n}"
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{seller_token}}"
+            }
+        },
+        {
+            "_id": "3ab9a055-149b-4d74-94c9-65b11d672e41",
+            "colId": "7402a3f8-5ce7-4662-9986-0c4de6474629",
+            "containerId": "a5c300ac-844c-4e7e-95e5-d3941f53688c",
+            "name": "Get list",
+            "url": "{{BASE_URL}}/seller_site/category/categories",
+            "method": "GET",
+            "sortNum": 120000,
+            "created": "2024-07-28T05:09:49.624Z",
+            "modified": "2024-07-28T05:09:49.624Z",
+            "headers": [
+                {
+                    "name": "x-api-key",
+                    "value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj"
+                },
+                {
+                    "name": "paging",
+                    "value": "",
+                    "isDisabled": true
+                }
+            ],
+            "params": [
+                {
+                    "name": "limit",
+                    "value": "5",
+                    "isDisabled": true
+                },
+                {
+                    "name": "orderBy",
+                    "value": "created_at",
+                    "isDisabled": true
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": ""
+            }
+        },
+        {
+            "_id": "b69aef09-5233-4dc5-b139-87007253eef6",
+            "colId": "7402a3f8-5ce7-4662-9986-0c4de6474629",
+            "containerId": "a5c300ac-844c-4e7e-95e5-d3941f53688c",
+            "name": "Update category",
+            "url": "{{BASE_URL}}/seller_site/category/update/2b4127f0-659d-42e2-822b-57d1313325d3",
+            "method": "PUT",
+            "sortNum": 130000,
+            "created": "2024-07-28T05:09:49.625Z",
+            "modified": "2024-07-28T05:09:49.625Z",
+            "headers": [
+                {
+                    "name": "x-api-key",
+                    "value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\r\n    \"category_name\": \"nhim nhex nhau nham update\",\r\n    \"category_tag\": \"nhim nhex nhay nhet\",\r\n    \"status\": \"222222\"\r\n}"
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhcGkuZGV2Lnh5ei5jb20iLCJhdWQiOiJ4eXouY29tIiwic3ViIjoiZTYwYjcxMzUtNjlhZC00Yzk1LWFkM2QtNTYwMmIzZjliYjg2IiwiaWF0IjoxNzA4MzE0Mzg4LCJleHAiOjE3MDg0ODcxODgsInBybSI6IjRkMDM2MDQ1MDVmMjE5Njg1NGNmZjdjMDQwOTZlODM5NzQ1ZjUzMTcyZmFhNmI0ZWNjNTcxMzhlZWMwOGYyNzZmMTk1YmRiYWY3Mzk4MWIwN2RjNGVlNzRlMmFjODkwYThkYzZjY2UxZDc2MGY5NmQ2NDUzNTRlZDgzNDc5YTVmIn0.ITvhc7s2Hpq1jwqo6riJSCX3K6TzB8mSk6qZ39H97f27rnUeVaeufJPbvGSbr6ANPUK2C-2KQvdIGsYwTHPkcIkZ569Jsb-tYi6axERwY8BBOfyC5UFAw9P5qWjphG7892aau8A2uFrXytupEgUrlTnmt-LvwYRswAZhjsBjSTsrOQ8WFHMDJq2ipvKXCCtmRwcL-mWdY7XsYtSOOnPByS9cAvYWJkjpxcLAsaZpAYOCPJpyqpiY94fvpcBSQXkU2OzRApFJrKTcSkzZgtd6we9rhcNk7bRMJ-Jhzb671eHwdz7fd8dvM260TUvr2mjpR0LuRwsTiOftLw4AGGhtiQ"
+            }
+        },
+        {
+            "_id": "292d0211-61c5-4fa5-8417-0546df212438",
+            "colId": "7402a3f8-5ce7-4662-9986-0c4de6474629",
+            "containerId": "a5c300ac-844c-4e7e-95e5-d3941f53688c",
+            "name": "Detail category",
+            "url": "{{BASE_URL}}/seller_site/category/detail/74dddfb1-7fe9-431c-b5aa-e63b2839e368",
+            "method": "GET",
+            "sortNum": 140000,
+            "created": "2024-07-28T05:09:49.626Z",
+            "modified": "2024-07-28T05:09:49.626Z",
+            "headers": [
+                {
+                    "name": "x-api-key",
+                    "value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": ""
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhcGkuZGV2Lnh5ei5jb20iLCJhdWQiOiJ4eXouY29tIiwic3ViIjoiMzUxMTk2OGQtOGFmZS00OWNjLTg3ODgtMDJhOTRmZThhMDY5IiwiaWF0IjoxNzA4NjExNzc4LCJleHAiOjE3MDg3ODQ1NzgsInBybSI6IjIzNGFmYWVhY2U2ZmJhMzc5OGFjMmU1OTlhZDg0MWEzY2E0Yzk2OThkMjkyY2Q0N2ZlZmY3YzBkNDg4MTIyMDMwOGU4NmNiZThlMjEzOTZlMTFlZjkwNzEzZjU0M2UyNTA3MWEwMmI2NGY0YmMyNzg2MWNlYWEyMWI2Y2EyYWZiIn0.PEQuP5mWMOy1IvFOjb_HtslMlYl2wx27pKCo0wTKpw9qlTs-8LWYyMkRJwnFSyG228C75y_BpUR4FW0NW5_q0_uqY-hB8edT5yI8t_cCuLpmBA-LMP7UgGm2AFXH5W77mpASXR86XaUENW41UBVNzG51BEMGH3yup2-SkPXGx78zOLa8FvTkuZLDwk_rrJa2p-YbII6aeBsVBPwoUELZYWweekrnTE5qWyabnuseGfXsLMhHHfIjBytjEEO5eaGGBfHPc-GdQ41rnye5GWXyMBO38aC1E4Td38afm_47QS8950ss2r81u0menD4xuT5jnuBKNfpqtdNEsYil61HnEw"
+            }
+        },
+        {
+            "_id": "abd7a1e1-09f1-4e7c-87ae-ecd4a9a5d8ee",
+            "colId": "7402a3f8-5ce7-4662-9986-0c4de6474629",
+            "containerId": "a5c300ac-844c-4e7e-95e5-d3941f53688c",
+            "name": "Delete category",
+            "url": "{{BASE_URL}}/seller_site/category/delete/2b4127f0-659d-42e2-822b-57d1313325d3",
+            "method": "DELETE",
+            "sortNum": 150000,
+            "created": "2024-07-28T05:09:49.627Z",
+            "modified": "2024-07-28T05:09:49.627Z",
+            "headers": [
+                {
+                    "name": "x-api-key",
+                    "value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": ""
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhcGkuZGV2Lnh5ei5jb20iLCJhdWQiOiJ4eXouY29tIiwic3ViIjoiMzUxMTk2OGQtOGFmZS00OWNjLTg3ODgtMDJhOTRmZThhMDY5IiwiaWF0IjoxNzA4NjA4MTA1LCJleHAiOjE3MDg3ODA5MDUsInBybSI6ImZjYjQ0MzgwNmNhOTdjOGIzZjhhNDQxYTJmODU2YjJhMDgzN2JkZGNjZGEzYTc0NTFhMGI3Y2U4N2YwYTVkZGRlNjY2MjAzYTVjMjQ4ZDE1Njg5ZTNjYjk0N2U3ZGJjN2IyYjllNmI4NDM4MTU1ZDNiYzE0NjQxN2FjODg4NGUwIn0.ELsQRH9BZsXZL14lw8HCwb9hkUFFAQBSFNj98ShOpNlc_rJ1jqIG1dQ9yPCIJH9CLMZZhOD9lkpQ5nmNEiATKurCD8weThcncNHQDtkuha4XzhfLm_JsSbq_Yy-gHkGdYOT0o4eUlszukQ3o-soQj8pBk8Ixlc2oBEHOFKdvFq9-LPMj_z8CcEwC1yMBOLdwcX1NXOCvbbQ5KxJwa6KmFK9BOVwkenTXmZEOUl0iiGxZkQX2hrbmHhgM40wiGuuXfAFwJP4KageeIlYcPhHa6L39fi-TD_6OKMnlqDrLxGi_MZCYNE60IlJLeFxND1JEum--H7cZvxHuyDURhN7vPw"
+            }
+        },
+        {
+            "_id": "c09d2581-44d5-4e53-9ebb-9f9f84f5f157",
+            "colId": "7402a3f8-5ce7-4662-9986-0c4de6474629",
+            "containerId": "a5c300ac-844c-4e7e-95e5-d3941f53688c",
+            "name": "Get Category hierarchy",
+            "url": "{{BASE_URL}}/seller_site/category/categories/hierarchy",
+            "method": "GET",
+            "sortNum": 160000,
+            "created": "2024-07-28T05:09:49.628Z",
+            "modified": "2024-07-28T05:09:49.628Z",
+            "headers": [
+                {
+                    "name": "x-api-key",
+                    "value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj"
+                },
+                {
+                    "name": "paging",
+                    "value": "",
+                    "isDisabled": true
+                }
+            ],
+            "params": [
+                {
+                    "name": "limit",
+                    "value": "5",
+                    "isDisabled": true
+                },
+                {
+                    "name": "orderBy",
+                    "value": "created_at",
+                    "isDisabled": true
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": ""
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{seller_token}}"
+            }
+        },
+        {
+            "_id": "6e89c686-3710-488e-8083-b47ad014d3bd",
+            "colId": "7402a3f8-5ce7-4662-9986-0c4de6474629",
+            "containerId": "a5c300ac-844c-4e7e-95e5-d3941f53688c",
+            "name": "Move position category",
+            "url": "{{BASE_URL}}/seller_site/category/move/71d3f999-f639-11ee-9e73-0242ac160002",
+            "method": "PUT",
+            "sortNum": 170000,
+            "created": "2024-07-28T05:09:49.629Z",
+            "modified": "2024-07-28T05:09:49.629Z",
+            "headers": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{seller_token}}"
+            }
+        },
+        {
+            "_id": "ab687c8c-f477-47f6-acd7-65d810ec40e8",
+            "colId": "7402a3f8-5ce7-4662-9986-0c4de6474629",
+            "containerId": "4dfbb797-1033-415a-80e7-801be2d1fe6f",
+            "name": "Create Product with option",
+            "url": "{{BASE_URL}}/seller_site/product/create",
+            "method": "POST",
+            "sortNum": 180000,
+            "created": "2024-07-28T05:09:49.630Z",
+            "modified": "2024-07-28T05:09:49.630Z",
+            "headers": [
+                {
+                    "name": "x-api-key",
+                    "value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\r\n    \"isSubscription\": false,\r\n    \"buyingPeriod\": [],\r\n    \"isRecommend\": false,\r\n    \"productName\": \"test21\",\r\n    \"productImage\": [],\r\n    \"productDescription\": \"string\",\r\n    \"isFixPrice\": true,\r\n    \"productOverview\": \"aaaaa\",\r\n    \"productTag\": \"string\",\r\n    \"status\": \"string\",\r\n    \"isDiscount\": false,\r\n    \"discountPercentage\": 99,\r\n    \"hasDiscountSchedule\": true,\r\n    \"discountTimeFrom\": \"2024/05/06\",\r\n    \"discountTimeTo\": \"2024/07/07\",\r\n    \"categories\": [],\r\n    \"price\": \"25.00\",\r\n    \"stockItem\": 100,\r\n    \"amount\": 1000,\r\n    \"components\": [],\r\n    \"faqs\":[],\r\n    \"capacity\":\"\",\r\n    \"expirationUseDate\":\"\",\r\n    \"storageMethod\":\"\",\r\n    \"intakeMethod\":\"\",\r\n    \"ingredient\":\"\",\r\n    \"notificationNumber\": \"\",\r\n    \"notification\":\"\",\r\n    \"hasOption\":false,\r\n    \"options\":[],\r\n    \"optionPrices\":[]\r\n}"
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{seller_token}}"
+            }
+        },
+        {
+            "_id": "7c9c869f-4067-47f2-82b7-67b1716b7526",
+            "colId": "7402a3f8-5ce7-4662-9986-0c4de6474629",
+            "containerId": "4dfbb797-1033-415a-80e7-801be2d1fe6f",
+            "name": "Create Product with no option Copy",
+            "url": "{{BASE_URL}}/seller_site/product/create",
+            "method": "POST",
+            "sortNum": 190000,
+            "created": "2024-07-28T05:09:49.631Z",
+            "modified": "2024-07-28T05:09:49.631Z",
+            "headers": [
+                {
+                    "name": "x-api-key",
+                    "value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\r\n    \"isSubscription\": false,\r\n    \"isDiscount\": false,\r\n    \"discountPercentage\": 10,\r\n    \"hasDiscountSchedule\": true,\r\n    \"isRecommend\": false,\r\n    \"productName\": \"string\",\r\n    \"productImage\": [],\r\n    \"productDescription\": \"string\",\r\n    \"capacity\": \"string\",\r\n    \"expirationUseDate\": \"string\",\r\n    \"storageMethod\": \"string\",\r\n    \"intakeMethod\": \"string\",\r\n    \"ingredient\": \"string\",\r\n    \"notificationNumber\": \"string\",\r\n    \"notification\": \"string\",\r\n    \"isFixPrice\": true,\r\n    \"hasOption\": false,\r\n    \"productTag\": \"string\",\r\n    \"status\": \"string\",\r\n    \"productOverview\": \"ssss\",\r\n    \"faqs\": [],\r\n    \"components\": [\r\n        {\r\n            \"componentValue\": \"a\",\r\n            \"amount\": 100,\r\n            \"unit\": \"test\"\r\n        }\r\n    ],\r\n    \"cost\":9923456789,\r\n    \"options\": [],\r\n    \"optionPrices\": [],\r\n    \"buyingTimeOption\": [],\r\n    \"buyingPeriod\": [],\r\n    \"categories\": [],\r\n    \"price\": \"10\",\r\n    \"priceBeforeDiscount\": \"10\",\r\n    \"stockItem\": 100\r\n}"
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{seller_token}}"
+            }
+        },
+        {
+            "_id": "c48828b7-7f9a-4c29-b0e7-e42484ad6d92",
+            "colId": "7402a3f8-5ce7-4662-9986-0c4de6474629",
+            "containerId": "4dfbb797-1033-415a-80e7-801be2d1fe6f",
+            "name": "Create Product with subcription",
+            "url": "{{BASE_URL}}/seller_site/product/create",
+            "method": "POST",
+            "sortNum": 200000,
+            "created": "2024-07-28T05:09:49.632Z",
+            "modified": "2024-07-28T05:09:49.632Z",
+            "headers": [
+                {
+                    "name": "x-api-key",
+                    "value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\r\n    \"isSubscription\": true,\r\n    \"buyingPeriod\": [15,30,45,90],\r\n    \"isRecommend\": false,\r\n    \"productName\": \"string\",\r\n    \"productImage\": [],\r\n    \"productDescription\": \"string\",\r\n    \"capacity\": \"string\",\r\n    \"expirationUseDate\": \"string\",\r\n    \"storageMethod\": \"string\",\r\n    \"intakeMethod\": \"string\",\r\n    \"ingredient\": \"string\",\r\n    \"notificationNumber\": \"string\",\r\n    \"productOverview\": \"qq\",\r\n    \"faqs\":[],\r\n    \"notification\": \"string\",\r\n    \"hasOption\": false,\r\n    \"productTag\": \"string\",\r\n    \"status\": \"string\",\r\n    \"isDiscount\":true,\r\n    \"categories\": [],\r\n\r\n    \"components\": [\r\n        {\r\n            \"componentValue\":\"a\",\r\n            \"amount\": 100,\r\n            \"unit\": \"test\"\r\n        }\r\n    ],\r\n    \"options\": [],\r\n    \"optionPrices\": [],\r\n    \"price\": \"25.01\",\r\n    \"priceBeforeDiscount\": \"30.00\",\r\n    \"cost\": ,\r\n    \"stockItem\": 100,\r\n    \"priceSubscription\":\"10.00\",\r\n    \"discountPercentage\":\"10.00\",\r\n    \"hasDiscountSchedule\": false\r\n}"
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{seller_token}}"
+            }
+        },
+        {
+            "_id": "79b60e1f-7e3e-43ce-976f-9bc64a36b20a",
+            "colId": "7402a3f8-5ce7-4662-9986-0c4de6474629",
+            "containerId": "4dfbb797-1033-415a-80e7-801be2d1fe6f",
+            "name": "Active Product",
+            "url": "{{BASE_URL}}/seller_site/product/active/3f21487f-1f5a-4368-adbb-51bb5dec3db4",
+            "method": "PUT",
+            "sortNum": 210000,
+            "created": "2024-07-28T05:09:49.633Z",
+            "modified": "2024-07-28T05:09:49.633Z",
+            "headers": [
+                {
+                    "name": "x-api-key",
+                    "value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\r\n    \"isSubscription\": true,\r\n    \"buyingTimeOption\": [15,30,45,90],\r\n    \"buyingPeriod\": [-1,3,6,12],\r\n    \"isRecomend\": false,\r\n    \"productName\": \"string\",\r\n    \"productImage\": [],\r\n    \"productDescription\": \"string\",\r\n    \"capacity\": \"string\",\r\n    \"expirationUseDate\": \"string\",\r\n    \"storageMethod\": \"string\",\r\n    \"intakeMethod\": \"string\",\r\n    \"ingredient\": \"string\",\r\n    \"notificationNumber\": \"string\",\r\n    \"notification\": \"string\",\r\n    \"hasOption\": false,\r\n    \"productTag\": \"string\",\r\n    \"status\": \"string\",\r\n    \"components\": [\r\n        {\r\n            \"amount\": 100,\r\n            \"unit\": \"test\"\r\n        }\r\n    ],\r\n    \"options\": [],\r\n    \"optionPrices\": [],\r\n    \"price\": \"25.01\",\r\n    \"priceBeforeDiscount\": \"30.00\",\r\n    \"cost\": \"15.00\",\r\n    \"stockItem\": 100\r\n}"
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{seller_token}}"
+            }
+        },
+        {
+            "_id": "c13b2ca3-3819-4964-b68b-0ebfd16c7be0",
+            "colId": "7402a3f8-5ce7-4662-9986-0c4de6474629",
+            "containerId": "4dfbb797-1033-415a-80e7-801be2d1fe6f",
+            "name": "Inactive Product",
+            "url": "{{BASE_URL}}/seller_site/product/active/34bc82e3-17a2-4a0d-b79e-3fe6473d441d",
+            "method": "PUT",
+            "sortNum": 220000,
+            "created": "2024-07-28T05:09:49.634Z",
+            "modified": "2024-07-28T05:09:49.634Z",
+            "headers": [
+                {
+                    "name": "x-api-key",
+                    "value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\r\n    \"isSubscription\": true,\r\n    \"buyingTimeOption\": [15,30,45,90],\r\n    \"buyingPeriod\": [-1,3,6,12],\r\n    \"isRecomend\": false,\r\n    \"productName\": \"string\",\r\n    \"productImage\": [],\r\n    \"productDescription\": \"string\",\r\n    \"capacity\": \"string\",\r\n    \"expirationUseDate\": \"string\",\r\n    \"storageMethod\": \"string\",\r\n    \"intakeMethod\": \"string\",\r\n    \"ingredient\": \"string\",\r\n    \"notificationNumber\": \"string\",\r\n    \"notification\": \"string\",\r\n    \"hasOption\": false,\r\n    \"productTag\": \"string\",\r\n    \"status\": \"string\",\r\n    \"components\": [\r\n        {\r\n            \"amount\": 100,\r\n            \"unit\": \"test\"\r\n        }\r\n    ],\r\n    \"options\": [],\r\n    \"optionPrices\": [],\r\n    \"price\": \"25.01\",\r\n    \"priceBeforeDiscount\": \"30.00\",\r\n    \"cost\": \"15.00\",\r\n    \"stockItem\": 100\r\n}"
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{seller_token}}"
+            }
+        },
+        {
+            "_id": "52574595-c816-45a7-aa11-b610e51c26cc",
+            "colId": "7402a3f8-5ce7-4662-9986-0c4de6474629",
+            "containerId": "4dfbb797-1033-415a-80e7-801be2d1fe6f",
+            "name": "get Product list",
+            "url": "{{BASE_URL}}/seller_site/product/products",
+            "method": "GET",
+            "sortNum": 230000,
+            "created": "2024-07-28T05:09:49.635Z",
+            "modified": "2024-07-28T05:09:49.635Z",
+            "headers": [
+                {
+                    "name": "x-api-key",
+                    "value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj"
+                }
+            ],
+            "params": [
+                {
+                    "name": "categoryId",
+                    "value": "094796ce-fe57-408f-a1a8-8a91b81fd613",
+                    "isDisabled": true
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\r\n    \"isSubscription\": false,\r\n    \"buyingTimeOption\": [],\r\n    \"buyingPeriod\": [],\r\n    \"isRecomend\": false,\r\n    \"productName\": \"string\",\r\n    \"productImage\": [],\r\n    \"productDescription\": \"string\",\r\n    \"capacity\": \"string\",\r\n    \"expirationUseDate\": \"string\",\r\n    \"storageMethod\": \"string\",\r\n    \"intakeMethod\": \"string\",\r\n    \"ingredient\": \"string\",\r\n    \"notificationNumber\": \"string\",\r\n    \"notification\": \"string\",\r\n    \"isFixPrice\": false,\r\n    \"hasOption\": true,\r\n    \"productTag\": \"string\",\r\n    \"status\": \"string\",\r\n    \"components\": [\r\n        {\r\n            \"amount\": 100,\r\n            \"unit\": \"test\"\r\n        }\r\n    ],\r\n    \"options\": [\r\n        {\r\n            \"optionType\": \"color\",\r\n            \"optionValue\": [\r\n                \"Red\",\r\n                \"Blue\",\r\n                \"Green\"\r\n            ],\r\n            \"order\": 1\r\n        }\r\n    ],\r\n    \"optionPrices\": [\r\n        {\r\n            \"optionType1\": \"Color\",\r\n            \"optionValue1\": \"Red\",\r\n            \"optionType2\": \"Size\",\r\n            \"optionValue2\": \"Large\",\r\n            \"optionType3\": \"Material\",\r\n            \"optionValue3\": \"Cotton\",\r\n            \"price\": \"25.00\",\r\n            \"priceBeforeDiscount\": \"30.00\",\r\n            \"cost\": \"15.00\",\r\n            \"stockItem\": 100\r\n        },\r\n        {\r\n            \"optionType1\": \"Color\",\r\n            \"optionValue1\": \"Green\",\r\n            \"optionType2\": \"Size\",\r\n            \"optionValue2\": \"Large\",\r\n            \"optionType3\": \"Material\",\r\n            \"optionValue3\": \"Cotton\",\r\n            \"price\": \"25.00\",\r\n            \"priceBeforeDiscount\": \"30.00\",\r\n            \"cost\": \"15.00\",\r\n            \"stockItem\": 100\r\n        },\r\n        {\r\n            \"optionType1\": \"Color\",\r\n            \"optionValue1\": \"Blue\",\r\n            \"optionType2\": \"Size\",\r\n            \"optionValue2\": \"Large\",\r\n            \"optionType3\": \"Material\",\r\n            \"optionValue3\": \"Cotton\",\r\n            \"price\": \"25.00\",\r\n            \"priceBeforeDiscount\": \"30.00\",\r\n            \"cost\": \"15.00\",\r\n            \"stockItem\": 100\r\n        }\r\n    ]\r\n}"
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{seller_token}}"
+            }
+        },
+        {
+            "_id": "867e3bf4-eb27-4231-82f5-5aef67c9d546",
+            "colId": "7402a3f8-5ce7-4662-9986-0c4de6474629",
+            "containerId": "4dfbb797-1033-415a-80e7-801be2d1fe6f",
+            "name": "update Product",
+            "url": "{{BASE_URL}}/seller_site/product",
+            "method": "PUT",
+            "sortNum": 240000,
+            "created": "2024-07-28T05:09:49.636Z",
+            "modified": "2024-07-28T05:09:49.636Z",
+            "headers": [
+                {
+                    "name": "x-api-key",
+                    "value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj"
+                }
+            ],
+            "params": [
+                {
+                    "name": "categoryId",
+                    "value": "094796ce-fe57-408f-a1a8-8a91b81fd613",
+                    "isDisabled": true
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": " {\r\n        \"id\": \"e4ec1bb7-329a-44e4-84ee-0a3b51d2065c\",\r\n        \"storeId\": \"ca97cb7a-5cf5-4e46-928d-8799c49bab03\",\r\n        \"isSubscription\": false,\r\n        \"isDiscount\": false,\r\n        \"buyingPeriod\": [],\r\n        \"isRecommend\": false,\r\n        \"productName\": \"string\",\r\n        \"productImage\": [],\r\n        \"productDescription\": \"string\",\r\n        \"productOverview\": \"ssss\",\r\n        \"price\": 10,\r\n        \"priceSubscription\": null,\r\n        \"cost\": \"0\",\r\n        \"stockItem\": 100,\r\n        \"productTag\": \"string\",\r\n        \"status\": \"string\",\r\n        \"components\": [\r\n            {\r\n                \"id\": \"26c1e927-987a-4c59-a888-f40844209117\",\r\n                \"productId\": \"e4ec1bb7-329a-44e4-84ee-0a3b51d2065c\",\r\n                \"componentValue\": \"a\",\r\n                \"componentName\": \"\"\r\n            }\r\n        ],\r\n        \"categories\": [],\r\n        \"faqs\": [],\r\n        \"discountPercentage\": 10,\r\n        \"hasDiscountSchedule\": true,\r\n        \"calculatedNormalPrice\": 10,\r\n        \"createdAt\": \"2024-07-09T04:39:51.000Z\",\r\n        \"updatedAt\": \"2024-07-09T04:39:51.000Z\"\r\n    }"
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{seller_token}}"
+            }
+        },
+        {
+            "_id": "de98f6ea-c994-4297-b8c1-8a0074698d56",
+            "colId": "7402a3f8-5ce7-4662-9986-0c4de6474629",
+            "containerId": "4dfbb797-1033-415a-80e7-801be2d1fe6f",
+            "name": "Get Product Detail",
+            "url": "{{BASE_URL}}/seller_site/product/detail/e4ec1bb7-329a-44e4-84ee-0a3b51d2065c",
+            "method": "GET",
+            "sortNum": 250000,
+            "created": "2024-07-28T05:09:49.637Z",
+            "modified": "2024-07-28T05:09:49.637Z",
+            "headers": [
+                {
+                    "name": "x-api-key",
+                    "value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj"
+                }
+            ],
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{seller_token}}"
+            }
+        },
+        {
+            "_id": "f5fe2b16-e5bf-422d-b322-35adbd92f5dd",
+            "colId": "7402a3f8-5ce7-4662-9986-0c4de6474629",
+            "containerId": "4dfbb797-1033-415a-80e7-801be2d1fe6f",
+            "name": "delete1",
+            "url": "{{BASE_URL}}/seller_site/product/delete/e32d170e-1d5b-449b-86bb-1b564908a880",
+            "method": "DELETE",
+            "sortNum": 260000,
+            "created": "2024-07-28T05:09:49.638Z",
+            "modified": "2024-07-28T05:09:49.638Z",
+            "headers": [
+                {
+                    "name": "x-api-key",
+                    "value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\r\n    \"id\": \"1ebd5276-9f5a-4de7-8ebf-da439d6e24a1\",\r\n    \"storeId\": \"454cb39e-513f-4716-b15e-14c9d18b431a\",\r\n    \"isSubscription\": false,\r\n    \"buyingTimeOption\": [],\r\n    \"buyingPeriod\": [],\r\n    \"isRecomend\": false,\r\n    \"productName\": \"string\",\r\n    \"productImage\": [],\r\n    \"productDescription\": \"string\",\r\n    \"capacity\": \"string\",\r\n    \"expirationUseDate\": \"string\",\r\n    \"storageMethod\": \"string\",\r\n    \"intakeMethod\": \"string\",\r\n    \"ingredient\": \"string\",\r\n    \"notificationNumber\": \"string\",\r\n    \"notification\": \"string\",\r\n    \"hasOption\": true,\r\n    \"price\": \"0.0000\",\r\n    \"priceBeforeDiscount\": \"0.0000\",\r\n    \"cost\": \"0.0000\",\r\n    \"stockItem\": 0,\r\n    \"productTag\": \"string\",\r\n    \"status\": \"string\",\r\n    \"components\": [\r\n        {\r\n            \"id\": \"10a05587-c112-45f7-8032-09c345de2b52\",\r\n            \"productId\": \"1ebd5276-9f5a-4de7-8ebf-da439d6e24a1\",\r\n            \"amount\": \"100.0000\",\r\n            \"unit\": \"test\"\r\n        }\r\n    ],\r\n    \"options\": [\r\n        {\r\n            \"productId\": \"1ebd5276-9f5a-4de7-8ebf-da439d6e24a1\",\r\n            \"optionType\": \"color\",\r\n            \"optionValue\": [\r\n                \"Red\",\r\n                \"Blue\",\r\n                \"Green\"\r\n            ],\r\n            \"order\": 1\r\n        }\r\n    ],\r\n    \"optionPrices\": [\r\n        {\r\n            \"productId\": \"1ebd5276-9f5a-4de7-8ebf-da439d6e24a1\",\r\n            \"optionValue1\": \"Blue\",\r\n            \"optionValue2\": \"Large\",\r\n            \"optionValue3\": \"Cotton\",\r\n            \"price\": \"25.0000\",\r\n            \"priceBeforeDiscount\": \"30.0000\",\r\n            \"cost\": \"15.0000\",\r\n            \"stockItem\": 100\r\n        },\r\n        {\r\n            \"productId\": \"1ebd5276-9f5a-4de7-8ebf-da439d6e24a1\",\r\n            \"optionValue1\": \"Green\",\r\n            \"optionValue2\": \"Large\",\r\n            \"optionValue3\": \"Cotton\",\r\n            \"price\": \"25.0000\",\r\n            \"priceBeforeDiscount\": \"30.0000\",\r\n            \"cost\": \"15.0000\",\r\n            \"stockItem\": 100\r\n        },\r\n        {\r\n            \"productId\": \"1ebd5276-9f5a-4de7-8ebf-da439d6e24a1\",\r\n            \"optionValue1\": \"Red\",\r\n            \"optionValue2\": \"Large\",\r\n            \"optionValue3\": \"Cotton\",\r\n            \"price\": \"25.0000\",\r\n            \"priceBeforeDiscount\": \"30.0000\",\r\n            \"cost\": \"15.0000\",\r\n            \"stockItem\": 100\r\n        }\r\n    ],\r\n    \"categories\": [\r\n        \"984e23df-f6bd-40b6-bc83-f608ee0d1944\",\r\n        \"f44808d2-e9af-43de-a54c-f721304c57da\"\r\n    ]\r\n}"
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{seller_token}}"
+            }
+        },
+        {
+            "_id": "e63aec6a-d04e-46ed-9686-3c0d9b348cab",
+            "colId": "7402a3f8-5ce7-4662-9986-0c4de6474629",
+            "containerId": "f503b264-bc1f-4fcf-81a4-6c31776a98a0",
+            "name": "add post",
+            "url": "{{BASE_URL}}/seller_site/post/",
+            "method": "POST",
+            "sortNum": 270000,
+            "created": "2024-07-28T05:09:49.639Z",
+            "modified": "2024-07-28T05:09:49.639Z",
+            "headers": [
+                {
+                    "name": "x-api-key",
+                    "value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\r\n    \"title\": \" aaaa\",\r\n    \"postImage\": \"aaa\",\r\n    \"status\":\"string\",\r\n    \"details\": \"aaa\"\r\n}"
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{seller_token}}"
+            }
+        },
+        {
+            "_id": "125423ff-d65b-4e25-82be-cf5723b8d849",
+            "colId": "7402a3f8-5ce7-4662-9986-0c4de6474629",
+            "containerId": "f503b264-bc1f-4fcf-81a4-6c31776a98a0",
+            "name": "update post",
+            "url": "{{BASE_URL}}/seller_site/post/",
+            "method": "PUT",
+            "sortNum": 280000,
+            "created": "2024-07-28T05:09:49.640Z",
+            "modified": "2024-07-28T05:09:49.640Z",
+            "headers": [
+                {
+                    "name": "x-api-key",
+                    "value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\r\n    \"id\": \"6fe7c715-93cd-4fec-9b4f-22e82f4c0f24\",\r\n    \"storeId\": \"48f6a6c4-b9ab-4752-ba26-41e8de4903c5\",\r\n    \"postImage\": \"aaaaaaaaaaaaaaaaaaaaaabba\",\r\n    \"title\": \" aaaa\",\r\n    \"details\": \"aaa\",\r\n    \"status\" : \"AAA\"\r\n}"
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{seller_token}}"
+            }
+        },
+        {
+            "_id": "ddf06162-0a28-47f2-b63b-a169354dba6a",
+            "colId": "7402a3f8-5ce7-4662-9986-0c4de6474629",
+            "containerId": "f503b264-bc1f-4fcf-81a4-6c31776a98a0",
+            "name": "active post",
+            "url": "{{BASE_URL}}/seller_site/post/active/6fe7c715-93cd-4fec-9b4f-22e82f4c0f24",
+            "method": "PUT",
+            "sortNum": 290000,
+            "created": "2024-07-28T05:09:49.641Z",
+            "modified": "2024-07-28T05:09:49.641Z",
+            "headers": [
+                {
+                    "name": "x-api-key",
+                    "value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\r\n    \"id\": \"d7914043-1053-46f3-b5e0-776efa7a6e33\",\r\n    \"storeId\": \"e94c893b-1f21-4d70-942b-e551060637ce\",\r\n    \"notificationImage\": \"aabba\",\r\n    \"title\": \" aaaa\",\r\n    \"details\": \"aaa\"\r\n}"
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{seller_token}}"
+            }
+        },
+        {
+            "_id": "ccc767f0-e718-4d7e-bacb-e3de2b121445",
+            "colId": "7402a3f8-5ce7-4662-9986-0c4de6474629",
+            "containerId": "f503b264-bc1f-4fcf-81a4-6c31776a98a0",
+            "name": "inactive post",
+            "url": "{{BASE_URL}}/seller_site/post/inactive/6fe7c715-93cd-4fec-9b4f-22e82f4c0f24",
+            "method": "PUT",
+            "sortNum": 300000,
+            "created": "2024-07-28T05:09:49.642Z",
+            "modified": "2024-07-28T05:09:49.642Z",
+            "headers": [
+                {
+                    "name": "x-api-key",
+                    "value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\r\n    \"id\": \"d7914043-1053-46f3-b5e0-776efa7a6e33\",\r\n    \"storeId\": \"e94c893b-1f21-4d70-942b-e551060637ce\",\r\n    \"notificationImage\": \"aabba\",\r\n    \"title\": \" aaaa\",\r\n    \"details\": \"aaa\"\r\n}"
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{seller_token}}"
+            }
+        },
+        {
+            "_id": "75cfa488-7610-46ec-b4ba-c53e6f6f3f09",
+            "colId": "7402a3f8-5ce7-4662-9986-0c4de6474629",
+            "containerId": "f503b264-bc1f-4fcf-81a4-6c31776a98a0",
+            "name": "get post",
+            "url": "{{BASE_URL}}/seller_site/post/6fe7c715-93cd-4fec-9b4f-22e82f4c0f24",
+            "method": "GET",
+            "sortNum": 310000,
+            "created": "2024-07-28T05:09:49.643Z",
+            "modified": "2024-07-28T05:09:49.643Z",
+            "headers": [
+                {
+                    "name": "x-api-key",
+                    "value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\r\n    \"title\": \" aaaa\",\r\n    \"notificationImage\": \"aaa\",\r\n    \"details\": \"aaa\"\r\n}"
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{seller_token}}"
+            }
+        },
+        {
+            "_id": "b6c9c064-b4b2-4c65-94c6-d72f8c9a1678",
+            "colId": "7402a3f8-5ce7-4662-9986-0c4de6474629",
+            "containerId": "f503b264-bc1f-4fcf-81a4-6c31776a98a0",
+            "name": "get posts by store id",
+            "url": "{{BASE_URL}}/seller_site/post/",
+            "method": "GET",
+            "sortNum": 320000,
+            "created": "2024-07-28T05:09:49.644Z",
+            "modified": "2024-07-28T05:09:49.644Z",
+            "headers": [
+                {
+                    "name": "x-api-key",
+                    "value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\r\n    \"title\": \" aaaa\",\r\n    \"notificationImage\": \"aaa\",\r\n    \"details\": \"aaa\"\r\n}"
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{seller_token}}"
+            }
+        },
+        {
+            "_id": "9ca88559-9dd6-44fb-965a-fdb37ec4acb5",
+            "colId": "7402a3f8-5ce7-4662-9986-0c4de6474629",
+            "containerId": "f503b264-bc1f-4fcf-81a4-6c31776a98a0",
+            "name": "delete post",
+            "url": "{{BASE_URL}}/seller_site/post/6fe7c715-93cd-4fec-9b4f-22e82f4c0f24",
+            "method": "DELETE",
+            "sortNum": 330000,
+            "created": "2024-07-28T05:09:49.645Z",
+            "modified": "2024-07-28T05:09:49.645Z",
+            "headers": [
+                {
+                    "name": "x-api-key",
+                    "value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\r\n    \"title\": \" aaaa\",\r\n    \"notificationImage\": \"aaa\",\r\n    \"details\": \"aaa\"\r\n}"
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{seller_token}}"
+            }
+        },
+        {
+            "_id": "68f8b4a0-ff93-44a7-b86e-11bd8e0f4021",
+            "colId": "7402a3f8-5ce7-4662-9986-0c4de6474629",
+            "containerId": "818ae7f3-df20-4412-91eb-ccfe19f0a8a2",
+            "name": "getMe",
+            "url": "http://localhost:3000/buyer_site/buyer/getMe",
+            "method": "GET",
+            "sortNum": 340000,
+            "created": "2024-07-28T05:09:49.646Z",
+            "modified": "2024-07-28T05:09:49.646Z",
+            "headers": [
+                {
+                    "name": "x-api-key",
+                    "value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "x-store-id",
+                    "value": "{{buyer_store_id}}"
+                },
+                {
+                    "name": "Authorization",
+                    "value": "Bearer aaa"
+                }
+            ],
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{buyer_id}}"
+            }
+        },
+        {
+            "_id": "6ead7300-fd37-46ae-9689-71e25d508db4",
+            "colId": "7402a3f8-5ce7-4662-9986-0c4de6474629",
+            "containerId": "44f8bbe7-0849-428a-ac8f-85bfde73cd8e",
+            "name": "Add item",
+            "url": "{{BASE_URL}}/buyer_site/cart/",
+            "method": "POST",
+            "sortNum": 350000,
+            "created": "2024-07-28T05:09:49.647Z",
+            "modified": "2024-07-28T05:09:49.647Z",
+            "headers": [
+                {
+                    "name": "x-api-key",
+                    "value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "x-store-id",
+                    "value": "{{buyer_store_id}}"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\r\n    \"productId\": \"3f21487f-1f5a-4368-adbb-51bb5dec3db4\",\r\n    \"quantity\": 100,\r\n    \"isSubscription\": false,\r\n    \"buyingPeriod\": [15],\r\n    \"component\":[],\r\n    \"startBuyingDate\": \"2024/12/11\"\r\n}"
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{buyer_id}}"
+            }
+        },
+        {
+            "_id": "fcb96df3-ce08-4a72-bcae-da69ae3dc667",
+            "colId": "7402a3f8-5ce7-4662-9986-0c4de6474629",
+            "containerId": "44f8bbe7-0849-428a-ac8f-85bfde73cd8e",
+            "name": "Update item",
+            "url": "{{BASE_URL}}/buyer_site/cart/",
+            "method": "PUT",
+            "sortNum": 360000,
+            "created": "2024-07-28T05:09:49.648Z",
+            "modified": "2024-07-28T05:09:49.648Z",
+            "headers": [
+                {
+                    "name": "x-api-key",
+                    "value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "x-store-id",
+                    "value": "{{buyer_store_id}}"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\r\n    \"id\": \"e56486c4-1c3f-41f5-b553-af4dad9ddfba\",\r\n    \"buyerId\": \"7a72733a-7bb0-45a8-8973-fa50af302222\",\r\n    \"storeId\": \"747aa96d-251d-4bb4-a61d-683f43169419\",\r\n    \"productId\": \"9dd12ffc-fa58-495d-91e2-afa9cb3cff25\",\r\n    \"quantity\": 2,\r\n    \"isSubscription\": false,\r\n    \"buyingPeriod\": null,\r\n    \"product\": {\r\n        \"id\": \"9dd12ffc-fa58-495d-91e2-afa9cb3cff25\",\r\n        \"storeId\": \"747aa96d-251d-4bb4-a61d-683f43169419\",\r\n        \"isSubscription\": false,\r\n        \"isDiscount\": false,\r\n        \"buyingPeriod\": [],\r\n        \"isRecommend\": false,\r\n        \"productName\": \"test21\",\r\n        \"productImage\": [],\r\n        \"productDescription\": \"string\",\r\n        \"productOverview\": \"aaaaa\",\r\n        \"price\": 25,\r\n        \"priceSubscription\": null,\r\n        \"cost\": \"0\",\r\n        \"stockItem\": 100,\r\n        \"productTag\": \"string\",\r\n        \"status\": \"string\",\r\n        \"components\": [],\r\n        \"categories\": [],\r\n        \"faqs\": [],\r\n        \"discountPercentage\": 99,\r\n        \"hasDiscountSchedule\": true,\r\n        \"discountTimeFrom\": \"2024/05/06\",\r\n        \"discountTimeTo\": \"2024/07/07\",\r\n        \"calculatedNormalPrice\": 25,\r\n        \"createdAt\": \"2024-06-26T07:58:23.000Z\",\r\n        \"updatedAt\": \"2024-06-26T07:58:23.000Z\"\r\n    }\r\n}"
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{buyer_id}}"
+            }
+        },
+        {
+            "_id": "e0f7bb4d-c935-4f17-838e-6db949ea20a0",
+            "colId": "7402a3f8-5ce7-4662-9986-0c4de6474629",
+            "containerId": "44f8bbe7-0849-428a-ac8f-85bfde73cd8e",
+            "name": "Delete item",
+            "url": "{{BASE_URL}}/buyer_site/cart/6cf43206-103e-46c7-962a-1abdf26bf4a5",
+            "method": "DELETE",
+            "sortNum": 370000,
+            "created": "2024-07-28T05:09:49.649Z",
+            "modified": "2024-07-28T05:09:49.649Z",
+            "headers": [
+                {
+                    "name": "x-api-key",
+                    "value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "x-store-id",
+                    "value": "{{buyer_store_id}}"
+                }
+            ],
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{buyer_id}}"
+            }
+        },
+        {
+            "_id": "7dcb0ebd-2b6b-4e7e-b0d6-b0b9fb001230",
+            "colId": "7402a3f8-5ce7-4662-9986-0c4de6474629",
+            "containerId": "44f8bbe7-0849-428a-ac8f-85bfde73cd8e",
+            "name": "Delete items",
+            "url": "{{BASE_URL}}/buyer_site/cart/items",
+            "method": "DELETE",
+            "sortNum": 380000,
+            "created": "2024-07-28T05:09:49.650Z",
+            "modified": "2024-07-28T05:09:49.650Z",
+            "headers": [
+                {
+                    "name": "x-api-key",
+                    "value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "x-store-id",
+                    "value": "{{buyer_store_id}}"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\r\n    \"ids\": [\r\n       \"5a6bdcb5-0922-4c78-9034-d66ff5c7156c\"\r\n    ]\r\n}"
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{buyer_id}}"
+            }
+        },
+        {
+            "_id": "304eb0cc-2847-424e-82fc-e7b31c7b9e85",
+            "colId": "7402a3f8-5ce7-4662-9986-0c4de6474629",
+            "containerId": "44f8bbe7-0849-428a-ac8f-85bfde73cd8e",
+            "name": "Get cart",
+            "url": "{{BASE_URL}}/buyer_site/cart",
+            "method": "GET",
+            "sortNum": 390000,
+            "created": "2024-07-28T05:09:49.651Z",
+            "modified": "2024-07-28T05:09:49.651Z",
+            "headers": [
+                {
+                    "name": "x-api-key",
+                    "value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "x-store-id",
+                    "value": "{{buyer_store_id}}"
+                }
+            ],
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{buyer_id}}"
+            }
+        },
+        {
+            "_id": "363a44d6-ef0a-4eef-9211-3ed5a0eaf8d9",
+            "colId": "7402a3f8-5ce7-4662-9986-0c4de6474629",
+            "containerId": "0b1b53c9-5e33-4c2d-8264-deb59096c9c7",
+            "name": "Add address",
+            "url": "{{BASE_URL}}/buyer_site/address/",
+            "method": "POST",
+            "sortNum": 400000,
+            "created": "2024-07-28T05:09:49.652Z",
+            "modified": "2024-07-28T05:09:49.652Z",
+            "headers": [
+                {
+                    "name": "x-api-key",
+                    "value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "x-store-id",
+                    "value": "{{buyer_store_id}}"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\r\n    \"nameKana\": \"aa\",\r\n    \"nameKanji\": \"a2a\",\r\n    \"postCode\": \"aaa\",\r\n    \"cityTown\": \"aa\",\r\n    \"streetAddress\": \"aa\",\r\n    \"buildingName\": \"aaa\",\r\n    \"email\": \"aaa\",\r\n    \"telephoneNumber\":\"111\"\r\n}"
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{buyer_id}}"
+            }
+        },
+        {
+            "_id": "53a8aca5-a1bc-4fd9-890b-e5bde3b567cd",
+            "colId": "7402a3f8-5ce7-4662-9986-0c4de6474629",
+            "containerId": "0b1b53c9-5e33-4c2d-8264-deb59096c9c7",
+            "name": "Update address",
+            "url": "{{BASE_URL}}/buyer_site/address/",
+            "method": "PUT",
+            "sortNum": 410000,
+            "created": "2024-07-28T05:09:49.653Z",
+            "modified": "2024-07-28T05:09:49.653Z",
+            "headers": [
+                {
+                    "name": "x-api-key",
+                    "value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "x-store-id",
+                    "value": "{{buyer_store_id}}"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\r\n    \"id\" :\"fa1bf477-c27c-4d3e-a739-cb60f68a3651\",\r\n    \"nameKana\": \"bbb\",\r\n    \"nameKanji\": \"a2a\",\r\n    \"postCode\": \"aaa\",\r\n    \"cityTown\": \"aa\",\r\n    \"streetAddress\": \"aa\",\r\n    \"buildingName\": \"aaa\",\r\n    \"email\": \"aaa\",\r\n    \"telephoneNumber\":\"111\"\r\n}"
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{buyer_id}}"
+            }
+        },
+        {
+            "_id": "24546bf6-1751-4e6a-909d-77fb4cf7e8ac",
+            "colId": "7402a3f8-5ce7-4662-9986-0c4de6474629",
+            "containerId": "0b1b53c9-5e33-4c2d-8264-deb59096c9c7",
+            "name": "Delete address",
+            "url": "{{BASE_URL}}/buyer_site/address/fa1bf477-c27c-4d3e-a739-cb60f68a3651",
+            "method": "DELETE",
+            "sortNum": 420000,
+            "created": "2024-07-28T05:09:49.654Z",
+            "modified": "2024-07-28T05:09:49.654Z",
+            "headers": [
+                {
+                    "name": "x-api-key",
+                    "value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "x-store-id",
+                    "value": "{{buyer_store_id}}"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\r\n    \"id\" :\"fa1bf477-c27c-4d3e-a739-cb60f68a3651\",\r\n    \"nameKana\": \"bbb\",\r\n    \"nameKanji\": \"a2a\",\r\n    \"postCode\": \"aaa\",\r\n    \"cityTown\": \"aa\",\r\n    \"streetAddress\": \"aa\",\r\n    \"buildingName\": \"aaa\",\r\n    \"email\": \"aaa\",\r\n    \"telephoneNumber\":\"111\"\r\n}"
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{buyer_id}}"
+            }
+        },
+        {
+            "_id": "c0bcec1c-9e80-4be8-a9e4-4806ab3f24e3",
+            "colId": "7402a3f8-5ce7-4662-9986-0c4de6474629",
+            "containerId": "0b1b53c9-5e33-4c2d-8264-deb59096c9c7",
+            "name": "get address by id",
+            "url": "{{BASE_URL}}/buyer_site/address/fe0050ee-dd30-495c-8fb4-4ad171b62e36",
+            "method": "GET",
+            "sortNum": 430000,
+            "created": "2024-07-28T05:09:49.655Z",
+            "modified": "2024-07-28T05:09:49.655Z",
+            "headers": [
+                {
+                    "name": "x-api-key",
+                    "value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "x-store-id",
+                    "value": "{{buyer_store_id}}"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\r\n    \"id\" :\"fa1bf477-c27c-4d3e-a739-cb60f68a3651\",\r\n    \"nameKana\": \"bbb\",\r\n    \"nameKanji\": \"a2a\",\r\n    \"postCode\": \"aaa\",\r\n    \"cityTown\": \"aa\",\r\n    \"streetAddress\": \"aa\",\r\n    \"buildingName\": \"aaa\",\r\n    \"email\": \"aaa\",\r\n    \"telephoneNumber\":\"111\"\r\n}"
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{buyer_id}}"
+            }
+        },
+        {
+            "_id": "bc1472a3-b3df-4290-a077-0a3e8aa0ceec",
+            "colId": "7402a3f8-5ce7-4662-9986-0c4de6474629",
+            "containerId": "0b1b53c9-5e33-4c2d-8264-deb59096c9c7",
+            "name": "get addresses by buyer id",
+            "url": "{{BASE_URL}}/buyer_site/address/",
+            "method": "GET",
+            "sortNum": 440000,
+            "created": "2024-07-28T05:09:49.656Z",
+            "modified": "2024-07-28T05:09:49.656Z",
+            "headers": [
+                {
+                    "name": "x-api-key",
+                    "value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "x-store-id",
+                    "value": "{{buyer_store_id}}"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\r\n    \"id\" :\"fa1bf477-c27c-4d3e-a739-cb60f68a3651\",\r\n    \"nameKana\": \"bbb\",\r\n    \"nameKanji\": \"a2a\",\r\n    \"postCode\": \"aaa\",\r\n    \"cityTown\": \"aa\",\r\n    \"streetAddress\": \"aa\",\r\n    \"buildingName\": \"aaa\",\r\n    \"email\": \"aaa\",\r\n    \"telephoneNumber\":\"111\"\r\n}"
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{buyer_id}}"
+            }
+        },
+        {
+            "_id": "37f97fa3-64b9-4d85-9aa2-9b2620d416f5",
+            "colId": "7402a3f8-5ce7-4662-9986-0c4de6474629",
+            "containerId": "0b1b53c9-5e33-4c2d-8264-deb59096c9c7",
+            "name": "get addresses by buyer id Copy",
+            "url": "{{BASE_URL}}/buyer_site/address/store/storeId",
+            "method": "GET",
+            "sortNum": 450000,
+            "created": "2024-07-28T05:09:49.657Z",
+            "modified": "2024-07-28T05:09:49.657Z",
+            "headers": [
+                {
+                    "name": "x-api-key",
+                    "value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "x-store-id",
+                    "value": "{{buyer_store_id}}"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\r\n    \"id\" :\"fa1bf477-c27c-4d3e-a739-cb60f68a3651\",\r\n    \"nameKana\": \"bbb\",\r\n    \"nameKanji\": \"a2a\",\r\n    \"postCode\": \"aaa\",\r\n    \"cityTown\": \"aa\",\r\n    \"streetAddress\": \"aa\",\r\n    \"buildingName\": \"aaa\",\r\n    \"email\": \"aaa\",\r\n    \"telephoneNumber\":\"111\"\r\n}"
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{buyer_id}}"
+            }
+        },
+        {
+            "_id": "5565da5a-fec8-45dc-8c22-924cc1f8e6e6",
+            "colId": "7402a3f8-5ce7-4662-9986-0c4de6474629",
+            "containerId": "93a86116-7832-40b6-a76e-11cc6b89d7f4",
+            "name": "test",
+            "url": "test",
+            "method": "GET",
+            "sortNum": 460000,
+            "created": "2024-07-28T05:10:37.720Z",
+            "modified": "2024-07-28T05:10:46.090Z",
+            "headers": []
+        }
+    ],
+    "ref": "mIDYUidPB_u5NQlMGbJscOVNmxGzesrvqnv6sA-pM8J3oc9VExUxQo0AkTePrcxfBQxoFlvA3GNHmSqjpVPPWQ"
 }
